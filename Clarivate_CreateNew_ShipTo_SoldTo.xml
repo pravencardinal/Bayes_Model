@@ -1,0 +1,2736 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.3">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Users\praven.kumar\OneDrive - Cardinal Health\Desktop\clarivate\IMS_UNSPSC_Allocation.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>IMS_UNSPSC_Allocation.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="254" source="File: C:\Users\praven.kumar\OneDrive - Cardinal Health\Desktop\clarivate\IMS_UNSPSC_Allocation.csv" type="V_String" />
+            <Field name="ims_org_id" size="254" source="File: C:\Users\praven.kumar\OneDrive - Cardinal Health\Desktop\clarivate\IMS_UNSPSC_Allocation.csv" type="V_String" />
+            <Field name="UNSPSC" size="254" source="File: C:\Users\praven.kumar\OneDrive - Cardinal Health\Desktop\clarivate\IMS_UNSPSC_Allocation.csv" type="V_String" />
+            <Field name="CHB_Sales" size="254" source="File: C:\Users\praven.kumar\OneDrive - Cardinal Health\Desktop\clarivate\IMS_UNSPSC_Allocation.csv" type="V_String" />
+            <Field name="Sales_Opportunity_Total" size="254" source="File: C:\Users\praven.kumar\OneDrive - Cardinal Health\Desktop\clarivate\IMS_UNSPSC_Allocation.csv" type="V_String" />
+            <Field name="Sales_Opportunity" size="254" source="File: C:\Users\praven.kumar\OneDrive - Cardinal Health\Desktop\clarivate\IMS_UNSPSC_Allocation.csv" type="V_String" />
+            <Field name="Convertible_Percentage" size="254" source="File: C:\Users\praven.kumar\OneDrive - Cardinal Health\Desktop\clarivate\IMS_UNSPSC_Allocation.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="174" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="CHB_Sales" selected="True" rename="IMS_CHB" type="Double" size="8" />
+            <SelectField field="Sales_Opportunity_Total" selected="True" rename="IMS_OppTotal" type="Double" size="8" />
+            <SelectField field="Sales_Opportunity" selected="True" rename="IMS_Opp" type="Double" size="8" />
+            <SelectField field="Convertible_Percentage" selected="True" rename="IMS_Conv" type="Double" size="8" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="570" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">\\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Projects\Enginuity\Production\MaterialLevelEnginuity.yxdb</File>
+          <FormatSpecificOptions />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>MaterialLevelEnginuity.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="360AccountKey" size="10" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="360AccountSegment" size="7" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="360CustomerName" size="78" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AACCG_HierarchyNameLevel3" size="14" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AACCG_HierarchyNameLevel4" size="15" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AACCG_HierarchyNameLevel5" size="19" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AACCG_HierarchyNodeIdLevel3" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AACCG_HierarchyNodeIdLevel4" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AACCG_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AASUG_HierarchyNameLevel3" size="1" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="AASUG_HierarchyNameLevel4" size="14" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AASUG_HierarchyNameLevel5" size="20" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AASUG_HierarchyNodeIdLevel3" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AASUG_HierarchyNodeIdLevel4" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AASUG_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Account Name" size="70" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ANWSR RD" size="1" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="ANWSR Rep" size="11" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ANWSR RVP" size="1" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="ANWSR_HierarchyNodeIdLevel3" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ANWSR_HierarchyNodeIdLevel4" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ANWSR_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ANWSS_HierarchyNameLevel3" size="1" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="ANWSS_HierarchyNameLevel4" size="13" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ANWSS_HierarchyNameLevel5" size="18" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ANWSS_HierarchyNodeIdLevel3" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ANWSS_HierarchyNodeIdLevel4" size="7" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ANWSS_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="BaseUomQty" source="File: (Multiple Sources) (BatchMacro)" type="Double" />
+            <Field name="BCodeBasedOnUnspscAssignment" size="4" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="BCodeDesc" size="24" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="BillingDays" source="File: \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\AlteryxServerRefresh\Outputs\BillingDays.csv (BatchMacro)" type="Double" />
+            <Field name="Business Unit" size="31" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Category Bucket" size="6" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="Product Category Group Description" size="31" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Product Category Group ID" source="File: odbc:DSN=Prod_PackagesRawData|||Select * From DEV.PackagesRawData.ProductMaster (BatchMacro)" type="Byte" />
+            <Field name="GPO Contract Number" size="20" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Cost" source="File: (Multiple Sources) (BatchMacro)" type="Double" />
+            <Field name="CustomerSizeSegment" size="10" source="Summarize: GroupBy - Customer Size Segment" type="V_String" />
+            <Field name="CustomerSupplierViewDesc" size="35" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Distribution Type" size="21" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="EnhancedDescription" size="255" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="EquivalentTaxonomyDesc" size="80" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="EquivalentTaxonomyId" source="File: odbc:DSN=Prod_PackagesRawData|||Select * From DEV.PackagesRawData.ProductMaster (BatchMacro)" type="Int64" />
+            <Field name="EXNA_HierarchyNameLevel3" size="13" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="EXNA_HierarchyNameLevel4" size="13" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="EXNA_HierarchyNameLevel5" size="15" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="EXNA_HierarchyNodeIdLevel3" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="EXNA_HierarchyNodeIdLevel4" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="EXNA_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="FinClassId" size="5" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="GMSP_HierarchyNameLevel3" size="11" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="GMSP_HierarchyNameLevel4" size="15" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="GMSP_HierarchyNameLevel5" size="23" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="GMSP_HierarchyNodeIdLevel3" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="GMSP_HierarchyNodeIdLevel4" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="GMSP_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="GPO Contract Name" size="80" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Gpo Contract Type" size="16" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="I.S. Non Acute Exclusive Products RD" size="18" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="I.S. Non Acute Exclusive Products Rep" size="18" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="I.S. Non Acute Exclusive Products RVP" size="13" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="IndividualUom" size="3" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="Is360Customer" source="Summarize: GroupBy - Is360Customer (BatchMacro)" type="Bool" />
+            <Field name="IsAscendSole" source="Summarize: GroupBy - IsAscendSole (BatchMacro)" type="Bool" />
+            <Field name="IsEXNAView" source="Summarize: GroupBy - IsEXNAView (BatchMacro)" type="Bool" />
+            <Field name="IsKit" source="Formula: IF (CategoryGroupId == '70' &#xA;OR (CategoryGroupId != '70' &#xA;AND (FindString(UPPERCASE(SubcategoryDesc), 'KIT') != -1) &#xA;OR (FindString(UPPERCASE(SubcategoryDesc), 'TRAY') != -1) &#xA;OR (FindString(UPPERCASE(SubcategoryDesc), 'LAB PRESOURCE') != -1)) &#xA;AND ((FindString(UPPERCASE(SubcategoryDesc), 'KITCHEN') == -1) ) &#xA;AND (FindString(UPPERCASE(SubcategoryDesc), 'FOOD') == -1) &#xA;AND (FindString(UPPERCASE(SubcategoryDesc), 'SURGICAL LAP MAYO TRAYS') == -1)  &#xA;AND (FindString(UPPERCASE(SubcategoryDesc), 'MAYO STANDS') == -1)) &#xA;AND SubcategoryId NOT IN ('700K700001304','700E700010035','700K700001004','700E700010034','700N700010038','700K700001006') &#xA;THEN 1 ELSE 0 ENDIF (BatchMacro)" type="Bool" />
+            <Field name="IsMedtronic" source="File: odbc:DSN=Prod_PackagesRawData|||Select * From DEV.PackagesRawData.ProductMaster (BatchMacro)" type="Bool" />
+            <Field name="IsMSAView" source="Summarize: GroupBy - IsMSAView (BatchMacro)" type="Bool" />
+            <Field name="IsPerformancePlus" source="Formula: if [SourceTypeId] = 'NBP' and [ExternalMaterialGroupDesc] = 'Preferred' then 1 else 0 endif (BatchMacro)" type="Bool" />
+            <Field name="IsStrategicAccount" source="Summarize: GroupBy - IsStrategicAccount (BatchMacro)" type="Bool" />
+            <Field name="LABS_HierarchyNameLevel3" size="16" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="LABS_HierarchyNameLevel4" size="17" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="LABS_HierarchyNameLevel5" size="23" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="LABS_HierarchyNodeIdLevel3" size="6" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="LABS_HierarchyNodeIdLevel4" size="7" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="LABS_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="Long Term Care RD" size="18" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Long Term Care RD Node ID" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Long Term Care Rep" size="21" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Long Term Care Rep Node ID" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Long Term Care RVP" size="13" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Long Term Care RVP Node ID" size="5" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="MarketingViewAlternativeView" size="30" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="MaterialId" size="18" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="MSAAccountName" size="30" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="NAEP_HierarchyNodeIdLevel3" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="NAEP_HierarchyNodeIdLevel4" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="NAEP_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="PackagingString" size="64" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="PR Breakout-ProductConversionField" size="28" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="PriceUnitQuantiy" source="File: odbc:DSN=Prod_PackagesRawData|||&quot;DEV&quot;.&quot;PackagesRawData&quot;.&quot;UomStandardCosts&quot; (BatchMacro)" type="Double" />
+            <Field name="Product Conversion Field" size="18" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Product Line" size="70" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ProductOrService" size="8" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="PurchaseTrendAccount15Month" size="7" source="Summarize: GroupBy - Purchase Trend - Account-15Month" type="V_String" />
+            <Field name="PurchaseTrendAccount6Month" size="7" source="Summarize: GroupBy - Purchase Trend - Account-6Month" type="V_String" />
+            <Field name="PurchaseTrendAccountCategory15Month" size="7" source="Summarize: GroupBy - Purchase Trend - Account-Category-15Month" type="V_String" />
+            <Field name="PurchaseTrendAccountCategory6Month" size="7" source="Summarize: GroupBy - Purchase Trend - Account-Category-6Month" type="V_String" />
+            <Field name="PurchaseTrendSoldTo15Month" size="7" source="Summarize: GroupBy - Purchase Trend - SoldTo-15Month" type="V_String" />
+            <Field name="PurchaseTrendSoldTo6Month" size="7" source="Summarize: GroupBy - Purchase Trend - SoldTo-6Month" type="V_String" />
+            <Field name="PurchaseTrendSoldToCategory15Month" size="7" source="Summarize: GroupBy - Purchase Trend - SoldTo-Category-15Month" type="V_String" />
+            <Field name="PurchaseTrendSoldToCategory6Month" size="7" source="Summarize: GroupBy - Purchase Trend - SoldTo-Category-6Month" type="V_String" />
+            <Field name="Right_MarketingViewAlternativeView" size="30" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Right_MaterialId" source="File: \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Projects\Enginuity\Data\Inputs\VerticalSalesTransactionSalesData_202110.csv (BatchMacro)" type="Bool" />
+            <Field name="Right_SalesHierarchyBusinessSegment" size="8" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="Right_ShipToCustomerId" source="File: \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Projects\Enginuity\Data\Inputs\VerticalSalesTransactionSalesData_202110.csv (BatchMacro)" type="Bool" />
+            <Field name="Right_WorkflowFilePath" size="152" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="SaleItemGroupId" size="5" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="Sales" source="(Multiple Sources) (BatchMacro)" type="Double" />
+            <Field name="SalesHierarchyBusinessSegment" size="8" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="SameTaxonomyId" source="File: odbc:DSN=Prod_PackagesRawData|||Select * From DEV.PackagesRawData.ProductMaster (BatchMacro)" type="Int64" />
+            <Field name="SAT Finance Account Name" size="30" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="SellingUomQty" source="File: (Multiple Sources) (BatchMacro)" type="Double" />
+            <Field name="ShipToBusinessSegment" size="8" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="ShipTo City" size="27" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ShipToCustomerClass" size="2" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="ShipTo Number" size="10" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="ShipTo Name" size="35" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ShipTo Zip" size="9" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="ShipToServicingBusinessUnit" size="2" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="ShipTo State" size="2" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="SIGPrime" source="Formula: [AACCGprime]*[AASUGprime]*[ALTCprime]*[ANWSSprime]*[GMSPprime]*[LABSprime]*[NAEPprime]*[SPECprime]*[EXNAPrime]*[BDPOprime]" type="Int64" />
+            <Field name="SimilarTaxonomyId" source="File: odbc:DSN=Prod_PackagesRawData|||Select * From DEV.PackagesRawData.ProductMaster (BatchMacro)" type="Int64" />
+            <Field name="SoldTo City" size="25" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="SoldToCustomerClass" size="2" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="SoldTo Number" size="10" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="SoldTo Name" size="35" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="SoldTo Zip" size="10" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="SoldTo State" size="2" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="SourceTypeId" size="3" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="SPEC_HierarchyNodeIdLevel3" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="SPEC_HierarchyNodeIdLevel4" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="SPEC_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Specialty RD" size="19" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Specialty Rep" size="19" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Specialty RVP" size="16" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="SubcategoryDesc" size="40" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="SubcategoryId" size="13" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="Supplier ID" size="10" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="Supplier Name" size="35" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="UnspscId" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="GPO Affiliation" size="25" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="WorkflowFilePath" size="152" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="YearMonth" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="YearMonthMax" size="254" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="YearMonthMaxFormat" source="DateTime: To dd-MM-yy (BatchMacro)" type="Date" />
+            <Field name="PrimeVendor" size="56" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="PrimeVendor_Channel10" source="Formula: iif(contains([PrimeVendor],&quot;10 -&quot;),1,0) (BatchMacro)" type="Bool" />
+            <Field name="PrimeVendor_Channel20" source="Formula: iif(contains([PrimeVendor],&quot;20 -&quot;),1,0) (BatchMacro)" type="Bool" />
+            <Field name="PrimeVendor_Channel30" source="Formula: iif(contains([PrimeVendor],&quot;30 -&quot;),1,0) (BatchMacro)" type="Bool" />
+            <Field name="ORSP_HierarchyNameLevel3" size="18" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ORSP_HierarchyNameLevel4" size="18" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ORSP_HierarchyNameLevel5" size="21" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ORSP_HierarchyNodeIdLevel3" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ORSP_HierarchyNodeIdLevel4" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ORSP_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="BDPO_HierarchyNameLevel3" size="14" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="BDPO_HierarchyNameLevel4" size="14" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="BDPO_HierarchyNameLevel5" size="18" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="BDPO_HierarchyNodeIdLevel3" size="5" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="BDPO_HierarchyNodeIdLevel4" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="BDPO_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AACBD_HierarchyNameLevel3" size="11" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AACBD_HierarchyNameLevel4" size="14" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AACBD_HierarchyNameLevel5" size="12" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AACBD_HierarchyNodeIdLevel3" size="5" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="AACBD_HierarchyNodeIdLevel4" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AACBD_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AACPM_HierarchyNameLevel3" size="1" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="AACPM_HierarchyNameLevel4" size="15" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AACPM_HierarchyNameLevel5" size="16" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AACPM_HierarchyNodeIdLevel3" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AACPM_HierarchyNodeIdLevel4" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AACPM_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="IDNM_HierarchyNameLevel3" size="1" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="IDNM_HierarchyNameLevel4" size="1" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="IDNM_HierarchyNameLevel5" size="1" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="IDNM_HierarchyNodeIdLevel3" size="5" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="IDNM_HierarchyNodeIdLevel4" size="5" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="IDNM_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Right_YearMonth" source="File: \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Projects\Enginuity\Data\Inputs\VerticalSalesTransactionSalesData_202110.csv (BatchMacro)" type="Bool" />
+            <Field name="Right_SaleItemGroupId" source="File: \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Projects\Enginuity\Data\Inputs\VerticalSalesTransactionSalesData_202110.csv (BatchMacro)" type="Bool" />
+            <Field name="Right_Sales" source="File: \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Projects\Enginuity\Data\Inputs\VerticalSalesTransactionSalesData_202110.csv (BatchMacro)" type="Bool" />
+            <Field name="Right_Cost" source="File: \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Projects\Enginuity\Data\Inputs\VerticalSalesTransactionSalesData_202110.csv (BatchMacro)" type="Bool" />
+            <Field name="Right_Gp" source="File: \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Projects\Enginuity\Data\Inputs\VerticalSalesTransactionSalesData_202110.csv (BatchMacro)" type="Bool" />
+            <Field name="Right_BaseUomQty" source="File: \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Projects\Enginuity\Data\Inputs\VerticalSalesTransactionSalesData_202110.csv (BatchMacro)" type="Bool" />
+            <Field name="Right_IsMedtronic" source="File: \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Projects\Enginuity\Data\Inputs\VerticalSalesTransactionSalesData_202110.csv (BatchMacro)" type="Bool" />
+            <Field name="Right_SellingUomQty" source="File: \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Projects\Enginuity\Data\Inputs\VerticalSalesTransactionSalesData_202110.csv (BatchMacro)" type="Bool" />
+            <Field name="Calendar Year" source="Formula: Left([YearMonth], 4) (BatchMacro)" type="Bool" />
+            <Field name="Calendar Month" source="Formula: Right([YearMonth], 2) (BatchMacro)" type="Bool" />
+            <Field name="Date" source="Formula: ToDate(&#xA;[Calendar Year] + '-' + [Calendar Month] + '-01' ) (BatchMacro)" type="Date" />
+            <Field name="TodayDate" source="Formula: ToDate(DateTimeNow()) (BatchMacro)" type="Bool" />
+            <Field name="DateDiff" source="Formula: DateTimeDiff([TodayDate],Date,&quot;months&quot;) (BatchMacro)" type="Bool" />
+            <Field name="BDPOPrime" source="Formula: iif(!isnull([BDPO_HierarchyNodeIdLevel3]) and !isempty([BDPO_HierarchyNodeIdLevel3]),37,1)" type="Int64" />
+            <Field name="ANCR_HierarchyNameLevel3" size="15" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ANCR_HierarchyNameLevel4" size="15" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ANCR_HierarchyNameLevel5" size="17" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ANCR_HierarchyNodeIdLevel3" size="6" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="ANCR_HierarchyNodeIdLevel4" size="6" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="ANCR_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="GPO" size="25" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="HasAasugAffiliation" source="Summarize: GroupBy - HasAasugAffiliation (BatchMacro)" type="Bool" />
+            <Field name="HasANCRAffiliation" source="Summarize: GroupBy - HasANCRAffiliation (BatchMacro)" type="Bool" />
+            <Field name="HasLabAffiliation" source="Summarize: GroupBy - HasLabAffiliation (BatchMacro)" type="Bool" />
+            <Field name="HasNDCAAfilliation" source="Summarize: GroupBy - HasNDCAAfilliation (BatchMacro)" type="Bool" />
+            <Field name="HasRDCAAffiliation" source="Summarize: GroupBy - HasRDCAAffiliation (BatchMacro)" type="Bool" />
+            <Field name="HasSCSEAffiliation" source="Summarize: GroupBy - HasSCSEAffiliation (BatchMacro)" type="Bool" />
+            <Field name="HasSCSRAffiliation" source="Summarize: GroupBy - HasSCSRAffiliation (BatchMacro)" type="Bool" />
+            <Field name="Left_Left_Right_IsMedtronic" source="File: \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Projects\Enginuity\Data\Inputs\VerticalSalesTransactionSalesData_202110.csv (BatchMacro)" type="Bool" />
+            <Field name="Left_Left_Right_IsMedtronic2" source="File: \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Projects\Enginuity\Data\Inputs\VerticalSalesTransactionSalesData_202110.csv (BatchMacro)" type="Bool" />
+            <Field name="NDCA_HierarchyNameLevel3" size="10" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="NDCA_HierarchyNameLevel4" size="10" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="NDCA_HierarchyNameLevel5" size="19" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="NDCA_HierarchyNodeIdLevel3" size="6" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="NDCA_HierarchyNodeIdLevel4" size="6" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="NDCA_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="SCSE_HierarchyNameLevel3" size="15" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="SCSE_HierarchyNameLevel4" size="20" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="SCSE_HierarchyNameLevel5" size="20" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="SCSE_HierarchyNodeIdLevel3" size="6" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="SCSE_HierarchyNodeIdLevel4" size="6" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="SCSE_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="SCSR_HierarchyNameLevel3" size="15" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="SCSR_HierarchyNameLevel4" size="16" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="SCSR_HierarchyNameLevel5" size="19" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="SCSR_HierarchyNodeIdLevel3" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="SCSR_HierarchyNodeIdLevel4" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="SCSR_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AmbcareAcCode" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Gp" source="File: (Multiple Sources) (BatchMacro)" type="Double" />
+            <Field name="RDCA_HierarchyNameLevel3" size="15" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="RDCA_HierarchyNameLevel4" size="15" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="RDCA_HierarchyNameLevel5" size="16" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="RDCA_HierarchyNodeIdLevel3" size="6" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="RDCA_HierarchyNodeIdLevel4" size="6" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="RDCA_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="186" y="570" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="AECL_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="AECL_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="AECL_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="AESP_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="AESP_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="AESP_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="CAMR Region Director" selected="False" />
+            <SelectField field="CAMR Region VP" selected="False" />
+            <SelectField field="CAMR Rep" selected="False" />
+            <SelectField field="CAMR_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="CAMR_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="CAMR_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="CorrespondingBaseUomQtyField" selected="False" />
+            <SelectField field="CorrespondingCostField" selected="False" />
+            <SelectField field="CorrespondingGPField" selected="False" />
+            <SelectField field="CorrespondingSalesField" selected="False" />
+            <SelectField field="CyAvgBillingDays" selected="False" />
+            <SelectField field="EXNAPrime" selected="False" />
+            <SelectField field="FiscalYearMonth" selected="False" />
+            <SelectField field="FyAvgBillingDays" selected="False" />
+            <SelectField field="Gen Med RD" selected="False" />
+            <SelectField field="Gen Med Rep" selected="False" />
+            <SelectField field="Gen Med RVP" selected="False" />
+            <SelectField field="GMOR_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="GMOR_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="GMOR_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="GVTM_HierarchyNameLevel3" selected="False" />
+            <SelectField field="GVTM_HierarchyNameLevel4" selected="False" />
+            <SelectField field="GVTM_HierarchyNameLevel5" selected="False" />
+            <SelectField field="GVTM_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="GVTM_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="GVTM_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="HasCamrAffiliation" selected="False" />
+            <SelectField field="HasGMORAffiliation" selected="False" />
+            <SelectField field="I.S. Acute Hospitals RD" selected="False" />
+            <SelectField field="I.S. Acute Hospitals RD Node ID" selected="False" />
+            <SelectField field="I.S. Acute Hospitals Rep" selected="False" />
+            <SelectField field="I.S. Acute Hospitals Rep Node ID" selected="False" />
+            <SelectField field="I.S. Acute Hospitals RVP" selected="False" />
+            <SelectField field="I.S. Acute Hospitals RVP Node ID" selected="False" />
+            <SelectField field="I.S. Exclusive Clinical RD" selected="False" />
+            <SelectField field="I.S. Exclusive Clinical Rep" selected="False" />
+            <SelectField field="I.S. Exclusive Clinical RVP" selected="False" />
+            <SelectField field="I.S. Exclusive Supplies RD" selected="False" />
+            <SelectField field="I.S. Exclusive Supplies Rep" selected="False" />
+            <SelectField field="I.S. Exclusive Supplies RVP" selected="False" />
+            <SelectField field="IRIS_HierarchyNameLevel3" selected="False" />
+            <SelectField field="IRIS_HierarchyNameLevel4" selected="False" />
+            <SelectField field="IRIS_HierarchyNameLevel5" selected="False" />
+            <SelectField field="IRIS_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="IRIS_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="IRIS_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="ISSP_HierarchyNameLevel3" selected="False" />
+            <SelectField field="ISSP_HierarchyNameLevel4" selected="False" />
+            <SelectField field="ISSP_HierarchyNameLevel5" selected="False" />
+            <SelectField field="ISSP_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="ISSP_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="ISSP_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="MsaAccountName" selected="False" />
+            <SelectField field="MsaAccountName" selected="False" />
+            <SelectField field="NPWT_HierarchyNameLevel3" selected="False" />
+            <SelectField field="NPWT_HierarchyNameLevel4" selected="False" />
+            <SelectField field="NPWT_HierarchyNameLevel5" selected="False" />
+            <SelectField field="NPWT_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="NPWT_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="NPWT_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="RBPT_HierarchyNameLevel3" selected="False" />
+            <SelectField field="RBPT_HierarchyNameLevel4" selected="False" />
+            <SelectField field="RBPT_HierarchyNameLevel5" selected="False" />
+            <SelectField field="RBPT_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="RBPT_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="RBPT_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="RHSE_HierarchyNameLevel3" selected="False" />
+            <SelectField field="RHSE_HierarchyNameLevel4" selected="False" />
+            <SelectField field="RHSE_HierarchyNameLevel5" selected="False" />
+            <SelectField field="RHSE_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="RHSE_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="RHSE_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="SAE RD" selected="False" />
+            <SelectField field="SAE Rep" selected="False" />
+            <SelectField field="SAE VP" selected="False" />
+            <SelectField field="SAES_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="SAES_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="SAES_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="SalesAvgBillingDays" selected="False" />
+            <SelectField field="SysActive" selected="False" />
+            <SelectField field="SysCreatedBy" selected="False" />
+            <SelectField field="SysCreatedOn" selected="False" />
+            <SelectField field="SysID" selected="False" />
+            <SelectField field="SysUpdatedBy" selected="False" />
+            <SelectField field="SysUpdatedOn" selected="False" />
+            <SelectField field="UnspscDesc" selected="False" />
+            <SelectField field="360AccountKey" selected="False" />
+            <SelectField field="360AccountSegment" selected="False" />
+            <SelectField field="360CustomerName" selected="False" />
+            <SelectField field="AACBD_HierarchyNameLevel3" selected="False" />
+            <SelectField field="AACBD_HierarchyNameLevel4" selected="False" />
+            <SelectField field="AACBD_HierarchyNameLevel5" selected="False" />
+            <SelectField field="AACBD_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="AACBD_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="AACBD_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="AACCG_HierarchyNameLevel3" selected="False" />
+            <SelectField field="AACCG_HierarchyNameLevel4" selected="False" />
+            <SelectField field="AACCG_HierarchyNameLevel5" selected="False" />
+            <SelectField field="AACCG_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="AACCG_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="AACCG_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="AACPM_HierarchyNameLevel3" selected="False" />
+            <SelectField field="AACPM_HierarchyNameLevel4" selected="False" />
+            <SelectField field="AACPM_HierarchyNameLevel5" selected="False" />
+            <SelectField field="AACPM_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="AACPM_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="AACPM_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="AASUG_HierarchyNameLevel3" selected="False" />
+            <SelectField field="AASUG_HierarchyNameLevel4" selected="False" />
+            <SelectField field="AASUG_HierarchyNameLevel5" selected="False" />
+            <SelectField field="AASUG_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="AASUG_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="AASUG_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="Account Name" selected="False" />
+            <SelectField field="AmbcareAcCode" selected="False" />
+            <SelectField field="ANCR_HierarchyNameLevel3" selected="False" />
+            <SelectField field="ANCR_HierarchyNameLevel4" selected="False" />
+            <SelectField field="ANCR_HierarchyNameLevel5" selected="False" />
+            <SelectField field="ANCR_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="ANCR_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="ANCR_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="ANWSR RD" selected="False" />
+            <SelectField field="ANWSR Rep" selected="False" />
+            <SelectField field="ANWSR RVP" selected="False" />
+            <SelectField field="ANWSR_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="ANWSR_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="ANWSR_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="ANWSS_HierarchyNameLevel3" selected="False" />
+            <SelectField field="ANWSS_HierarchyNameLevel4" selected="False" />
+            <SelectField field="ANWSS_HierarchyNameLevel5" selected="False" />
+            <SelectField field="ANWSS_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="ANWSS_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="ANWSS_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="BaseUomQty" selected="False" />
+            <SelectField field="BCodeBasedOnUnspscAssignment" selected="False" />
+            <SelectField field="BCodeDesc" selected="False" />
+            <SelectField field="BDPO_HierarchyNameLevel3" selected="False" />
+            <SelectField field="BDPO_HierarchyNameLevel4" selected="False" />
+            <SelectField field="BDPO_HierarchyNameLevel5" selected="False" />
+            <SelectField field="BDPO_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="BDPO_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="BDPO_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="BDPOPrime" selected="False" />
+            <SelectField field="BillingDays" selected="False" />
+            <SelectField field="Business Unit" selected="False" />
+            <SelectField field="Calendar Month" selected="False" />
+            <SelectField field="Calendar Year" selected="False" />
+            <SelectField field="Category Bucket" selected="False" />
+            <SelectField field="Cost" selected="False" />
+            <SelectField field="CustomerSizeSegment" selected="False" />
+            <SelectField field="CustomerSupplierViewDesc" selected="False" />
+            <SelectField field="Date" selected="False" />
+            <SelectField field="DateDiff" selected="False" />
+            <SelectField field="Distribution Type" selected="False" />
+            <SelectField field="EnhancedDescription" selected="False" />
+            <SelectField field="EquivalentTaxonomyDesc" selected="False" />
+            <SelectField field="EquivalentTaxonomyId" selected="False" />
+            <SelectField field="EXNA_HierarchyNameLevel3" selected="False" />
+            <SelectField field="EXNA_HierarchyNameLevel4" selected="False" />
+            <SelectField field="EXNA_HierarchyNameLevel5" selected="False" />
+            <SelectField field="EXNA_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="EXNA_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="EXNA_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="FinClassId" selected="False" />
+            <SelectField field="GMSP_HierarchyNameLevel3" selected="False" />
+            <SelectField field="GMSP_HierarchyNameLevel4" selected="False" />
+            <SelectField field="GMSP_HierarchyNameLevel5" selected="False" />
+            <SelectField field="GMSP_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="GMSP_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="GMSP_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="Gp" selected="False" />
+            <SelectField field="GPO" selected="False" />
+            <SelectField field="GPO Affiliation" selected="False" />
+            <SelectField field="GPO Contract Name" selected="False" />
+            <SelectField field="GPO Contract Number" selected="False" />
+            <SelectField field="Gpo Contract Type" selected="False" />
+            <SelectField field="HasAasugAffiliation" selected="False" />
+            <SelectField field="HasANCRAffiliation" selected="False" />
+            <SelectField field="HasLabAffiliation" selected="False" />
+            <SelectField field="HasNDCAAfilliation" selected="False" />
+            <SelectField field="HasRDCAAffiliation" selected="False" />
+            <SelectField field="HasSCSEAffiliation" selected="False" />
+            <SelectField field="HasSCSRAffiliation" selected="False" />
+            <SelectField field="I.S. Non Acute Exclusive Products RD" selected="False" />
+            <SelectField field="I.S. Non Acute Exclusive Products Rep" selected="False" />
+            <SelectField field="I.S. Non Acute Exclusive Products RVP" selected="False" />
+            <SelectField field="IDNM_HierarchyNameLevel3" selected="False" />
+            <SelectField field="IDNM_HierarchyNameLevel4" selected="False" />
+            <SelectField field="IDNM_HierarchyNameLevel5" selected="False" />
+            <SelectField field="IDNM_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="IDNM_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="IDNM_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="IndividualUom" selected="False" />
+            <SelectField field="Is360Customer" selected="False" />
+            <SelectField field="IsAscendSole" selected="False" />
+            <SelectField field="IsEXNAView" selected="False" />
+            <SelectField field="IsKit" selected="False" />
+            <SelectField field="IsMedtronic" selected="False" />
+            <SelectField field="IsMSAView" selected="False" />
+            <SelectField field="IsPerformancePlus" selected="False" />
+            <SelectField field="IsStrategicAccount" selected="False" />
+            <SelectField field="LABS_HierarchyNameLevel3" selected="False" />
+            <SelectField field="LABS_HierarchyNameLevel4" selected="False" />
+            <SelectField field="LABS_HierarchyNameLevel5" selected="False" />
+            <SelectField field="LABS_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="LABS_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="LABS_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="Left_Left_Right_IsMedtronic" selected="False" />
+            <SelectField field="Left_Left_Right_IsMedtronic2" selected="False" />
+            <SelectField field="Long Term Care RD" selected="False" />
+            <SelectField field="Long Term Care RD Node ID" selected="False" />
+            <SelectField field="Long Term Care Rep" selected="False" />
+            <SelectField field="Long Term Care Rep Node ID" selected="False" />
+            <SelectField field="Long Term Care RVP" selected="False" />
+            <SelectField field="Long Term Care RVP Node ID" selected="False" />
+            <SelectField field="MarketingViewAlternativeView" selected="True" />
+            <SelectField field="MaterialId" selected="False" />
+            <SelectField field="NAEP_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="NAEP_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="NAEP_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="NDCA_HierarchyNameLevel3" selected="False" />
+            <SelectField field="NDCA_HierarchyNameLevel4" selected="False" />
+            <SelectField field="NDCA_HierarchyNameLevel5" selected="False" />
+            <SelectField field="NDCA_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="NDCA_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="NDCA_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="ORSP_HierarchyNameLevel3" selected="False" />
+            <SelectField field="ORSP_HierarchyNameLevel4" selected="False" />
+            <SelectField field="ORSP_HierarchyNameLevel5" selected="False" />
+            <SelectField field="ORSP_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="ORSP_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="ORSP_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="PackagingString" selected="False" />
+            <SelectField field="PR Breakout-ProductConversionField" selected="False" />
+            <SelectField field="PriceUnitQuantiy" selected="False" />
+            <SelectField field="PrimeVendor" selected="False" />
+            <SelectField field="PrimeVendor_Channel10" selected="False" />
+            <SelectField field="PrimeVendor_Channel20" selected="False" />
+            <SelectField field="PrimeVendor_Channel30" selected="False" />
+            <SelectField field="Product Category Group Description" selected="False" />
+            <SelectField field="Product Category Group ID" selected="False" />
+            <SelectField field="Product Conversion Field" selected="True" />
+            <SelectField field="Product Line" selected="False" />
+            <SelectField field="ProductOrService" selected="False" />
+            <SelectField field="PurchaseTrendAccount15Month" selected="False" />
+            <SelectField field="PurchaseTrendAccount6Month" selected="False" />
+            <SelectField field="PurchaseTrendAccountCategory15Month" selected="False" />
+            <SelectField field="PurchaseTrendAccountCategory6Month" selected="False" />
+            <SelectField field="PurchaseTrendSoldTo15Month" selected="False" />
+            <SelectField field="PurchaseTrendSoldTo6Month" selected="False" />
+            <SelectField field="PurchaseTrendSoldToCategory15Month" selected="False" />
+            <SelectField field="PurchaseTrendSoldToCategory6Month" selected="False" />
+            <SelectField field="RDCA_HierarchyNameLevel3" selected="False" />
+            <SelectField field="RDCA_HierarchyNameLevel4" selected="False" />
+            <SelectField field="RDCA_HierarchyNameLevel5" selected="False" />
+            <SelectField field="RDCA_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="RDCA_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="RDCA_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="Right_BaseUomQty" selected="False" />
+            <SelectField field="Right_Cost" selected="False" />
+            <SelectField field="Right_Gp" selected="False" />
+            <SelectField field="Right_IsMedtronic" selected="False" />
+            <SelectField field="Right_MarketingViewAlternativeView" selected="False" />
+            <SelectField field="Right_MaterialId" selected="False" />
+            <SelectField field="Right_SaleItemGroupId" selected="False" />
+            <SelectField field="Right_Sales" selected="False" />
+            <SelectField field="Right_SalesHierarchyBusinessSegment" selected="False" />
+            <SelectField field="Right_SellingUomQty" selected="False" />
+            <SelectField field="Right_ShipToCustomerId" selected="False" />
+            <SelectField field="Right_WorkflowFilePath" selected="False" />
+            <SelectField field="Right_YearMonth" selected="False" />
+            <SelectField field="SaleItemGroupId" selected="False" />
+            <SelectField field="Sales" selected="True" />
+            <SelectField field="SalesHierarchyBusinessSegment" selected="False" />
+            <SelectField field="SameTaxonomyId" selected="False" />
+            <SelectField field="SAT Finance Account Name" selected="False" />
+            <SelectField field="SCSE_HierarchyNameLevel3" selected="False" />
+            <SelectField field="SCSE_HierarchyNameLevel4" selected="False" />
+            <SelectField field="SCSE_HierarchyNameLevel5" selected="False" />
+            <SelectField field="SCSE_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="SCSE_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="SCSE_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="SCSR_HierarchyNameLevel3" selected="False" />
+            <SelectField field="SCSR_HierarchyNameLevel4" selected="False" />
+            <SelectField field="SCSR_HierarchyNameLevel5" selected="False" />
+            <SelectField field="SCSR_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="SCSR_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="SCSR_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="SellingUomQty" selected="False" />
+            <SelectField field="ShipTo City" selected="False" />
+            <SelectField field="ShipTo Name" selected="False" />
+            <SelectField field="ShipTo Number" selected="True" />
+            <SelectField field="ShipTo State" selected="False" />
+            <SelectField field="ShipTo Zip" selected="False" />
+            <SelectField field="ShipToBusinessSegment" selected="False" />
+            <SelectField field="ShipToCustomerClass" selected="False" />
+            <SelectField field="ShipToServicingBusinessUnit" selected="False" />
+            <SelectField field="SIGPrime" selected="False" />
+            <SelectField field="SimilarTaxonomyId" selected="False" />
+            <SelectField field="SoldTo City" selected="False" />
+            <SelectField field="SoldTo Name" selected="False" />
+            <SelectField field="SoldTo Number" selected="True" />
+            <SelectField field="SoldTo State" selected="False" />
+            <SelectField field="SoldTo Zip" selected="False" />
+            <SelectField field="SoldToCustomerClass" selected="False" />
+            <SelectField field="SourceTypeId" selected="False" />
+            <SelectField field="SPEC_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="SPEC_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="SPEC_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="Specialty RD" selected="False" />
+            <SelectField field="Specialty Rep" selected="False" />
+            <SelectField field="Specialty RVP" selected="False" />
+            <SelectField field="SubcategoryDesc" selected="False" />
+            <SelectField field="SubcategoryId" selected="False" />
+            <SelectField field="Supplier ID" selected="False" />
+            <SelectField field="Supplier Name" selected="False" />
+            <SelectField field="TodayDate" selected="False" />
+            <SelectField field="UnspscId" selected="True" size="11" />
+            <SelectField field="WorkflowFilePath" selected="False" />
+            <SelectField field="YearMonth" selected="True" />
+            <SelectField field="YearMonthMax" selected="False" />
+            <SelectField field="YearMonthMaxFormat" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DateTime.DateTime">
+        <Position x="378" y="570" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <IsFrom value="False" />
+          <InputFieldName>YearMonth</InputFieldName>
+          <Format>yyyy-MM</Format>
+          <OutputFieldName>YearMonthFormat</OutputFieldName>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Convert YearMonth From:
+Custom</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDateTime" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="654" y="570" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>!isnull([UnspscId])
+AND
+!contains([UnspscId],"99999")
+AND
+[Sales] &gt; 0.0</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>!isnull([UnspscId])
+AND
+!contains([UnspscId],"99999")
+AND
+[Sales] &gt; 0.0</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="954" y="558" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="ShipTo Number" action="GroupBy" rename="ShipTo Number" />
+            <SummarizeField field="SoldTo Number" action="GroupBy" rename="SoldTo Number" />
+            <SummarizeField field="Sales" action="Sum" rename="CHB_Sales" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="762" y="558" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="max(0,[Sales])" field="Sales" size="8" type="Double" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Sales = max(0,[Sales])
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="282" y="570" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="858" y="558" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="MarketingViewAlternativeView" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="570" y="570" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="ShipTo Number" action="GroupBy" rename="ShipTo Number" />
+            <SummarizeField field="SoldTo Number" action="GroupBy" rename="SoldTo Number" />
+            <SummarizeField field="UnspscId" action="GroupBy" rename="UnspscId" />
+            <SummarizeField field="YearMonth" action="GroupBy" rename="YearMonth" />
+            <SummarizeField field="YearMonthMaxFormat" action="GroupBy" rename="YearMonthMaxFormat" />
+            <SummarizeField field="YearMonthFormat" action="GroupBy" rename="YearMonthFormat" />
+            <SummarizeField field="Sales" action="Sum" rename="Sales" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="474" y="570" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression><![CDATA[[YearMonthFormat] > datetimeadd([YearMonthMaxFormat],-12,"Months")
+AND
+[Product Conversion Field] = "CAH"
+]]></Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[YearMonthFormat] &gt; datetimeadd([YearMonthMaxFormat],-12,"Months")
+AND
+[Product ...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1074" y="558" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="ShipTo Number" selected="True" rename="ShipToCustomerId" />
+            <SelectField field="SoldTo Number" selected="True" rename="SoldToCustomerId" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="474" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="ims_org_id" selected="True" />
+            <SelectField field="ShipToCustomerId" selected="True" />
+            <SelectField field="AacbdLevel3" selected="False" />
+            <SelectField field="AacbdLevel3Node" selected="False" />
+            <SelectField field="AacbdLevel4" selected="False" />
+            <SelectField field="AacbdLevel4Node" selected="False" />
+            <SelectField field="AacbdLevel5" selected="False" />
+            <SelectField field="AacbdLevel5Node" selected="False" />
+            <SelectField field="AacbdRegion" selected="False" />
+            <SelectField field="AaccgChallengerProfile" selected="False" />
+            <SelectField field="AaccgLevel3" selected="False" />
+            <SelectField field="AaccgLevel3Node" selected="False" />
+            <SelectField field="CensusBeds" selected="False" />
+            <SelectField field="AaccgLevel4" selected="False" />
+            <SelectField field="AaccgLevel5" selected="False" />
+            <SelectField field="AaccgLevel5Node" selected="False" />
+            <SelectField field="AaccgRegion" selected="False" />
+            <SelectField field="AasugChallengerProfile" selected="False" />
+            <SelectField field="AasugLevel3" selected="False" />
+            <SelectField field="AasugLevel3Node" selected="False" />
+            <SelectField field="AasugLevel4" selected="False" />
+            <SelectField field="AasugLevel4Node" selected="False" />
+            <SelectField field="AasugLevel5" selected="False" />
+            <SelectField field="AasugLevel5Node" selected="False" />
+            <SelectField field="AasugRegion" selected="False" />
+            <SelectField field="AccountName" selected="False" />
+            <SelectField field="AaccgLevel4Node" selected="False" />
+            <SelectField field="AacbdChallengerProfile" selected="False" />
+            <SelectField field="360CustomerName" selected="False" />
+            <SelectField field="AccountNameCount" selected="False" />
+            <SelectField field="AccountSegment" selected="False" />
+            <SelectField field="ALTCLevel4" selected="False" />
+            <SelectField field="ALTCLevel4Node" selected="False" />
+            <SelectField field="ALTCLevel5" selected="False" />
+            <SelectField field="ALTCLevel5Node" selected="False" />
+            <SelectField field="ALTCRegion" selected="False" />
+            <SelectField field="AmbcareNationalAccountName" selected="False" />
+            <SelectField field="AmbCareSegment" selected="False" />
+            <SelectField field="AnwsrChallengerProfile" selected="False" />
+            <SelectField field="AnwsrLevel3" selected="False" />
+            <SelectField field="AnwsrLevel3Node" selected="False" />
+            <SelectField field="AnwsrLevel4" selected="False" />
+            <SelectField field="AnwsrLevel4Node" selected="False" />
+            <SelectField field="NPWTLevel4" selected="False" />
+            <SelectField field="AnwsrLevel5" selected="False" />
+            <SelectField field="AnwsrRegion" selected="False" />
+            <SelectField field="AnwssChallengerProfile" selected="False" />
+            <SelectField field="AnwssLevel3" selected="False" />
+            <SelectField field="AnwssLevel3Node" selected="False" />
+            <SelectField field="AnwssLevel4" selected="False" />
+            <SelectField field="AnwssLevel4Node" selected="False" />
+            <SelectField field="AnwssLevel5" selected="False" />
+            <SelectField field="AnwssLevel5Node" selected="False" />
+            <SelectField field="AnwssRegion" selected="False" />
+            <SelectField field="Beds" selected="False" />
+            <SelectField field="ALTCLevel3" selected="False" />
+            <SelectField field="AltcChallengerProfile" selected="False" />
+            <SelectField field="AnwsrLevel5Node" selected="False" />
+            <SelectField field="CompanyType" selected="False" />
+            <SelectField field="Current360RebateEffectiveDate" selected="False" />
+            <SelectField field="HealthIndustryNumber" selected="False" />
+            <SelectField field="Current360RebateTierSpendThreshold" selected="False" />
+            <SelectField field="DataSourceDate" selected="False" />
+            <SelectField field="DeaNumber" selected="False" />
+            <SelectField field="EanAccountName" selected="False" />
+            <SelectField field="EanAccountNumber" selected="False" />
+            <SelectField field="FinanceAmbCareCustomerSegment" selected="False" />
+            <SelectField field="GlobalLocationNumber" selected="False" />
+            <SelectField field="GmspChallengerProfile" selected="False" />
+            <SelectField field="GMSPLevel3" selected="False" />
+            <SelectField field="GMSPLevel3Node" selected="False" />
+            <SelectField field="HasSaesAffiliation" selected="False" />
+            <SelectField field="GMSPLevel4" selected="False" />
+            <SelectField field="GMSPLevel5" selected="False" />
+            <SelectField field="GMSPLevel5Node" selected="False" />
+            <SelectField field="GMSPRegion" selected="False" />
+            <SelectField field="HasAacbdAffiliation" selected="False" />
+            <SelectField field="HasAaccgAffiliation" selected="False" />
+            <SelectField field="HasAasugAffiliation" selected="False" />
+            <SelectField field="HasALTCAffiliation" selected="False" />
+            <SelectField field="HasAnwsrAffiliation" selected="False" />
+            <SelectField field="HasAnwssAffiliation" selected="False" />
+            <SelectField field="HasCustomerSoldToDeleteFlag" selected="False" />
+            <SelectField field="HasGMSPAffiliation" selected="False" />
+            <SelectField field="HasLabAffiliation" selected="False" />
+            <SelectField field="GMSPLevel4Node" selected="False" />
+            <SelectField field="Current360RebateTierRebatePercentage" selected="False" />
+            <SelectField field="Current360RebateEndDate" selected="False" />
+            <SelectField field="HasNAEPAffiliation" selected="False" />
+            <SelectField field="HasShipToCustomerDeleteFlag" selected="False" />
+            <SelectField field="IdnAccountName" selected="False" />
+            <SelectField field="IdnAccountNumber" selected="False" />
+            <SelectField field="Is360Customer" selected="False" />
+            <SelectField field="IsAmbcareTop150Account" selected="False" />
+            <SelectField field="IsEXNAView" selected="False" />
+            <SelectField field="IsMSAView" selected="False" />
+            <SelectField field="IsPremierAscend" selected="False" />
+            <SelectField field="IsPublicCorp" selected="False" />
+            <SelectField field="IsStrategicAccount" selected="False" />
+            <SelectField field="LABSChallengerProfile" selected="False" />
+            <SelectField field="MdsiCompanyId" selected="False" />
+            <SelectField field="MedicareId" selected="False" />
+            <SelectField field="ALTCLevel3Node" selected="False" />
+            <SelectField field="MsaAccountName" selected="False" />
+            <SelectField field="NAEPLevel3" selected="False" />
+            <SelectField field="NAEPLevel3Node" selected="False" />
+            <SelectField field="NAEPLevel4" selected="False" />
+            <SelectField field="NAEPLevel4Node" selected="False" />
+            <SelectField field="NAEPLevel5" selected="False" />
+            <SelectField field="NAEPLevel5Node" selected="False" />
+            <SelectField field="NAEPRegion" selected="False" />
+            <SelectField field="NationalProviderIdentifier" selected="False" />
+            <SelectField field="NpwtChallengerProfile" selected="False" />
+            <SelectField field="NPWTLevel3" selected="False" />
+            <SelectField field="HasSPECAffiliation" selected="False" />
+            <SelectField field="Current360RebateContractTier" selected="False" />
+            <SelectField field="NaepChallengerProfile" selected="False" />
+            <SelectField field="360AccountKey" selected="False" />
+            <SelectField field="NPWTLevel3Node" selected="False" />
+            <SelectField field="NPWTLevel4Node" selected="False" />
+            <SelectField field="NPWTRegion" selected="False" />
+            <SelectField field="PayoutPeriod" selected="False" />
+            <SelectField field="PrimaryIdnAccountName" selected="False" />
+            <SelectField field="PrimeVendor" selected="False" />
+            <SelectField field="SAESChallengerProfile" selected="False" />
+            <SelectField field="SAESLevel3Node" selected="False" />
+            <SelectField field="SAESLevel5Node" selected="False" />
+            <SelectField field="SAESRegion" selected="False" />
+            <SelectField field="ShipToCity" selected="False" />
+            <SelectField field="ShipToCustomerClass" selected="False" />
+            <SelectField field="ShipToCustomerClassDesc" selected="False" />
+            <SelectField field="HasSCSRAffiliation" selected="False" />
+            <SelectField field="ShipToCustomerGroup" selected="False" />
+            <SelectField field="ShipToCustomerName" selected="False" />
+            <SelectField field="ShipToPostalCode" selected="False" />
+            <SelectField field="ShipToServicingBusinessUnit" selected="False" />
+            <SelectField field="ShipToServicingBusinessUnitDesc" selected="False" />
+            <SelectField field="ShipToState" selected="False" />
+            <SelectField field="ShipToStreetDesc" selected="False" />
+            <SelectField field="SoldToCity" selected="False" />
+            <SelectField field="SoldToCustomerClass" selected="False" />
+            <SelectField field="SoldToCustomerClassDesc" selected="False" />
+            <SelectField field="SoldToCustomerGroup" selected="False" />
+            <SelectField field="SoldToCustomerGroupDesc" selected="False" />
+            <SelectField field="SoldToCustomerId" selected="False" />
+            <SelectField field="NPWTLevel5Node" selected="False" />
+            <SelectField field="SoldToCustomerName" selected="False" />
+            <SelectField field="SoldToPostalCode" selected="False" />
+            <SelectField field="SoldToState" selected="False" />
+            <SelectField field="SPECChallengerProfile" selected="False" />
+            <SelectField field="SPECLevel3Node" selected="False" />
+            <SelectField field="SPECLevel4Node" selected="False" />
+            <SelectField field="SPECLevel5Node" selected="False" />
+            <SelectField field="SPECRegion" selected="False" />
+            <SelectField field="StrategicAccountName" selected="False" />
+            <SelectField field="TaxStatus" selected="False" />
+            <SelectField field="TraceIndicatorId" selected="False" />
+            <SelectField field="UpdatedPrimaryGpoAffiliation" selected="False" />
+            <SelectField field="ZipLatitude" selected="False" />
+            <SelectField field="ZipLongitude" selected="False" />
+            <SelectField field="Uean" selected="False" />
+            <SelectField field="ShipToCustomerGroupDesc" selected="False" />
+            <SelectField field="UeanName" selected="False" />
+            <SelectField field="ANCRLevel3" selected="False" />
+            <SelectField field="ANCRLevel3Node" selected="False" />
+            <SelectField field="ANCRLevel4" selected="False" />
+            <SelectField field="ANCRLevel4Node" selected="False" />
+            <SelectField field="ANCRLevel5" selected="False" />
+            <SelectField field="ANCRLevel5Node" selected="False" />
+            <SelectField field="ANCRRegion" selected="False" />
+            <SelectField field="HasANCRAffiliation" selected="False" />
+            <SelectField field="HasNDCAAfilliation" selected="False" />
+            <SelectField field="HasRDCAAffiliation" selected="False" />
+            <SelectField field="HasSCSEAffiliation" selected="False" />
+            <SelectField field="SoldToStreetDesc" selected="False" />
+            <SelectField field="ANCRChallengerProfile" selected="False" />
+            <SelectField field="WorkflowFilePath" selected="False" />
+            <SelectField field="LABSLevel3" selected="False" />
+            <SelectField field="LABSLevel4" selected="False" />
+            <SelectField field="LABSLevel5" selected="False" />
+            <SelectField field="LABSLevel5Node" selected="False" />
+            <SelectField field="LABSRegion" selected="False" />
+            <SelectField field="NDCAChallengerProfile" selected="False" />
+            <SelectField field="NDCALevel3" selected="False" />
+            <SelectField field="NDCALevel3Node" selected="False" />
+            <SelectField field="NDCALevel4" selected="False" />
+            <SelectField field="NDCALevel4Node" selected="False" />
+            <SelectField field="NDCALevel5" selected="False" />
+            <SelectField field="NDCALevel5Node" selected="False" />
+            <SelectField field="NDCARegion" selected="False" />
+            <SelectField field="LABSLevel3Node" selected="False" />
+            <SelectField field="LABSLevel4Node" selected="False" />
+            <SelectField field="RDCAChallengerProfile" selected="False" />
+            <SelectField field="RDCALevel4" selected="False" />
+            <SelectField field="RDCALevel4Node" selected="False" />
+            <SelectField field="RDCALevel5" selected="False" />
+            <SelectField field="RDCALevel5Node" selected="False" />
+            <SelectField field="RDCARegion" selected="False" />
+            <SelectField field="SAESLevel3" selected="False" />
+            <SelectField field="SAESLevel4" selected="False" />
+            <SelectField field="SAESLevel4Node" selected="False" />
+            <SelectField field="SAESLevel5" selected="False" />
+            <SelectField field="SCSEChallengerProfile" selected="False" />
+            <SelectField field="SCSELevel3" selected="False" />
+            <SelectField field="RDCALevel3" selected="False" />
+            <SelectField field="RDCALevel3Node" selected="False" />
+            <SelectField field="NPWTLevel5" selected="False" />
+            <SelectField field="SCSELevel3Node" selected="False" />
+            <SelectField field="SCSELevel4Node" selected="False" />
+            <SelectField field="SCSELevel5Node" selected="False" />
+            <SelectField field="SCSERegion" selected="False" />
+            <SelectField field="SCSRChallengerProfile" selected="False" />
+            <SelectField field="SCSRLevel3" selected="False" />
+            <SelectField field="SCSRLevel3Node" selected="False" />
+            <SelectField field="SCSRLevel4" selected="False" />
+            <SelectField field="SCSRLevel4Node" selected="False" />
+            <SelectField field="SCSRLevel5" selected="False" />
+            <SelectField field="SCSRLevel5Node" selected="False" />
+            <SelectField field="SCSRRegion" selected="False" />
+            <SelectField field="SPECLevel3" selected="False" />
+            <SelectField field="SPECLevel4" selected="False" />
+            <SelectField field="SCSELevel4" selected="False" />
+            <SelectField field="SPECLevel5" selected="False" />
+            <SelectField field="3rdP_DataID" selected="False" />
+            <SelectField field="business_name" selected="False" />
+            <SelectField field="dba_name" selected="False" />
+            <SelectField field="physical_addr_1" selected="False" />
+            <SelectField field="physical_city" selected="False" />
+            <SelectField field="physical_state" selected="False" />
+            <SelectField field="physical_zip" selected="False" />
+            <SelectField field="DefHC_WEBSITE" selected="False" />
+            <SelectField field="corp_parent_name" selected="False" />
+            <SelectField field="owner_sub_name" selected="False" />
+            <SelectField field="Right_FileName" selected="False" />
+            <SelectField field="SCSELevel5" selected="False" />
+            <SelectField field="FileName" selected="False" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="390" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">\\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Projects\CustomerMatching\IQVIA_version\Data\Output_04_EnrichedCustomerMaster.yxdb</File>
+          <FormatSpecificOptions />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Output_04_EnrichedCustomerMaster.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="360AccountKey" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="360CustomerName" size="100" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AacbdChallengerProfile" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AacbdLevel3" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AacbdLevel3Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AacbdLevel4" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AacbdLevel4Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AacbdLevel5" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AacbdLevel5Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AacbdRegion" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AaccgChallengerProfile" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AaccgLevel3" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AaccgLevel3Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AaccgLevel4" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AaccgLevel4Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AaccgLevel5" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AaccgLevel5Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AaccgRegion" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AasugChallengerProfile" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AasugLevel3" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AasugLevel3Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AasugLevel4" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AasugLevel4Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AasugLevel5" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AasugLevel5Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AasugRegion" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AccountName" size="125" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AccountNameCount" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="Int32" />
+            <Field name="AccountSegment" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AltcChallengerProfile" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="ALTCLevel3" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="ALTCLevel3Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="ALTCLevel4" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="ALTCLevel4Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="ALTCLevel5" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="ALTCLevel5Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="ALTCRegion" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AmbcareNationalAccountName" size="100" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AmbCareSegment" size="33" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AnwsrChallengerProfile" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AnwsrLevel3" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AnwsrLevel3Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AnwsrLevel4" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AnwsrLevel4Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AnwsrLevel5" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AnwsrLevel5Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AnwsrRegion" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AnwssChallengerProfile" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AnwssLevel3" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AnwssLevel3Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AnwssLevel4" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AnwssLevel4Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AnwssLevel5" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AnwssLevel5Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="AnwssRegion" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="Beds" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="Double" />
+            <Field name="CensusBeds" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="Double" />
+            <Field name="CompanyType" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="Current360RebateContractTier" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="Double" />
+            <Field name="Current360RebateEffectiveDate" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="DateTime" />
+            <Field name="Current360RebateEndDate" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="DateTime" />
+            <Field name="Current360RebateTierRebatePercentage" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="Double" />
+            <Field name="Current360RebateTierSpendThreshold" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="Double" />
+            <Field name="DataSourceDate" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="DateTime" />
+            <Field name="DeaNumber" size="35" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="EanAccountName" size="70" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="EanAccountNumber" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="FinanceAmbCareCustomerSegment" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="GlobalLocationNumber" size="60" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="GmspChallengerProfile" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="GMSPLevel3" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="GMSPLevel3Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="GMSPLevel4" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="GMSPLevel4Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="GMSPLevel5" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="GMSPLevel5Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="GMSPRegion" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="HasAacbdAffiliation" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="Bool" />
+            <Field name="HasAaccgAffiliation" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="Bool" />
+            <Field name="HasAasugAffiliation" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="Bool" />
+            <Field name="HasALTCAffiliation" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="Bool" />
+            <Field name="HasAnwsrAffiliation" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="Bool" />
+            <Field name="HasAnwssAffiliation" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="Bool" />
+            <Field name="HasCustomerSoldToDeleteFlag" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="Bool" />
+            <Field name="HasGMSPAffiliation" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="Bool" />
+            <Field name="HasLabAffiliation" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="Bool" />
+            <Field name="HasNAEPAffiliation" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="Bool" />
+            <Field name="HasSaesAffiliation" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="Bool" />
+            <Field name="HasShipToCustomerDeleteFlag" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="Bool" />
+            <Field name="HasSPECAffiliation" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="Bool" />
+            <Field name="HealthIndustryNumber" size="60" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="IdnAccountName" size="70" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="IdnAccountNumber" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="Is360Customer" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="Bool" />
+            <Field name="IsAmbcareTop150Account" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="Bool" />
+            <Field name="IsEXNAView" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="Bool" />
+            <Field name="IsMSAView" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="Bool" />
+            <Field name="IsPremierAscend" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="Bool" />
+            <Field name="IsPublicCorp" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="Bool" />
+            <Field name="IsStrategicAccount" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="Bool" />
+            <Field name="LABSChallengerProfile" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="MdsiCompanyId" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="MedicareId" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="MsaAccountName" size="100" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="NaepChallengerProfile" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="NAEPLevel3" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="NAEPLevel3Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="NAEPLevel4" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="NAEPLevel4Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="NAEPLevel5" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="NAEPLevel5Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="NAEPRegion" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="NationalProviderIdentifier" size="255" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="NpwtChallengerProfile" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="NPWTLevel3" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="NPWTLevel3Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="NPWTLevel4" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="NPWTLevel4Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="NPWTLevel5" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="NPWTLevel5Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="NPWTRegion" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="PayoutPeriod" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="PrimaryIdnAccountName" size="100" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="PrimeVendor" size="100" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SAESChallengerProfile" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SAESLevel3Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SAESLevel5Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SAESRegion" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="ShipToCity" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="ShipToCustomerClass" size="2" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="ShipToCustomerClassDesc" size="20" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="ShipToCustomerGroup" size="2" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="ShipToCustomerGroupDesc" size="20" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="ShipToCustomerId" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="ShipToCustomerName" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="ShipToPostalCode" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="ShipToServicingBusinessUnit" size="2" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="ShipToServicingBusinessUnitDesc" size="20" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="ShipToState" size="3" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="ShipToStreetDesc" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SoldToCity" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SoldToCustomerClass" size="2" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SoldToCustomerClassDesc" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SoldToCustomerGroup" size="2" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SoldToCustomerGroupDesc" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SoldToCustomerId" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SoldToCustomerName" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SoldToPostalCode" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SoldToState" size="3" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SoldToStreetDesc" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SPECChallengerProfile" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SPECLevel3Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SPECLevel4Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SPECLevel5Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SPECRegion" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="StrategicAccountName" size="70" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="TaxStatus" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="TraceIndicatorId" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="UpdatedPrimaryGpoAffiliation" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="ZipLatitude" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="ZipLongitude" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="Uean" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="UeanName" size="70" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="ANCRChallengerProfile" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="ANCRLevel3" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="ANCRLevel3Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="ANCRLevel4" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="ANCRLevel4Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="ANCRLevel5" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="ANCRLevel5Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="ANCRRegion" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="HasANCRAffiliation" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="Bool" />
+            <Field name="HasNDCAAfilliation" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="Bool" />
+            <Field name="HasRDCAAffiliation" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="Bool" />
+            <Field name="HasSCSEAffiliation" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="Bool" />
+            <Field name="HasSCSRAffiliation" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="Bool" />
+            <Field name="LABSLevel3" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="LABSLevel3Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="LABSLevel4" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="LABSLevel4Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="LABSLevel5" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="LABSLevel5Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="LABSRegion" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="NDCAChallengerProfile" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="NDCALevel3" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="NDCALevel3Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="NDCALevel4" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="NDCALevel4Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="NDCALevel5" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="NDCALevel5Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="NDCARegion" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="RDCAChallengerProfile" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="RDCALevel3" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="RDCALevel3Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="RDCALevel4" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="RDCALevel4Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="RDCALevel5" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="RDCALevel5Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="RDCARegion" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SAESLevel3" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SAESLevel4" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SAESLevel4Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SAESLevel5" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SCSEChallengerProfile" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SCSELevel3" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SCSELevel3Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SCSELevel4" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SCSELevel4Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SCSELevel5" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SCSELevel5Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SCSERegion" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SCSRChallengerProfile" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SCSRLevel3" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SCSRLevel3Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SCSRLevel4" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SCSRLevel4Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SCSRLevel5" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SCSRLevel5Node" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SCSRRegion" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SPECLevel3" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SPECLevel4" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="SPECLevel5" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.CustomerMaster.* &#xA;from AnalyticsGateway.dbo.CustomerMaster" type="V_String" />
+            <Field name="FileName" size="50" source="Formula: [ShipToCustomerGroup]" type="V_WString" />
+            <Field name="3rdP_DataID" size="11" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="ims_org_id" size="11" source="File: \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Projects\CustomerMatching\IQVIA_version\Data\IQVIAdata\HCOS_Cardinal_Access2000.accdb|||`business`" type="V_WString" />
+            <Field name="business_name" size="80" source="File: \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Projects\CustomerMatching\IQVIA_version\Data\IQVIAdata\HCOS_Cardinal_Access2000.accdb|||`business`" type="V_WString" />
+            <Field name="dba_name" size="80" source="File: \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Projects\CustomerMatching\IQVIA_version\Data\IQVIAdata\HCOS_Cardinal_Access2000.accdb|||`business`" type="V_WString" />
+            <Field name="physical_addr_1" size="80" source="File: \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Projects\CustomerMatching\IQVIA_version\Data\IQVIAdata\HCOS_Cardinal_Access2000.accdb|||`business`" type="V_WString" />
+            <Field name="physical_city" size="30" source="File: \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Projects\CustomerMatching\IQVIA_version\Data\IQVIAdata\HCOS_Cardinal_Access2000.accdb|||`business`" type="V_WString" />
+            <Field name="physical_state" size="2" source="File: \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Projects\CustomerMatching\IQVIA_version\Data\IQVIAdata\HCOS_Cardinal_Access2000.accdb|||`business`" type="V_WString" />
+            <Field name="physical_zip" size="15" source="File: \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Projects\CustomerMatching\IQVIA_version\Data\IQVIAdata\HCOS_Cardinal_Access2000.accdb|||`business`" type="V_WString" />
+            <Field name="DefHC_WEBSITE" size="100" source="File: \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Projects\CustomerMatching\IQVIA_version\Data\IQVIAdata\HCOS_Cardinal_Access2000.accdb|||`business`" type="V_WString" />
+            <Field name="corp_parent_name" size="80" source="File: \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Projects\CustomerMatching\IQVIA_version\Data\IQVIAdata\HCOS_Cardinal_Access2000.accdb|||`business`" type="V_WString" />
+            <Field name="owner_sub_name" size="80" source="File: \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Projects\CustomerMatching\IQVIA_version\Data\IQVIAdata\HCOS_Cardinal_Access2000.accdb|||`business`" type="V_WString" />
+            <Field name="Right_FileName" size="100" source="Formula: [cot_classification] + &quot;|&quot; + [cot_facility_type]" type="V_WString" />
+            <Field name="WorkflowFilePath" size="2040" source="Formula: [Engine.WorkflowDirectory] + [Engine.WorkflowFileName]" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="66" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">\\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Productionalized Solution Outputs\CustomerMatching\IQVIA_CAH_ShipTo_Crosswalk_w_BSM_v2.yxdb</File>
+          <FormatSpecificOptions />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>IQVIA_CAH_ShipTo_Crosswalk_w_BSM_v2.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="ims_org_id" size="254" source="File: (Multiple Sources)" type="V_WString" />
+            <Field name="Shipto" size="20" source="(Multiple Sources)" type="V_WString" />
+            <Field name="CrosswalkSource" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="198" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="if [CrosswalkSource] = &quot;CCA&quot;&#xA;then &quot;2&quot;&#xA;elseif [CrosswalkSource] = &quot;MDM&quot;&#xA;then &quot;3&quot;&#xA;elseif [CrosswalkSource] = &quot;BSM&quot;&#xA;then &quot;1&quot;&#xA;else &quot;4&quot;&#xA;endif" field="SourcePriority" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>SourcePriority = if [CrosswalkSource] = "CCA"
+then "2"
+elseif [CrosswalkSource] ...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="306" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="1033">
+            <Field field="Shipto" order="Ascending" />
+            <Field field="SourcePriority" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Shipto - Ascending
+SourcePriority - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="390" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="Shipto" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="26">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="474" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Shipto" selected="True" rename="ShipToCustomerId" />
+            <SelectField field="CrosswalkSource" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="594" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="ShipToCustomerId" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="ShipToCustomerId" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_ims_org_id" selected="True" rename="Right_ims_org_id" input="Right_" />
+                <SelectField field="Right_ShipToCustomerId" selected="True" rename="Right_ShipToCustomerId" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="714" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="29">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="810" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="30">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="990" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="ims_org_id" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="ims_org_id" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_ims_org_id" selected="False" rename="Right_ims_org_id" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="31">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1206" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="32">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1350" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="ShipToCustomerId" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="ShipToCustomerId" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_ShipToCustomerId" selected="False" rename="Right_ShipToCustomerId" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="33">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1098" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\ADAM~1.THO\AppData\Local\Temp\Engine_25504_5ec1da3d160746ab847350c55c5e35ff_\Engine_11232_25c04df293224cfaaf45f1244b0c6e43_.yxdb</TempFile>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="34">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="402" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[IMS_CHB]+[IMS_OppTotal]" field="IMS_TotalDenominator" size="8" type="Double" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[IMS_TotalDenominator = [IMS_CHB]+[IMS_OppTotal]
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="35">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="1494" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="36">
+      <GuiSettings>
+        <Position x="1614" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Check Box (135)">False</Value>
+          <Value name="Check Box (136)">False</Value>
+          <Value name="List Box (11)">"Field_1","ims_org_id","UNSPSC","IMS_CHB","IMS_OppTotal","IMS_Opp","IMS_Conv","IMS_TotalDenominator","ShipToCustomerId","SourcePriority","SoldToCustomerId","UnspscId","CHB_Sales"</Value>
+          <Value name="Check Box (84)">False</Value>
+          <Value name="Check Box (117)">True</Value>
+          <Value name="Check Box (15)">False</Value>
+          <Value name="Check Box (109)">False</Value>
+          <Value name="Check Box (122)">False</Value>
+          <Value name="Check Box (53)">False</Value>
+          <Value name="Check Box (58)">False</Value>
+          <Value name="Check Box (70)">False</Value>
+          <Value name="Check Box (77)">False</Value>
+          <Value name="Drop Down (81)">upper</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="37">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1734" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="ims_org_id" action="GroupBy" rename="ims_org_id" />
+            <SummarizeField field="CHB_Sales" action="Sum" rename="Sum_CHB_Sales" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="38">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1854" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="ims_org_id" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="ims_org_id" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_ims_org_id" selected="False" rename="Right_ims_org_id" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="39">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="2094" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="if [Sum_CHB_Sales] &gt; 0.0 then&#xA;[CHB_Sales]/[Sum_CHB_Sales]&#xA;else 0.0&#xA;endif&#xA;" field="Shipto_Perc" size="8" type="Double" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Shipto_Perc = if [Sum_CHB_Sales] &gt; 0.0 then
+[CHB_Sales]/[Sum_CHB_Sales]
+else 0.0...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="40">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2862" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Field_1" selected="False" />
+            <SelectField field="IMS_CHB" selected="False" />
+            <SelectField field="IMS_OppTotal" selected="False" />
+            <SelectField field="IMS_Opp" selected="False" />
+            <SelectField field="IMS_Conv" selected="False" />
+            <SelectField field="IMS_TotalDenominator" selected="False" />
+            <SelectField field="Shipto_Perc" selected="False" />
+            <SelectField field="SourcePriority" selected="False" />
+            <SelectField field="CHB_Sales" selected="False" />
+            <SelectField field="Sum_CHB_Sales" selected="False" />
+            <SelectField field="UnspscId" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="41">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="2958" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="ims_org_id" action="GroupBy" rename="ims_org_id" />
+            <SummarizeField field="ShipToCustomerId" action="GroupBy" rename="ShipToCustomerId" />
+            <SummarizeField field="UNSPSC" action="GroupBy" rename="UnspscId" />
+            <SummarizeField field="Shipto_Denom" action="Sum" rename="CHB_and_Opportunity_Total_Denominator" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="42">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="2958" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="SoldToCustomerId" action="GroupBy" rename="SoldToCustomerId" />
+            <SummarizeField field="UNSPSC" action="GroupBy" rename="UnspscId" />
+            <SummarizeField field="Shipto_Denom" action="Sum" rename="CHB_and_Opportunity_Total_Denominator" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="43">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="3102" y="462" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="CHB_and_Opportunity_Total_Denominator" action="Sum" rename="Shipto" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="44">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="3102" y="558" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="CHB_and_Opportunity_Total_Denominator" action="Sum" rename="Soldto" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="45">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="2790" y="666" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="IMS_TotalDenominator" action="Sum" rename="IMS" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="46">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.JoinMultiple.JoinMultiple">
+        <Position x="3222" y="462" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <JoinByRecPos value="True" />
+          <OutputJoinOnly value="False" />
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoinMultiple" />
+    </Node>
+    <Node ToolID="47">
+      <GuiSettings Plugin="PortfolioPluginsGui.ComposerTable.PortfolioComposerTable">
+        <Position x="3318" y="462" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TableMode>Basic</TableMode>
+          <GroupingFields orderChanged="False" />
+          <Width>100%</Width>
+          <ShowHeader value="True" />
+          <ShowBarGraph value="False" />
+          <TableFields orderChanged="False">
+            <Field name="Shipto" selected="True" Alignment="Right" />
+            <Field name="Soldto" selected="True" Alignment="Right" />
+            <Field name="IMS" selected="True" Alignment="Right" />
+            <Field name="*Unknown" selected="True" Alignment="Right" />
+          </TableFields>
+          <TableStyles>
+            <Style Name="Data" Font="Arial" Size="8" TextColor="#000000" BackColor="#ffffff" AltColor="#f0f0f0" RowGroup="1" />
+            <Style Name="Header" Font="Arial" Size="10" TextColor="#000000" BackColor="#dbdbdb" />
+            <Style Name="Borders" Width="1" DataColor="#000000" HeaderColor="#000000" RowBorder="None" BasicColBorder="Default (Use Per Column Setting)" />
+            <Style Name="Table" CellPadding="0" ColumnPadding="0" TableBorder="true" Width="1" BorderColor="#000000" />
+          </TableStyles>
+          <StyleRules />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Basic Table</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerTablePlugin" />
+    </Node>
+    <Node ToolID="48">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="3426" y="462" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\ADAM~1.THO\AppData\Local\Temp\Engine_25504_5ec1da3d160746ab847350c55c5e35ff_\Engine_11232_7065ed4c11084edc997b4e67d68bddf9_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Report</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="49">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1974" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>&gt;</Operator>
+            <Field>Sum_CHB_Sales</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2024-08-19 10:22:08</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <StartDate>2024-08-19 10:22:08</StartDate>
+              <EndDate>2024-08-19 10:22:08</EndDate>
+              <Operand>0.0</Operand>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Sum_CHB_Sales] &gt; 0.0</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="51">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1530" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="ims_org_id" action="GroupBy" rename="ims_org_id" />
+            <SummarizeField field="ShipToCustomerId" action="GroupBy" rename="ShipToCustomerId" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="52">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+        <Position x="1638" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldName>RecordID</FieldName>
+          <StartValue>1</StartValue>
+          <FieldType>Int32</FieldType>
+          <FieldSize>6</FieldSize>
+          <Position>1</Position>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+    </Node>
+    <Node ToolID="53">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1806" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="ims_org_id" action="GroupBy" rename="ims_org_id" />
+            <SummarizeField field="RecordID" action="Max" rename="Max_RecordID" />
+            <SummarizeField field="RecordID" action="Min" rename="Min_RecordID" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="54">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1722" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="RecordID" selected="True" type="Double" size="8" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="55">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1950" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="ims_org_id" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="ims_org_id" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_ims_org_id" selected="False" rename="Right_ims_org_id" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="56">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="2046" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[RecordID]-[Min_RecordID]" field="RecordID" size="8" type="Double" />
+            <FormulaField expression="if [RecordID] &lt; 1.0 then 1.0&#xA;else 0.0&#xA;endif" field="Shipto_Perc" size="8" type="Double" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>RecordID = [RecordID]-[Min_RecordID]
+Shipto_Perc = if [RecordID] &lt; 1.0 then 1.0
+...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="57">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="2766" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[IMS_TotalDenominator]*[Shipto_Perc]" field="Shipto_Denom" size="8" type="Double" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Shipto_Denom = [IMS_TotalDenominator]*[Shipto_Perc]
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="59">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2166" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Max_RecordID" selected="False" />
+            <SelectField field="Min_RecordID" selected="False" />
+            <SelectField field="RecordID" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="60">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="2250" y="390" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="ShipToCustomerId" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="ShipToCustomerId" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_ims_org_id" selected="False" rename="Right_ims_org_id" input="Right_" />
+                <SelectField field="Right_ShipToCustomerId" selected="False" rename="Right_ShipToCustomerId" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="61">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="2310" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="62">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="3138" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File FileFormat="19" MaxRecords="">C:\Users\praven.kumar\OneDrive - Cardinal Health\Desktop\clarivate\Soldto_Unspsc_Denominator_20240819.yxdb</File>
+          <Passwords />
+          <Disable>False</Disable>
+          <FormatSpecificOptions>
+            <NoSpatialIndex>False</NoSpatialIndex>
+            <SaveSource>True</SaveSource>
+            <WriteCompatibleVersion>False</WriteCompatibleVersion>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Soldto_Unspsc_Denominator_20240819.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="65">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="714" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="ims_org_id" action="GroupBy" rename="ims_org_id" />
+            <SummarizeField field="IMS_CHB" action="Sum" rename="IMS_CHB" />
+            <SummarizeField field="IMS_OppTotal" action="Sum" rename="IMS_OppTotal" />
+            <SummarizeField field="IMS_TotalDenominator" action="Sum" rename="IMS_TotalDenominator" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="66">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2418" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="IMS_CHB" selected="False" />
+            <SelectField field="IMS_OppTotal" selected="False" />
+            <SelectField field="IMS_TotalDenominator" selected="False" />
+            <SelectField field="SourcePriority" selected="False" />
+            <SelectField field="CHB_Sales" selected="False" />
+            <SelectField field="Sum_CHB_Sales" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="67">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="2526" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="ims_org_id" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="ims_org_id" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_ims_org_id" selected="False" rename="Right_ims_org_id" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="69">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2634" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="70">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="3054" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>IsNotNull</Operator>
+            <Field>SoldToCustomerId</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2024-08-19 11:27:03</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <StartDate>2024-08-19 11:27:03</StartDate>
+              <EndDate>2024-08-19 11:27:03</EndDate>
+              <Operand>
+              </Operand>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>!IsNull([SoldToCustomerId])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="34" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="True" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="True" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="32" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="31" Connection="Output" />
+      <Destination ToolID="32" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="27" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Output" />
+      <Destination ToolID="27" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Output" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="23" Connection="Output" />
+      <Destination ToolID="24" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="Output" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Unique" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="26" Connection="Output" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="27" Connection="Right" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="Output" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="Output" />
+      <Destination ToolID="30" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="65" Connection="Output" />
+      <Destination ToolID="30" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="30" Connection="Join" />
+      <Destination ToolID="31" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="30" Connection="Left" />
+      <Destination ToolID="33" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="32" Connection="Join" />
+      <Destination ToolID="35" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="32" Connection="Left" />
+      <Destination ToolID="35" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Output" />
+      <Destination ToolID="45" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Output" />
+      <Destination ToolID="65" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Output" />
+      <Destination ToolID="67" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="66" Connection="Output" />
+      <Destination ToolID="67" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="35" Connection="Output" />
+      <Destination ToolID="36" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="36" Connection="Output26" />
+      <Destination ToolID="37" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="36" Connection="Output26" />
+      <Destination ToolID="38" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="37" Connection="Output" />
+      <Destination ToolID="38" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="Join" />
+      <Destination ToolID="49" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="39" Connection="Output" />
+      <Destination ToolID="61" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="60" Connection="Join" />
+      <Destination ToolID="61" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="40" Connection="Output" />
+      <Destination ToolID="41" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="40" Connection="Output" />
+      <Destination ToolID="42" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="41" Connection="Output" />
+      <Destination ToolID="43" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="42" Connection="Output" />
+      <Destination ToolID="70" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="43" Connection="Output" />
+      <Destination ToolID="46" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="44" Connection="Output" />
+      <Destination ToolID="46" Connection="Input" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="45" Connection="Output" />
+      <Destination ToolID="46" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="46" Connection="Output" />
+      <Destination ToolID="47" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="47" Connection="Output" />
+      <Destination ToolID="48" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="49" Connection="True" />
+      <Destination ToolID="39" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="49" Connection="False" />
+      <Destination ToolID="51" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="49" Connection="False" />
+      <Destination ToolID="60" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="59" Connection="Output" />
+      <Destination ToolID="60" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="51" Connection="Output" />
+      <Destination ToolID="52" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="52" Connection="Output" />
+      <Destination ToolID="54" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="53" Connection="Output" />
+      <Destination ToolID="55" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="54" Connection="Output" />
+      <Destination ToolID="55" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="54" Connection="Output" />
+      <Destination ToolID="53" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="55" Connection="Join" />
+      <Destination ToolID="56" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="56" Connection="Output" />
+      <Destination ToolID="59" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="57" Connection="Output" />
+      <Destination ToolID="40" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="61" Connection="Output" />
+      <Destination ToolID="66" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="67" Connection="Join" />
+      <Destination ToolID="69" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="69" Connection="Output" />
+      <Destination ToolID="57" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="70" Connection="True" />
+      <Destination ToolID="44" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="70" Connection="True" />
+      <Destination ToolID="62" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Clarivate_CreateNew_Shipto_Soldto</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="f9404428-a5a8-437e-859b-39d6fc23ecdb" />
+      <Telemetry>
+        <PreviousWorkflowId value="82703e69-0f0e-47e4-bf34-e200b5dfcd18" />
+        <OriginWorkflowId value="82703e69-0f0e-47e4-bf34-e200b5dfcd18" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

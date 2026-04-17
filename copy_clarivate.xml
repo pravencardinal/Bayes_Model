@@ -1,0 +1,2762 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.3">
+  <Nodes>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="607" y="704" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="MaterialId" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="MaterialId" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_MaterialId" selected="False" rename="Right_MaterialId" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1375" y="213" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="DIST_ITEM_KEY" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="MaterialId" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_MaterialId" selected="False" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1519" y="213" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="ZIP" action="GroupBy" rename="ZIP" />
+            <SummarizeField field="UnspscId" action="GroupBy" rename="UnspscId" />
+            <SummarizeField field="Sum_DIST_TOT_REVENUE" action="Sum" rename="Sum_Sum_DIST_TOT_REVENUE" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="1651" y="213" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields>
+            <Field field="ZIP" />
+          </GroupFields>
+          <HeaderField field="UnspscId" />
+          <DataField field="Sum_Sum_DIST_TOT_REVENUE" />
+          <Methods>
+            <Method method="Sum" />
+          </Methods>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="ZIP" source="CrossTab:Group:Sum:" type="Int16" />
+            <Field name="12352104" source="CrossTab:Header:UnspscId:12352104:Sum:" type="Double" />
+            <Field name="12352501" source="CrossTab:Header:UnspscId:12352501:Sum:" type="Double" />
+            <Field name="14111539" source="CrossTab:Header:UnspscId:14111539:Sum:" type="Double" />
+            <Field name="14111701" source="CrossTab:Header:UnspscId:14111701:Sum:" type="Double" />
+            <Field name="14111703" source="CrossTab:Header:UnspscId:14111703:Sum:" type="Double" />
+            <Field name="14111704" source="CrossTab:Header:UnspscId:14111704:Sum:" type="Double" />
+            <Field name="24111502" source="CrossTab:Header:UnspscId:24111502:Sum:" type="Double" />
+            <Field name="24111503" source="CrossTab:Header:UnspscId:24111503:Sum:" type="Double" />
+            <Field name="24111506" source="CrossTab:Header:UnspscId:24111506:Sum:" type="Double" />
+            <Field name="24121512" source="CrossTab:Header:UnspscId:24121512:Sum:" type="Double" />
+            <Field name="24131602" source="CrossTab:Header:UnspscId:24131602:Sum:" type="Double" />
+            <Field name="24141504" source="CrossTab:Header:UnspscId:24141504:Sum:" type="Double" />
+            <Field name="24141514" source="CrossTab:Header:UnspscId:24141514:Sum:" type="Double" />
+            <Field name="26111702" source="CrossTab:Header:UnspscId:26111702:Sum:" type="Double" />
+            <Field name="30191505" source="CrossTab:Header:UnspscId:30191505:Sum:" type="Double" />
+            <Field name="41101504" source="CrossTab:Header:UnspscId:41101504:Sum:" type="Double" />
+            <Field name="41101703" source="CrossTab:Header:UnspscId:41101703:Sum:" type="Double" />
+            <Field name="41102403" source="CrossTab:Header:UnspscId:41102403:Sum:" type="Double" />
+            <Field name="41102406" source="CrossTab:Header:UnspscId:41102406:Sum:" type="Double" />
+            <Field name="41102422" source="CrossTab:Header:UnspscId:41102422:Sum:" type="Double" />
+            <Field name="41102426" source="CrossTab:Header:UnspscId:41102426:Sum:" type="Double" />
+            <Field name="41102428" source="CrossTab:Header:UnspscId:41102428:Sum:" type="Double" />
+            <Field name="41102902" source="CrossTab:Header:UnspscId:41102902:Sum:" type="Double" />
+            <Field name="41102904" source="CrossTab:Header:UnspscId:41102904:Sum:" type="Double" />
+            <Field name="41102915" source="CrossTab:Header:UnspscId:41102915:Sum:" type="Double" />
+            <Field name="41102917" source="CrossTab:Header:UnspscId:41102917:Sum:" type="Double" />
+            <Field name="41102920" source="CrossTab:Header:UnspscId:41102920:Sum:" type="Double" />
+            <Field name="41102921" source="CrossTab:Header:UnspscId:41102921:Sum:" type="Double" />
+            <Field name="41102925" source="CrossTab:Header:UnspscId:41102925:Sum:" type="Double" />
+            <Field name="41103005" source="CrossTab:Header:UnspscId:41103005:Sum:" type="Double" />
+            <Field name="41103010" source="CrossTab:Header:UnspscId:41103010:Sum:" type="Double" />
+            <Field name="41103011" source="CrossTab:Header:UnspscId:41103011:Sum:" type="Double" />
+            <Field name="41103014" source="CrossTab:Header:UnspscId:41103014:Sum:" type="Double" />
+            <Field name="41103019" source="CrossTab:Header:UnspscId:41103019:Sum:" type="Double" />
+            <Field name="41103020" source="CrossTab:Header:UnspscId:41103020:Sum:" type="Double" />
+            <Field name="41103022" source="CrossTab:Header:UnspscId:41103022:Sum:" type="Double" />
+            <Field name="41103025" source="CrossTab:Header:UnspscId:41103025:Sum:" type="Double" />
+            <Field name="41103714" source="CrossTab:Header:UnspscId:41103714:Sum:" type="Double" />
+            <Field name="41103716" source="CrossTab:Header:UnspscId:41103716:Sum:" type="Double" />
+            <Field name="41103814" source="CrossTab:Header:UnspscId:41103814:Sum:" type="Double" />
+            <Field name="41103815" source="CrossTab:Header:UnspscId:41103815:Sum:" type="Double" />
+            <Field name="41103901" source="CrossTab:Header:UnspscId:41103901:Sum:" type="Double" />
+            <Field name="41103903" source="CrossTab:Header:UnspscId:41103903:Sum:" type="Double" />
+            <Field name="41103913" source="CrossTab:Header:UnspscId:41103913:Sum:" type="Double" />
+            <Field name="41103915" source="CrossTab:Header:UnspscId:41103915:Sum:" type="Double" />
+            <Field name="41104101" source="CrossTab:Header:UnspscId:41104101:Sum:" type="Double" />
+            <Field name="41104102" source="CrossTab:Header:UnspscId:41104102:Sum:" type="Double" />
+            <Field name="41104103" source="CrossTab:Header:UnspscId:41104103:Sum:" type="Double" />
+            <Field name="41104104" source="CrossTab:Header:UnspscId:41104104:Sum:" type="Double" />
+            <Field name="41104105" source="CrossTab:Header:UnspscId:41104105:Sum:" type="Double" />
+            <Field name="41104107" source="CrossTab:Header:UnspscId:41104107:Sum:" type="Double" />
+            <Field name="41104111" source="CrossTab:Header:UnspscId:41104111:Sum:" type="Double" />
+            <Field name="41104112" source="CrossTab:Header:UnspscId:41104112:Sum:" type="Double" />
+            <Field name="41104115" source="CrossTab:Header:UnspscId:41104115:Sum:" type="Double" />
+            <Field name="41104116" source="CrossTab:Header:UnspscId:41104116:Sum:" type="Double" />
+            <Field name="41104118" source="CrossTab:Header:UnspscId:41104118:Sum:" type="Double" />
+            <Field name="41104121" source="CrossTab:Header:UnspscId:41104121:Sum:" type="Double" />
+            <Field name="41104122" source="CrossTab:Header:UnspscId:41104122:Sum:" type="Double" />
+            <Field name="41104123" source="CrossTab:Header:UnspscId:41104123:Sum:" type="Double" />
+            <Field name="41104124" source="CrossTab:Header:UnspscId:41104124:Sum:" type="Double" />
+            <Field name="41104125" source="CrossTab:Header:UnspscId:41104125:Sum:" type="Double" />
+            <Field name="41104126" source="CrossTab:Header:UnspscId:41104126:Sum:" type="Double" />
+            <Field name="41104130" source="CrossTab:Header:UnspscId:41104130:Sum:" type="Double" />
+            <Field name="41104138" source="CrossTab:Header:UnspscId:41104138:Sum:" type="Double" />
+            <Field name="41104402" source="CrossTab:Header:UnspscId:41104402:Sum:" type="Double" />
+            <Field name="41104411" source="CrossTab:Header:UnspscId:41104411:Sum:" type="Double" />
+            <Field name="41104901" source="CrossTab:Header:UnspscId:41104901:Sum:" type="Double" />
+            <Field name="41104929" source="CrossTab:Header:UnspscId:41104929:Sum:" type="Double" />
+            <Field name="41105108" source="CrossTab:Header:UnspscId:41105108:Sum:" type="Double" />
+            <Field name="41105203" source="CrossTab:Header:UnspscId:41105203:Sum:" type="Double" />
+            <Field name="41111501" source="CrossTab:Header:UnspscId:41111501:Sum:" type="Double" />
+            <Field name="41111505" source="CrossTab:Header:UnspscId:41111505:Sum:" type="Double" />
+            <Field name="41111517" source="CrossTab:Header:UnspscId:41111517:Sum:" type="Double" />
+            <Field name="41111621" source="CrossTab:Header:UnspscId:41111621:Sum:" type="Double" />
+            <Field name="41111901" source="CrossTab:Header:UnspscId:41111901:Sum:" type="Double" />
+            <Field name="41111906" source="CrossTab:Header:UnspscId:41111906:Sum:" type="Double" />
+            <Field name="41111979" source="CrossTab:Header:UnspscId:41111979:Sum:" type="Double" />
+            <Field name="41112213" source="CrossTab:Header:UnspscId:41112213:Sum:" type="Double" />
+            <Field name="41112220" source="CrossTab:Header:UnspscId:41112220:Sum:" type="Double" />
+            <Field name="41112221" source="CrossTab:Header:UnspscId:41112221:Sum:" type="Double" />
+            <Field name="41112224" source="CrossTab:Header:UnspscId:41112224:Sum:" type="Double" />
+            <Field name="41112239" source="CrossTab:Header:UnspscId:41112239:Sum:" type="Double" />
+            <Field name="41112303" source="CrossTab:Header:UnspscId:41112303:Sum:" type="Double" />
+            <Field name="41112601" source="CrossTab:Header:UnspscId:41112601:Sum:" type="Double" />
+            <Field name="41112802" source="CrossTab:Header:UnspscId:41112802:Sum:" type="Double" />
+            <Field name="41113034" source="CrossTab:Header:UnspscId:41113034:Sum:" type="Double" />
+            <Field name="41114402" source="CrossTab:Header:UnspscId:41114402:Sum:" type="Double" />
+            <Field name="41115711" source="CrossTab:Header:UnspscId:41115711:Sum:" type="Double" />
+            <Field name="41115808" source="CrossTab:Header:UnspscId:41115808:Sum:" type="Double" />
+            <Field name="41115827" source="CrossTab:Header:UnspscId:41115827:Sum:" type="Double" />
+            <Field name="41116004" source="CrossTab:Header:UnspscId:41116004:Sum:" type="Double" />
+            <Field name="41116101" source="CrossTab:Header:UnspscId:41116101:Sum:" type="Double" />
+            <Field name="41116102" source="CrossTab:Header:UnspscId:41116102:Sum:" type="Double" />
+            <Field name="41116107" source="CrossTab:Header:UnspscId:41116107:Sum:" type="Double" />
+            <Field name="41116111" source="CrossTab:Header:UnspscId:41116111:Sum:" type="Double" />
+            <Field name="41116120" source="CrossTab:Header:UnspscId:41116120:Sum:" type="Double" />
+            <Field name="41116121" source="CrossTab:Header:UnspscId:41116121:Sum:" type="Double" />
+            <Field name="41116124" source="CrossTab:Header:UnspscId:41116124:Sum:" type="Double" />
+            <Field name="41116129" source="CrossTab:Header:UnspscId:41116129:Sum:" type="Double" />
+            <Field name="41116136" source="CrossTab:Header:UnspscId:41116136:Sum:" type="Double" />
+            <Field name="41116138" source="CrossTab:Header:UnspscId:41116138:Sum:" type="Double" />
+            <Field name="41116139" source="CrossTab:Header:UnspscId:41116139:Sum:" type="Double" />
+            <Field name="41116168" source="CrossTab:Header:UnspscId:41116168:Sum:" type="Double" />
+            <Field name="41116205" source="CrossTab:Header:UnspscId:41116205:Sum:" type="Double" />
+            <Field name="41116206" source="CrossTab:Header:UnspscId:41116206:Sum:" type="Double" />
+            <Field name="41121509" source="CrossTab:Header:UnspscId:41121509:Sum:" type="Double" />
+            <Field name="41121601" source="CrossTab:Header:UnspscId:41121601:Sum:" type="Double" />
+            <Field name="41121605" source="CrossTab:Header:UnspscId:41121605:Sum:" type="Double" />
+            <Field name="41121606" source="CrossTab:Header:UnspscId:41121606:Sum:" type="Double" />
+            <Field name="41121607" source="CrossTab:Header:UnspscId:41121607:Sum:" type="Double" />
+            <Field name="41121701" source="CrossTab:Header:UnspscId:41121701:Sum:" type="Double" />
+            <Field name="41121702" source="CrossTab:Header:UnspscId:41121702:Sum:" type="Double" />
+            <Field name="41121703" source="CrossTab:Header:UnspscId:41121703:Sum:" type="Double" />
+            <Field name="41121710" source="CrossTab:Header:UnspscId:41121710:Sum:" type="Double" />
+            <Field name="41121711" source="CrossTab:Header:UnspscId:41121711:Sum:" type="Double" />
+            <Field name="41121715" source="CrossTab:Header:UnspscId:41121715:Sum:" type="Double" />
+            <Field name="41121805" source="CrossTab:Header:UnspscId:41121805:Sum:" type="Double" />
+            <Field name="41122108" source="CrossTab:Header:UnspscId:41122108:Sum:" type="Double" />
+            <Field name="41122301" source="CrossTab:Header:UnspscId:41122301:Sum:" type="Double" />
+            <Field name="41122411" source="CrossTab:Header:UnspscId:41122411:Sum:" type="Double" />
+            <Field name="41122501" source="CrossTab:Header:UnspscId:41122501:Sum:" type="Double" />
+            <Field name="41122601" source="CrossTab:Header:UnspscId:41122601:Sum:" type="Double" />
+            <Field name="41122602" source="CrossTab:Header:UnspscId:41122602:Sum:" type="Double" />
+            <Field name="41122603" source="CrossTab:Header:UnspscId:41122603:Sum:" type="Double" />
+            <Field name="41122701" source="CrossTab:Header:UnspscId:41122701:Sum:" type="Double" />
+            <Field name="41122702" source="CrossTab:Header:UnspscId:41122702:Sum:" type="Double" />
+            <Field name="41123302" source="CrossTab:Header:UnspscId:41123302:Sum:" type="Double" />
+            <Field name="41123303" source="CrossTab:Header:UnspscId:41123303:Sum:" type="Double" />
+            <Field name="41123305" source="CrossTab:Header:UnspscId:41123305:Sum:" type="Double" />
+            <Field name="41123306" source="CrossTab:Header:UnspscId:41123306:Sum:" type="Double" />
+            <Field name="42131503" source="CrossTab:Header:UnspscId:42131503:Sum:" type="Double" />
+            <Field name="42131504" source="CrossTab:Header:UnspscId:42131504:Sum:" type="Double" />
+            <Field name="42131507" source="CrossTab:Header:UnspscId:42131507:Sum:" type="Double" />
+            <Field name="42131512" source="CrossTab:Header:UnspscId:42131512:Sum:" type="Double" />
+            <Field name="42131601" source="CrossTab:Header:UnspscId:42131601:Sum:" type="Double" />
+            <Field name="42131602" source="CrossTab:Header:UnspscId:42131602:Sum:" type="Double" />
+            <Field name="42131604" source="CrossTab:Header:UnspscId:42131604:Sum:" type="Double" />
+            <Field name="42131608" source="CrossTab:Header:UnspscId:42131608:Sum:" type="Double" />
+            <Field name="42131609" source="CrossTab:Header:UnspscId:42131609:Sum:" type="Double" />
+            <Field name="42131610" source="CrossTab:Header:UnspscId:42131610:Sum:" type="Double" />
+            <Field name="42131611" source="CrossTab:Header:UnspscId:42131611:Sum:" type="Double" />
+            <Field name="42131612" source="CrossTab:Header:UnspscId:42131612:Sum:" type="Double" />
+            <Field name="42131613" source="CrossTab:Header:UnspscId:42131613:Sum:" type="Double" />
+            <Field name="42131615" source="CrossTab:Header:UnspscId:42131615:Sum:" type="Double" />
+            <Field name="42131701" source="CrossTab:Header:UnspscId:42131701:Sum:" type="Double" />
+            <Field name="42131702" source="CrossTab:Header:UnspscId:42131702:Sum:" type="Double" />
+            <Field name="42131704" source="CrossTab:Header:UnspscId:42131704:Sum:" type="Double" />
+            <Field name="42131706" source="CrossTab:Header:UnspscId:42131706:Sum:" type="Double" />
+            <Field name="42131708" source="CrossTab:Header:UnspscId:42131708:Sum:" type="Double" />
+            <Field name="42131713" source="CrossTab:Header:UnspscId:42131713:Sum:" type="Double" />
+            <Field name="42131721" source="CrossTab:Header:UnspscId:42131721:Sum:" type="Double" />
+            <Field name="42132101" source="CrossTab:Header:UnspscId:42132101:Sum:" type="Double" />
+            <Field name="42132102" source="CrossTab:Header:UnspscId:42132102:Sum:" type="Double" />
+            <Field name="42132103" source="CrossTab:Header:UnspscId:42132103:Sum:" type="Double" />
+            <Field name="42132107" source="CrossTab:Header:UnspscId:42132107:Sum:" type="Double" />
+            <Field name="42132108" source="CrossTab:Header:UnspscId:42132108:Sum:" type="Double" />
+            <Field name="42132201" source="CrossTab:Header:UnspscId:42132201:Sum:" type="Double" />
+            <Field name="42132203" source="CrossTab:Header:UnspscId:42132203:Sum:" type="Double" />
+            <Field name="42132205" source="CrossTab:Header:UnspscId:42132205:Sum:" type="Double" />
+            <Field name="42141501" source="CrossTab:Header:UnspscId:42141501:Sum:" type="Double" />
+            <Field name="42141502" source="CrossTab:Header:UnspscId:42141502:Sum:" type="Double" />
+            <Field name="42141503" source="CrossTab:Header:UnspscId:42141503:Sum:" type="Double" />
+            <Field name="42141504" source="CrossTab:Header:UnspscId:42141504:Sum:" type="Double" />
+            <Field name="42141601" source="CrossTab:Header:UnspscId:42141601:Sum:" type="Double" />
+            <Field name="42141603" source="CrossTab:Header:UnspscId:42141603:Sum:" type="Double" />
+            <Field name="42141605" source="CrossTab:Header:UnspscId:42141605:Sum:" type="Double" />
+            <Field name="42141606" source="CrossTab:Header:UnspscId:42141606:Sum:" type="Double" />
+            <Field name="42141611" source="CrossTab:Header:UnspscId:42141611:Sum:" type="Double" />
+            <Field name="42141703" source="CrossTab:Header:UnspscId:42141703:Sum:" type="Double" />
+            <Field name="42141704" source="CrossTab:Header:UnspscId:42141704:Sum:" type="Double" />
+            <Field name="42141802" source="CrossTab:Header:UnspscId:42141802:Sum:" type="Double" />
+            <Field name="42141803" source="CrossTab:Header:UnspscId:42141803:Sum:" type="Double" />
+            <Field name="42141807" source="CrossTab:Header:UnspscId:42141807:Sum:" type="Double" />
+            <Field name="42141903" source="CrossTab:Header:UnspscId:42141903:Sum:" type="Double" />
+            <Field name="42141904" source="CrossTab:Header:UnspscId:42141904:Sum:" type="Double" />
+            <Field name="42142101" source="CrossTab:Header:UnspscId:42142101:Sum:" type="Double" />
+            <Field name="42142108" source="CrossTab:Header:UnspscId:42142108:Sum:" type="Double" />
+            <Field name="42142109" source="CrossTab:Header:UnspscId:42142109:Sum:" type="Double" />
+            <Field name="42142111" source="CrossTab:Header:UnspscId:42142111:Sum:" type="Double" />
+            <Field name="42142301" source="CrossTab:Header:UnspscId:42142301:Sum:" type="Double" />
+            <Field name="42142504" source="CrossTab:Header:UnspscId:42142504:Sum:" type="Double" />
+            <Field name="42142506" source="CrossTab:Header:UnspscId:42142506:Sum:" type="Double" />
+            <Field name="42142509" source="CrossTab:Header:UnspscId:42142509:Sum:" type="Double" />
+            <Field name="42142510" source="CrossTab:Header:UnspscId:42142510:Sum:" type="Double" />
+            <Field name="42142513" source="CrossTab:Header:UnspscId:42142513:Sum:" type="Double" />
+            <Field name="42142514" source="CrossTab:Header:UnspscId:42142514:Sum:" type="Double" />
+            <Field name="42142518" source="CrossTab:Header:UnspscId:42142518:Sum:" type="Double" />
+            <Field name="42142521" source="CrossTab:Header:UnspscId:42142521:Sum:" type="Double" />
+            <Field name="42142523" source="CrossTab:Header:UnspscId:42142523:Sum:" type="Double" />
+            <Field name="42142531" source="CrossTab:Header:UnspscId:42142531:Sum:" type="Double" />
+            <Field name="42142535" source="CrossTab:Header:UnspscId:42142535:Sum:" type="Double" />
+            <Field name="42142536" source="CrossTab:Header:UnspscId:42142536:Sum:" type="Double" />
+            <Field name="42142537" source="CrossTab:Header:UnspscId:42142537:Sum:" type="Double" />
+            <Field name="42142543" source="CrossTab:Header:UnspscId:42142543:Sum:" type="Double" />
+            <Field name="42142601" source="CrossTab:Header:UnspscId:42142601:Sum:" type="Double" />
+            <Field name="42142608" source="CrossTab:Header:UnspscId:42142608:Sum:" type="Double" />
+            <Field name="42142609" source="CrossTab:Header:UnspscId:42142609:Sum:" type="Double" />
+            <Field name="42142610" source="CrossTab:Header:UnspscId:42142610:Sum:" type="Double" />
+            <Field name="42142612" source="CrossTab:Header:UnspscId:42142612:Sum:" type="Double" />
+            <Field name="42142615" source="CrossTab:Header:UnspscId:42142615:Sum:" type="Double" />
+            <Field name="42142702" source="CrossTab:Header:UnspscId:42142702:Sum:" type="Double" />
+            <Field name="42142703" source="CrossTab:Header:UnspscId:42142703:Sum:" type="Double" />
+            <Field name="42142704" source="CrossTab:Header:UnspscId:42142704:Sum:" type="Double" />
+            <Field name="42142705" source="CrossTab:Header:UnspscId:42142705:Sum:" type="Double" />
+            <Field name="42142706" source="CrossTab:Header:UnspscId:42142706:Sum:" type="Double" />
+            <Field name="42142707" source="CrossTab:Header:UnspscId:42142707:Sum:" type="Double" />
+            <Field name="42142710" source="CrossTab:Header:UnspscId:42142710:Sum:" type="Double" />
+            <Field name="42142715" source="CrossTab:Header:UnspscId:42142715:Sum:" type="Double" />
+            <Field name="42142720" source="CrossTab:Header:UnspscId:42142720:Sum:" type="Double" />
+            <Field name="42142801" source="CrossTab:Header:UnspscId:42142801:Sum:" type="Double" />
+            <Field name="42142802" source="CrossTab:Header:UnspscId:42142802:Sum:" type="Double" />
+            <Field name="42143104" source="CrossTab:Header:UnspscId:42143104:Sum:" type="Double" />
+            <Field name="42143116" source="CrossTab:Header:UnspscId:42143116:Sum:" type="Double" />
+            <Field name="42143121" source="CrossTab:Header:UnspscId:42143121:Sum:" type="Double" />
+            <Field name="42143127" source="CrossTab:Header:UnspscId:42143127:Sum:" type="Double" />
+            <Field name="42143130" source="CrossTab:Header:UnspscId:42143130:Sum:" type="Double" />
+            <Field name="42143301" source="CrossTab:Header:UnspscId:42143301:Sum:" type="Double" />
+            <Field name="42143302" source="CrossTab:Header:UnspscId:42143302:Sum:" type="Double" />
+            <Field name="42143303" source="CrossTab:Header:UnspscId:42143303:Sum:" type="Double" />
+            <Field name="42143705" source="CrossTab:Header:UnspscId:42143705:Sum:" type="Double" />
+            <Field name="42143903" source="CrossTab:Header:UnspscId:42143903:Sum:" type="Double" />
+            <Field name="42144101" source="CrossTab:Header:UnspscId:42144101:Sum:" type="Double" />
+            <Field name="42144102" source="CrossTab:Header:UnspscId:42144102:Sum:" type="Double" />
+            <Field name="42144103" source="CrossTab:Header:UnspscId:42144103:Sum:" type="Double" />
+            <Field name="42144406" source="CrossTab:Header:UnspscId:42144406:Sum:" type="Double" />
+            <Field name="42151635" source="CrossTab:Header:UnspscId:42151635:Sum:" type="Double" />
+            <Field name="42151902" source="CrossTab:Header:UnspscId:42151902:Sum:" type="Double" />
+            <Field name="42151903" source="CrossTab:Header:UnspscId:42151903:Sum:" type="Double" />
+            <Field name="42152508" source="CrossTab:Header:UnspscId:42152508:Sum:" type="Double" />
+            <Field name="42161601" source="CrossTab:Header:UnspscId:42161601:Sum:" type="Double" />
+            <Field name="42172006" source="CrossTab:Header:UnspscId:42172006:Sum:" type="Double" />
+            <Field name="42172105" source="CrossTab:Header:UnspscId:42172105:Sum:" type="Double" />
+            <Field name="42172106" source="CrossTab:Header:UnspscId:42172106:Sum:" type="Double" />
+            <Field name="42181501" source="CrossTab:Header:UnspscId:42181501:Sum:" type="Double" />
+            <Field name="42181503" source="CrossTab:Header:UnspscId:42181503:Sum:" type="Double" />
+            <Field name="42181515" source="CrossTab:Header:UnspscId:42181515:Sum:" type="Double" />
+            <Field name="42181702" source="CrossTab:Header:UnspscId:42181702:Sum:" type="Double" />
+            <Field name="42181708" source="CrossTab:Header:UnspscId:42181708:Sum:" type="Double" />
+            <Field name="42181715" source="CrossTab:Header:UnspscId:42181715:Sum:" type="Double" />
+            <Field name="42181723" source="CrossTab:Header:UnspscId:42181723:Sum:" type="Double" />
+            <Field name="42181724" source="CrossTab:Header:UnspscId:42181724:Sum:" type="Double" />
+            <Field name="42182007" source="CrossTab:Header:UnspscId:42182007:Sum:" type="Double" />
+            <Field name="42182013" source="CrossTab:Header:UnspscId:42182013:Sum:" type="Double" />
+            <Field name="42182103" source="CrossTab:Header:UnspscId:42182103:Sum:" type="Double" />
+            <Field name="42182201" source="CrossTab:Header:UnspscId:42182201:Sum:" type="Double" />
+            <Field name="42182204" source="CrossTab:Header:UnspscId:42182204:Sum:" type="Double" />
+            <Field name="42182205" source="CrossTab:Header:UnspscId:42182205:Sum:" type="Double" />
+            <Field name="42182208" source="CrossTab:Header:UnspscId:42182208:Sum:" type="Double" />
+            <Field name="42182209" source="CrossTab:Header:UnspscId:42182209:Sum:" type="Double" />
+            <Field name="42182321" source="CrossTab:Header:UnspscId:42182321:Sum:" type="Double" />
+            <Field name="42182601" source="CrossTab:Header:UnspscId:42182601:Sum:" type="Double" />
+            <Field name="42182604" source="CrossTab:Header:UnspscId:42182604:Sum:" type="Double" />
+            <Field name="42182702" source="CrossTab:Header:UnspscId:42182702:Sum:" type="Double" />
+            <Field name="42191710" source="CrossTab:Header:UnspscId:42191710:Sum:" type="Double" />
+            <Field name="42191801" source="CrossTab:Header:UnspscId:42191801:Sum:" type="Double" />
+            <Field name="42191814" source="CrossTab:Header:UnspscId:42191814:Sum:" type="Double" />
+            <Field name="42191820" source="CrossTab:Header:UnspscId:42191820:Sum:" type="Double" />
+            <Field name="42192001" source="CrossTab:Header:UnspscId:42192001:Sum:" type="Double" />
+            <Field name="42192101" source="CrossTab:Header:UnspscId:42192101:Sum:" type="Double" />
+            <Field name="42192104" source="CrossTab:Header:UnspscId:42192104:Sum:" type="Double" />
+            <Field name="42192106" source="CrossTab:Header:UnspscId:42192106:Sum:" type="Double" />
+            <Field name="42192208" source="CrossTab:Header:UnspscId:42192208:Sum:" type="Double" />
+            <Field name="42192210" source="CrossTab:Header:UnspscId:42192210:Sum:" type="Double" />
+            <Field name="42192404" source="CrossTab:Header:UnspscId:42192404:Sum:" type="Double" />
+            <Field name="42192501" source="CrossTab:Header:UnspscId:42192501:Sum:" type="Double" />
+            <Field name="42192603" source="CrossTab:Header:UnspscId:42192603:Sum:" type="Double" />
+            <Field name="42201705" source="CrossTab:Header:UnspscId:42201705:Sum:" type="Double" />
+            <Field name="42201708" source="CrossTab:Header:UnspscId:42201708:Sum:" type="Double" />
+            <Field name="42201839" source="CrossTab:Header:UnspscId:42201839:Sum:" type="Double" />
+            <Field name="42201853" source="CrossTab:Header:UnspscId:42201853:Sum:" type="Double" />
+            <Field name="42203403" source="CrossTab:Header:UnspscId:42203403:Sum:" type="Double" />
+            <Field name="42203405" source="CrossTab:Header:UnspscId:42203405:Sum:" type="Double" />
+            <Field name="42203410" source="CrossTab:Header:UnspscId:42203410:Sum:" type="Double" />
+            <Field name="42203421" source="CrossTab:Header:UnspscId:42203421:Sum:" type="Double" />
+            <Field name="42203424" source="CrossTab:Header:UnspscId:42203424:Sum:" type="Double" />
+            <Field name="42203428" source="CrossTab:Header:UnspscId:42203428:Sum:" type="Double" />
+            <Field name="42203433" source="CrossTab:Header:UnspscId:42203433:Sum:" type="Double" />
+            <Field name="42203447" source="CrossTab:Header:UnspscId:42203447:Sum:" type="Double" />
+            <Field name="42211501" source="CrossTab:Header:UnspscId:42211501:Sum:" type="Double" />
+            <Field name="42211502" source="CrossTab:Header:UnspscId:42211502:Sum:" type="Double" />
+            <Field name="42211505" source="CrossTab:Header:UnspscId:42211505:Sum:" type="Double" />
+            <Field name="42211506" source="CrossTab:Header:UnspscId:42211506:Sum:" type="Double" />
+            <Field name="42211510" source="CrossTab:Header:UnspscId:42211510:Sum:" type="Double" />
+            <Field name="42211511" source="CrossTab:Header:UnspscId:42211511:Sum:" type="Double" />
+            <Field name="42211606" source="CrossTab:Header:UnspscId:42211606:Sum:" type="Double" />
+            <Field name="42211607" source="CrossTab:Header:UnspscId:42211607:Sum:" type="Double" />
+            <Field name="42211608" source="CrossTab:Header:UnspscId:42211608:Sum:" type="Double" />
+            <Field name="42211610" source="CrossTab:Header:UnspscId:42211610:Sum:" type="Double" />
+            <Field name="42211612" source="CrossTab:Header:UnspscId:42211612:Sum:" type="Double" />
+            <Field name="42211617" source="CrossTab:Header:UnspscId:42211617:Sum:" type="Double" />
+            <Field name="42211622" source="CrossTab:Header:UnspscId:42211622:Sum:" type="Double" />
+            <Field name="42221503" source="CrossTab:Header:UnspscId:42221503:Sum:" type="Double" />
+            <Field name="42221504" source="CrossTab:Header:UnspscId:42221504:Sum:" type="Double" />
+            <Field name="42221506" source="CrossTab:Header:UnspscId:42221506:Sum:" type="Double" />
+            <Field name="42221507" source="CrossTab:Header:UnspscId:42221507:Sum:" type="Double" />
+            <Field name="42221508" source="CrossTab:Header:UnspscId:42221508:Sum:" type="Double" />
+            <Field name="42221604" source="CrossTab:Header:UnspscId:42221604:Sum:" type="Double" />
+            <Field name="42221616" source="CrossTab:Header:UnspscId:42221616:Sum:" type="Double" />
+            <Field name="42221618" source="CrossTab:Header:UnspscId:42221618:Sum:" type="Double" />
+            <Field name="42221801" source="CrossTab:Header:UnspscId:42221801:Sum:" type="Double" />
+            <Field name="42221802" source="CrossTab:Header:UnspscId:42221802:Sum:" type="Double" />
+            <Field name="42221803" source="CrossTab:Header:UnspscId:42221803:Sum:" type="Double" />
+            <Field name="42222104" source="CrossTab:Header:UnspscId:42222104:Sum:" type="Double" />
+            <Field name="42222202" source="CrossTab:Header:UnspscId:42222202:Sum:" type="Double" />
+            <Field name="42231501" source="CrossTab:Header:UnspscId:42231501:Sum:" type="Double" />
+            <Field name="42231502" source="CrossTab:Header:UnspscId:42231502:Sum:" type="Double" />
+            <Field name="42231503" source="CrossTab:Header:UnspscId:42231503:Sum:" type="Double" />
+            <Field name="42231505" source="CrossTab:Header:UnspscId:42231505:Sum:" type="Double" />
+            <Field name="42231507" source="CrossTab:Header:UnspscId:42231507:Sum:" type="Double" />
+            <Field name="42231510" source="CrossTab:Header:UnspscId:42231510:Sum:" type="Double" />
+            <Field name="42231601" source="CrossTab:Header:UnspscId:42231601:Sum:" type="Double" />
+            <Field name="42231602" source="CrossTab:Header:UnspscId:42231602:Sum:" type="Double" />
+            <Field name="42231609" source="CrossTab:Header:UnspscId:42231609:Sum:" type="Double" />
+            <Field name="42231613" source="CrossTab:Header:UnspscId:42231613:Sum:" type="Double" />
+            <Field name="42231701" source="CrossTab:Header:UnspscId:42231701:Sum:" type="Double" />
+            <Field name="42231702" source="CrossTab:Header:UnspscId:42231702:Sum:" type="Double" />
+            <Field name="42241502" source="CrossTab:Header:UnspscId:42241502:Sum:" type="Double" />
+            <Field name="42241708" source="CrossTab:Header:UnspscId:42241708:Sum:" type="Double" />
+            <Field name="42271715" source="CrossTab:Header:UnspscId:42271715:Sum:" type="Double" />
+            <Field name="42271902" source="CrossTab:Header:UnspscId:42271902:Sum:" type="Double" />
+            <Field name="42271903" source="CrossTab:Header:UnspscId:42271903:Sum:" type="Double" />
+            <Field name="42271908" source="CrossTab:Header:UnspscId:42271908:Sum:" type="Double" />
+            <Field name="42271910" source="CrossTab:Header:UnspscId:42271910:Sum:" type="Double" />
+            <Field name="42271912" source="CrossTab:Header:UnspscId:42271912:Sum:" type="Double" />
+            <Field name="42271913" source="CrossTab:Header:UnspscId:42271913:Sum:" type="Double" />
+            <Field name="42271915" source="CrossTab:Header:UnspscId:42271915:Sum:" type="Double" />
+            <Field name="42272004" source="CrossTab:Header:UnspscId:42272004:Sum:" type="Double" />
+            <Field name="42272211" source="CrossTab:Header:UnspscId:42272211:Sum:" type="Double" />
+            <Field name="42272213" source="CrossTab:Header:UnspscId:42272213:Sum:" type="Double" />
+            <Field name="42272218" source="CrossTab:Header:UnspscId:42272218:Sum:" type="Double" />
+            <Field name="42272219" source="CrossTab:Header:UnspscId:42272219:Sum:" type="Double" />
+            <Field name="42272226" source="CrossTab:Header:UnspscId:42272226:Sum:" type="Double" />
+            <Field name="42272229" source="CrossTab:Header:UnspscId:42272229:Sum:" type="Double" />
+            <Field name="42272306" source="CrossTab:Header:UnspscId:42272306:Sum:" type="Double" />
+            <Field name="42281509" source="CrossTab:Header:UnspscId:42281509:Sum:" type="Double" />
+            <Field name="42281604" source="CrossTab:Header:UnspscId:42281604:Sum:" type="Double" />
+            <Field name="42281902" source="CrossTab:Header:UnspscId:42281902:Sum:" type="Double" />
+            <Field name="42281903" source="CrossTab:Header:UnspscId:42281903:Sum:" type="Double" />
+            <Field name="42281904" source="CrossTab:Header:UnspscId:42281904:Sum:" type="Double" />
+            <Field name="42281908" source="CrossTab:Header:UnspscId:42281908:Sum:" type="Double" />
+            <Field name="42281913" source="CrossTab:Header:UnspscId:42281913:Sum:" type="Double" />
+            <Field name="42291602" source="CrossTab:Header:UnspscId:42291602:Sum:" type="Double" />
+            <Field name="42291613" source="CrossTab:Header:UnspscId:42291613:Sum:" type="Double" />
+            <Field name="42291614" source="CrossTab:Header:UnspscId:42291614:Sum:" type="Double" />
+            <Field name="42291632" source="CrossTab:Header:UnspscId:42291632:Sum:" type="Double" />
+            <Field name="42291802" source="CrossTab:Header:UnspscId:42291802:Sum:" type="Double" />
+            <Field name="42291804" source="CrossTab:Header:UnspscId:42291804:Sum:" type="Double" />
+            <Field name="42291805" source="CrossTab:Header:UnspscId:42291805:Sum:" type="Double" />
+            <Field name="42291902" source="CrossTab:Header:UnspscId:42291902:Sum:" type="Double" />
+            <Field name="42292603" source="CrossTab:Header:UnspscId:42292603:Sum:" type="Double" />
+            <Field name="42292903" source="CrossTab:Header:UnspscId:42292903:Sum:" type="Double" />
+            <Field name="42293001" source="CrossTab:Header:UnspscId:42293001:Sum:" type="Double" />
+            <Field name="42293501" source="CrossTab:Header:UnspscId:42293501:Sum:" type="Double" />
+            <Field name="42293503" source="CrossTab:Header:UnspscId:42293503:Sum:" type="Double" />
+            <Field name="42293507" source="CrossTab:Header:UnspscId:42293507:Sum:" type="Double" />
+            <Field name="42293515" source="CrossTab:Header:UnspscId:42293515:Sum:" type="Double" />
+            <Field name="42293519" source="CrossTab:Header:UnspscId:42293519:Sum:" type="Double" />
+            <Field name="42293521" source="CrossTab:Header:UnspscId:42293521:Sum:" type="Double" />
+            <Field name="42293522" source="CrossTab:Header:UnspscId:42293522:Sum:" type="Double" />
+            <Field name="42294201" source="CrossTab:Header:UnspscId:42294201:Sum:" type="Double" />
+            <Field name="42294211" source="CrossTab:Header:UnspscId:42294211:Sum:" type="Double" />
+            <Field name="42294715" source="CrossTab:Header:UnspscId:42294715:Sum:" type="Double" />
+            <Field name="42294722" source="CrossTab:Header:UnspscId:42294722:Sum:" type="Double" />
+            <Field name="42294904" source="CrossTab:Header:UnspscId:42294904:Sum:" type="Double" />
+            <Field name="42294905" source="CrossTab:Header:UnspscId:42294905:Sum:" type="Double" />
+            <Field name="42294908" source="CrossTab:Header:UnspscId:42294908:Sum:" type="Double" />
+            <Field name="42294927" source="CrossTab:Header:UnspscId:42294927:Sum:" type="Double" />
+            <Field name="42294937" source="CrossTab:Header:UnspscId:42294937:Sum:" type="Double" />
+            <Field name="42295001" source="CrossTab:Header:UnspscId:42295001:Sum:" type="Double" />
+            <Field name="42295103" source="CrossTab:Header:UnspscId:42295103:Sum:" type="Double" />
+            <Field name="42295106" source="CrossTab:Header:UnspscId:42295106:Sum:" type="Double" />
+            <Field name="42295109" source="CrossTab:Header:UnspscId:42295109:Sum:" type="Double" />
+            <Field name="42295111" source="CrossTab:Header:UnspscId:42295111:Sum:" type="Double" />
+            <Field name="42295131" source="CrossTab:Header:UnspscId:42295131:Sum:" type="Double" />
+            <Field name="42295143" source="CrossTab:Header:UnspscId:42295143:Sum:" type="Double" />
+            <Field name="42295170" source="CrossTab:Header:UnspscId:42295170:Sum:" type="Double" />
+            <Field name="42295302" source="CrossTab:Header:UnspscId:42295302:Sum:" type="Double" />
+            <Field name="42295305" source="CrossTab:Header:UnspscId:42295305:Sum:" type="Double" />
+            <Field name="42295306" source="CrossTab:Header:UnspscId:42295306:Sum:" type="Double" />
+            <Field name="42295310" source="CrossTab:Header:UnspscId:42295310:Sum:" type="Double" />
+            <Field name="42295401" source="CrossTab:Header:UnspscId:42295401:Sum:" type="Double" />
+            <Field name="42295402" source="CrossTab:Header:UnspscId:42295402:Sum:" type="Double" />
+            <Field name="42295406" source="CrossTab:Header:UnspscId:42295406:Sum:" type="Double" />
+            <Field name="42295410" source="CrossTab:Header:UnspscId:42295410:Sum:" type="Double" />
+            <Field name="42295414" source="CrossTab:Header:UnspscId:42295414:Sum:" type="Double" />
+            <Field name="42295415" source="CrossTab:Header:UnspscId:42295415:Sum:" type="Double" />
+            <Field name="42295417" source="CrossTab:Header:UnspscId:42295417:Sum:" type="Double" />
+            <Field name="42295418" source="CrossTab:Header:UnspscId:42295418:Sum:" type="Double" />
+            <Field name="42295422" source="CrossTab:Header:UnspscId:42295422:Sum:" type="Double" />
+            <Field name="42295423" source="CrossTab:Header:UnspscId:42295423:Sum:" type="Double" />
+            <Field name="42295424" source="CrossTab:Header:UnspscId:42295424:Sum:" type="Double" />
+            <Field name="42295426" source="CrossTab:Header:UnspscId:42295426:Sum:" type="Double" />
+            <Field name="42295453" source="CrossTab:Header:UnspscId:42295453:Sum:" type="Double" />
+            <Field name="42295471" source="CrossTab:Header:UnspscId:42295471:Sum:" type="Double" />
+            <Field name="42295475" source="CrossTab:Header:UnspscId:42295475:Sum:" type="Double" />
+            <Field name="42295603" source="CrossTab:Header:UnspscId:42295603:Sum:" type="Double" />
+            <Field name="42295907" source="CrossTab:Header:UnspscId:42295907:Sum:" type="Double" />
+            <Field name="42296414" source="CrossTab:Header:UnspscId:42296414:Sum:" type="Double" />
+            <Field name="42296607" source="CrossTab:Header:UnspscId:42296607:Sum:" type="Double" />
+            <Field name="42301506" source="CrossTab:Header:UnspscId:42301506:Sum:" type="Double" />
+            <Field name="42311502" source="CrossTab:Header:UnspscId:42311502:Sum:" type="Double" />
+            <Field name="42311506" source="CrossTab:Header:UnspscId:42311506:Sum:" type="Double" />
+            <Field name="42311510" source="CrossTab:Header:UnspscId:42311510:Sum:" type="Double" />
+            <Field name="42311512" source="CrossTab:Header:UnspscId:42311512:Sum:" type="Double" />
+            <Field name="42311513" source="CrossTab:Header:UnspscId:42311513:Sum:" type="Double" />
+            <Field name="42311515" source="CrossTab:Header:UnspscId:42311515:Sum:" type="Double" />
+            <Field name="42311518" source="CrossTab:Header:UnspscId:42311518:Sum:" type="Double" />
+            <Field name="42311523" source="CrossTab:Header:UnspscId:42311523:Sum:" type="Double" />
+            <Field name="42311524" source="CrossTab:Header:UnspscId:42311524:Sum:" type="Double" />
+            <Field name="42311527" source="CrossTab:Header:UnspscId:42311527:Sum:" type="Double" />
+            <Field name="42311531" source="CrossTab:Header:UnspscId:42311531:Sum:" type="Double" />
+            <Field name="42311537" source="CrossTab:Header:UnspscId:42311537:Sum:" type="Double" />
+            <Field name="42311540" source="CrossTab:Header:UnspscId:42311540:Sum:" type="Double" />
+            <Field name="42311543" source="CrossTab:Header:UnspscId:42311543:Sum:" type="Double" />
+            <Field name="42311545" source="CrossTab:Header:UnspscId:42311545:Sum:" type="Double" />
+            <Field name="42311546" source="CrossTab:Header:UnspscId:42311546:Sum:" type="Double" />
+            <Field name="42311547" source="CrossTab:Header:UnspscId:42311547:Sum:" type="Double" />
+            <Field name="42311552" source="CrossTab:Header:UnspscId:42311552:Sum:" type="Double" />
+            <Field name="42312004" source="CrossTab:Header:UnspscId:42312004:Sum:" type="Double" />
+            <Field name="42312005" source="CrossTab:Header:UnspscId:42312005:Sum:" type="Double" />
+            <Field name="42312010" source="CrossTab:Header:UnspscId:42312010:Sum:" type="Double" />
+            <Field name="42312014" source="CrossTab:Header:UnspscId:42312014:Sum:" type="Double" />
+            <Field name="42312105" source="CrossTab:Header:UnspscId:42312105:Sum:" type="Double" />
+            <Field name="42312201" source="CrossTab:Header:UnspscId:42312201:Sum:" type="Double" />
+            <Field name="42312202" source="CrossTab:Header:UnspscId:42312202:Sum:" type="Double" />
+            <Field name="42312207" source="CrossTab:Header:UnspscId:42312207:Sum:" type="Double" />
+            <Field name="42312307" source="CrossTab:Header:UnspscId:42312307:Sum:" type="Double" />
+            <Field name="42312313" source="CrossTab:Header:UnspscId:42312313:Sum:" type="Double" />
+            <Field name="42312403" source="CrossTab:Header:UnspscId:42312403:Sum:" type="Double" />
+            <Field name="42312501" source="CrossTab:Header:UnspscId:42312501:Sum:" type="Double" />
+            <Field name="42312601" source="CrossTab:Header:UnspscId:42312601:Sum:" type="Double" />
+            <Field name="42312602" source="CrossTab:Header:UnspscId:42312602:Sum:" type="Double" />
+            <Field name="42312603" source="CrossTab:Header:UnspscId:42312603:Sum:" type="Double" />
+            <Field name="44103112" source="CrossTab:Header:UnspscId:44103112:Sum:" type="Double" />
+            <Field name="44121618" source="CrossTab:Header:UnspscId:44121618:Sum:" type="Double" />
+            <Field name="44122101" source="CrossTab:Header:UnspscId:44122101:Sum:" type="Double" />
+            <Field name="46151711" source="CrossTab:Header:UnspscId:46151711:Sum:" type="Double" />
+            <Field name="46181504" source="CrossTab:Header:UnspscId:46181504:Sum:" type="Double" />
+            <Field name="46181532" source="CrossTab:Header:UnspscId:46181532:Sum:" type="Double" />
+            <Field name="46181533" source="CrossTab:Header:UnspscId:46181533:Sum:" type="Double" />
+            <Field name="46181702" source="CrossTab:Header:UnspscId:46181702:Sum:" type="Double" />
+            <Field name="46181802" source="CrossTab:Header:UnspscId:46181802:Sum:" type="Double" />
+            <Field name="46181804" source="CrossTab:Header:UnspscId:46181804:Sum:" type="Double" />
+            <Field name="47121701" source="CrossTab:Header:UnspscId:47121701:Sum:" type="Double" />
+            <Field name="47121702" source="CrossTab:Header:UnspscId:47121702:Sum:" type="Double" />
+            <Field name="47121707" source="CrossTab:Header:UnspscId:47121707:Sum:" type="Double" />
+            <Field name="47121709" source="CrossTab:Header:UnspscId:47121709:Sum:" type="Double" />
+            <Field name="47131502" source="CrossTab:Header:UnspscId:47131502:Sum:" type="Double" />
+            <Field name="47131619" source="CrossTab:Header:UnspscId:47131619:Sum:" type="Double" />
+            <Field name="47131901" source="CrossTab:Header:UnspscId:47131901:Sum:" type="Double" />
+            <Field name="47131905" source="CrossTab:Header:UnspscId:47131905:Sum:" type="Double" />
+            <Field name="51472802" source="CrossTab:Header:UnspscId:51472802:Sum:" type="Double" />
+            <Field name="51473504" source="CrossTab:Header:UnspscId:51473504:Sum:" type="Double" />
+            <Field name="52121703" source="CrossTab:Header:UnspscId:52121703:Sum:" type="Double" />
+            <Field name="52141605" source="CrossTab:Header:UnspscId:52141605:Sum:" type="Double" />
+            <Field name="52152001" source="CrossTab:Header:UnspscId:52152001:Sum:" type="Double" />
+            <Field name="52152014" source="CrossTab:Header:UnspscId:52152014:Sum:" type="Double" />
+            <Field name="53102303" source="CrossTab:Header:UnspscId:53102303:Sum:" type="Double" />
+            <Field name="53102305" source="CrossTab:Header:UnspscId:53102305:Sum:" type="Double" />
+            <Field name="53102306" source="CrossTab:Header:UnspscId:53102306:Sum:" type="Double" />
+            <Field name="53102504" source="CrossTab:Header:UnspscId:53102504:Sum:" type="Double" />
+            <Field name="53131501" source="CrossTab:Header:UnspscId:53131501:Sum:" type="Double" />
+            <Field name="53131502" source="CrossTab:Header:UnspscId:53131502:Sum:" type="Double" />
+            <Field name="53131503" source="CrossTab:Header:UnspscId:53131503:Sum:" type="Double" />
+            <Field name="53131506" source="CrossTab:Header:UnspscId:53131506:Sum:" type="Double" />
+            <Field name="53131602" source="CrossTab:Header:UnspscId:53131602:Sum:" type="Double" />
+            <Field name="53131603" source="CrossTab:Header:UnspscId:53131603:Sum:" type="Double" />
+            <Field name="53131604" source="CrossTab:Header:UnspscId:53131604:Sum:" type="Double" />
+            <Field name="53131606" source="CrossTab:Header:UnspscId:53131606:Sum:" type="Double" />
+            <Field name="53131607" source="CrossTab:Header:UnspscId:53131607:Sum:" type="Double" />
+            <Field name="53131608" source="CrossTab:Header:UnspscId:53131608:Sum:" type="Double" />
+            <Field name="53131611" source="CrossTab:Header:UnspscId:53131611:Sum:" type="Double" />
+            <Field name="53131615" source="CrossTab:Header:UnspscId:53131615:Sum:" type="Double" />
+            <Field name="53131616" source="CrossTab:Header:UnspscId:53131616:Sum:" type="Double" />
+            <Field name="53131621" source="CrossTab:Header:UnspscId:53131621:Sum:" type="Double" />
+            <Field name="53131624" source="CrossTab:Header:UnspscId:53131624:Sum:" type="Double" />
+            <Field name="53131628" source="CrossTab:Header:UnspscId:53131628:Sum:" type="Double" />
+            <Field name="53131637" source="CrossTab:Header:UnspscId:53131637:Sum:" type="Double" />
+            <Field name="53131639" source="CrossTab:Header:UnspscId:53131639:Sum:" type="Double" />
+            <Field name="53131640" source="CrossTab:Header:UnspscId:53131640:Sum:" type="Double" />
+            <Field name="53131641" source="CrossTab:Header:UnspscId:53131641:Sum:" type="Double" />
+            <Field name="53131647" source="CrossTab:Header:UnspscId:53131647:Sum:" type="Double" />
+            <Field name="53141502" source="CrossTab:Header:UnspscId:53141502:Sum:" type="Double" />
+            <Field name="56122002" source="CrossTab:Header:UnspscId:56122002:Sum:" type="Double" />
+            <Field name="85161504" source="CrossTab:Header:UnspscId:85161504:Sum:" type="Double" />
+            <Field name="99999999" source="CrossTab:Header:UnspscId:99999999:Sum:" type="Double" />
+            <Field name="_Null_" source="CrossTab:Header:UnspscId:[Null]:Sum:" type="Double" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="ZIP" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+    <Node ToolID="26">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="1795" y="213" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File FileFormat="19" MaxRecords="">C:\Users\praven.kumar\OneDrive - Cardinal Health\Desktop\clarivate\Clarivate_Data.yxdb</File>
+          <Passwords />
+          <Disable>False</Disable>
+          <FormatSpecificOptions>
+            <NoSpatialIndex>False</NoSpatialIndex>
+            <SaveSource>True</SaveSource>
+            <WriteCompatibleVersion>False</WriteCompatibleVersion>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Clarivate_Data.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="739" y="765" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="UnspscId" action="GroupBy" rename="UnspscId" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="29">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="823" y="729" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="UnspscId" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="UnspscId" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_UnspscId" selected="False" rename="Right_UnspscId" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="32">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="115" y="644" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">\\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Projects\Enginuity\Production\MaterialLevelEnginuity.yxdb</File>
+          <FormatSpecificOptions />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>MaterialLevelEnginuity.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="360AccountKey" size="10" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="360AccountSegment" size="7" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="360CustomerName" size="78" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AACCG_HierarchyNameLevel3" size="12" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AACCG_HierarchyNameLevel4" size="15" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AACCG_HierarchyNameLevel5" size="19" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AACCG_HierarchyNodeIdLevel3" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AACCG_HierarchyNodeIdLevel4" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AACCG_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AASUG_HierarchyNameLevel3" size="11" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AASUG_HierarchyNameLevel4" size="14" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AASUG_HierarchyNameLevel5" size="20" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AASUG_HierarchyNodeIdLevel3" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AASUG_HierarchyNodeIdLevel4" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AASUG_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Account Name" size="70" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ANWSR RD" size="1" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="ANWSR Rep" size="11" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ANWSR RVP" size="1" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="ANWSR_HierarchyNodeIdLevel3" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ANWSR_HierarchyNodeIdLevel4" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ANWSR_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ANWSS_HierarchyNameLevel3" size="1" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="ANWSS_HierarchyNameLevel4" size="13" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ANWSS_HierarchyNameLevel5" size="18" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ANWSS_HierarchyNodeIdLevel3" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ANWSS_HierarchyNodeIdLevel4" size="7" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ANWSS_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="BaseUomQty" source="File: (Multiple Sources) (BatchMacro)" type="Double" />
+            <Field name="BCodeBasedOnUnspscAssignment" size="4" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="BCodeDesc" size="24" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="BillingDays" source="File: \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\AlteryxServerRefresh\Outputs\BillingDays.csv (BatchMacro)" type="Double" />
+            <Field name="Business Unit" size="31" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Category Bucket" size="6" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="Product Category Group Description" size="31" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Product Category Group ID" source="File: odbc:DSN=Prod_PackagesRawData|||Select * From DEV.PackagesRawData.ProductMaster (BatchMacro)" type="Byte" />
+            <Field name="GPO Contract Number" size="20" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Cost" source="File: (Multiple Sources) (BatchMacro)" type="Double" />
+            <Field name="CustomerSizeSegment" size="10" source="Summarize: GroupBy - Customer Size Segment" type="V_String" />
+            <Field name="CustomerSupplierViewDesc" size="35" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Distribution Type" size="21" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="EnhancedDescription" size="255" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="EquivalentTaxonomyDesc" size="80" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="EquivalentTaxonomyId" source="File: odbc:DSN=Prod_PackagesRawData|||Select * From DEV.PackagesRawData.ProductMaster (BatchMacro)" type="Int64" />
+            <Field name="EXNA_HierarchyNameLevel3" size="13" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="EXNA_HierarchyNameLevel4" size="13" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="EXNA_HierarchyNameLevel5" size="15" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="EXNA_HierarchyNodeIdLevel3" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="EXNA_HierarchyNodeIdLevel4" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="EXNA_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="FinClassId" size="5" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="GMSP_HierarchyNameLevel3" size="14" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="GMSP_HierarchyNameLevel4" size="15" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="GMSP_HierarchyNameLevel5" size="23" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="GMSP_HierarchyNodeIdLevel3" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="GMSP_HierarchyNodeIdLevel4" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="GMSP_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="GPO Contract Name" size="80" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Gpo Contract Type" size="16" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="I.S. Non Acute Exclusive Products RD" size="18" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="I.S. Non Acute Exclusive Products Rep" size="18" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="I.S. Non Acute Exclusive Products RVP" size="13" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="IndividualUom" size="3" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="Is360Customer" source="Summarize: GroupBy - Is360Customer (BatchMacro)" type="Bool" />
+            <Field name="IsAscendSole" source="Summarize: GroupBy - IsAscendSole (BatchMacro)" type="Bool" />
+            <Field name="IsEXNAView" source="Summarize: GroupBy - IsEXNAView (BatchMacro)" type="Bool" />
+            <Field name="IsKit" source="Formula: IF (CategoryGroupId == '70' &#xA;OR (CategoryGroupId != '70' &#xA;AND (FindString(UPPERCASE(SubcategoryDesc), 'KIT') != -1) &#xA;OR (FindString(UPPERCASE(SubcategoryDesc), 'TRAY') != -1) &#xA;OR (FindString(UPPERCASE(SubcategoryDesc), 'LAB PRESOURCE') != -1)) &#xA;AND ((FindString(UPPERCASE(SubcategoryDesc), 'KITCHEN') == -1) ) &#xA;AND (FindString(UPPERCASE(SubcategoryDesc), 'FOOD') == -1) &#xA;AND (FindString(UPPERCASE(SubcategoryDesc), 'SURGICAL LAP MAYO TRAYS') == -1)  &#xA;AND (FindString(UPPERCASE(SubcategoryDesc), 'MAYO STANDS') == -1)) &#xA;AND SubcategoryId NOT IN ('700K700001304','700E700010035','700K700001004','700E700010034','700N700010038','700K700001006') &#xA;THEN 1 ELSE 0 ENDIF (BatchMacro)" type="Bool" />
+            <Field name="IsMedtronic" source="File: odbc:DSN=Prod_PackagesRawData|||Select * From DEV.PackagesRawData.ProductMaster (BatchMacro)" type="Bool" />
+            <Field name="IsMSAView" source="Summarize: GroupBy - IsMSAView (BatchMacro)" type="Bool" />
+            <Field name="IsPerformancePlus" source="Formula: if [SourceTypeId] = 'NBP' and [ExternalMaterialGroupDesc] = 'Preferred' then 1 else 0 endif (BatchMacro)" type="Bool" />
+            <Field name="IsStrategicAccount" source="Summarize: GroupBy - IsStrategicAccount (BatchMacro)" type="Bool" />
+            <Field name="LABS_HierarchyNameLevel3" size="16" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="LABS_HierarchyNameLevel4" size="17" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="LABS_HierarchyNameLevel5" size="23" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="LABS_HierarchyNodeIdLevel3" size="6" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="LABS_HierarchyNodeIdLevel4" size="7" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="LABS_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="Long Term Care RD" size="18" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Long Term Care RD Node ID" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Long Term Care Rep" size="21" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Long Term Care Rep Node ID" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Long Term Care RVP" size="13" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Long Term Care RVP Node ID" size="5" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="MarketingViewAlternativeView" size="30" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="MaterialId" size="18" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="MSAAccountName" size="30" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="NAEP_HierarchyNodeIdLevel3" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="NAEP_HierarchyNodeIdLevel4" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="NAEP_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="PackagingString" size="64" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="PR Breakout-ProductConversionField" size="28" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="PriceUnitQuantiy" source="File: odbc:DSN=Prod_PackagesRawData|||&quot;DEV&quot;.&quot;PackagesRawData&quot;.&quot;UomStandardCosts&quot; (BatchMacro)" type="Double" />
+            <Field name="Product Conversion Field" size="18" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Product Line" size="70" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ProductOrService" size="8" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="PurchaseTrendAccount15Month" size="7" source="Summarize: GroupBy - Purchase Trend - Account-15Month" type="V_String" />
+            <Field name="PurchaseTrendAccount6Month" size="7" source="Summarize: GroupBy - Purchase Trend - Account-6Month" type="V_String" />
+            <Field name="PurchaseTrendAccountCategory15Month" size="7" source="Summarize: GroupBy - Purchase Trend - Account-Category-15Month" type="V_String" />
+            <Field name="PurchaseTrendAccountCategory6Month" size="7" source="Summarize: GroupBy - Purchase Trend - Account-Category-6Month" type="V_String" />
+            <Field name="PurchaseTrendSoldTo15Month" size="7" source="Summarize: GroupBy - Purchase Trend - SoldTo-15Month" type="V_String" />
+            <Field name="PurchaseTrendSoldTo6Month" size="7" source="Summarize: GroupBy - Purchase Trend - SoldTo-6Month" type="V_String" />
+            <Field name="PurchaseTrendSoldToCategory15Month" size="7" source="Summarize: GroupBy - Purchase Trend - SoldTo-Category-15Month" type="V_String" />
+            <Field name="PurchaseTrendSoldToCategory6Month" size="7" source="Summarize: GroupBy - Purchase Trend - SoldTo-Category-6Month" type="V_String" />
+            <Field name="Right_MarketingViewAlternativeView" size="30" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Right_MaterialId" source="File: \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Projects\Enginuity\Data\Inputs\VerticalSalesTransactionSalesData_202110.csv (BatchMacro)" type="Bool" />
+            <Field name="Right_SalesHierarchyBusinessSegment" size="8" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="Right_ShipToCustomerId" source="File: \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Projects\Enginuity\Data\Inputs\VerticalSalesTransactionSalesData_202110.csv (BatchMacro)" type="Bool" />
+            <Field name="Right_WorkflowFilePath" size="152" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="SaleItemGroupId" size="5" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="Sales" source="(Multiple Sources) (BatchMacro)" type="Double" />
+            <Field name="SalesHierarchyBusinessSegment" size="8" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="SameTaxonomyId" source="File: odbc:DSN=Prod_PackagesRawData|||Select * From DEV.PackagesRawData.ProductMaster (BatchMacro)" type="Int64" />
+            <Field name="SAT Finance Account Name" size="30" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="SellingUomQty" source="File: (Multiple Sources) (BatchMacro)" type="Double" />
+            <Field name="ShipToBusinessSegment" size="8" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="ShipTo City" size="27" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ShipToCustomerClass" size="2" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="ShipTo Number" size="10" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="ShipTo Name" size="35" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ShipTo Zip" size="9" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="ShipToServicingBusinessUnit" size="2" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="ShipTo State" size="2" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="SIGPrime" source="Formula: [AACCGprime]*[AASUGprime]*[ALTCprime]*[ANWSSprime]*[GMSPprime]*[LABSprime]*[NAEPprime]*[SPECprime]*[EXNAPrime]*[BDPOprime]" type="Int64" />
+            <Field name="SimilarTaxonomyId" source="File: odbc:DSN=Prod_PackagesRawData|||Select * From DEV.PackagesRawData.ProductMaster (BatchMacro)" type="Int64" />
+            <Field name="SoldTo City" size="25" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="SoldToCustomerClass" size="2" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="SoldTo Number" size="10" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="SoldTo Name" size="35" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="SoldTo Zip" size="10" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="SoldTo State" size="2" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="SourceTypeId" size="3" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="SPEC_HierarchyNodeIdLevel3" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="SPEC_HierarchyNodeIdLevel4" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="SPEC_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Specialty RD" size="19" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Specialty Rep" size="19" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Specialty RVP" size="15" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="SubcategoryDesc" size="40" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="SubcategoryId" size="13" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="Supplier ID" size="10" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="Supplier Name" size="35" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="UnspscId" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="GPO Affiliation" size="25" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="WorkflowFilePath" size="152" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="YearMonth" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="YearMonthMax" size="254" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="YearMonthMaxFormat" source="DateTime: To dd-MM-yy (BatchMacro)" type="Date" />
+            <Field name="PrimeVendor" size="56" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="PrimeVendor_Channel10" source="Formula: iif(contains([PrimeVendor],&quot;10 -&quot;),1,0) (BatchMacro)" type="Bool" />
+            <Field name="PrimeVendor_Channel20" source="Formula: iif(contains([PrimeVendor],&quot;20 -&quot;),1,0) (BatchMacro)" type="Bool" />
+            <Field name="PrimeVendor_Channel30" source="Formula: iif(contains([PrimeVendor],&quot;30 -&quot;),1,0) (BatchMacro)" type="Bool" />
+            <Field name="ORSP_HierarchyNameLevel3" size="15" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ORSP_HierarchyNameLevel4" size="18" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ORSP_HierarchyNameLevel5" size="21" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ORSP_HierarchyNodeIdLevel3" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ORSP_HierarchyNodeIdLevel4" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ORSP_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="BDPO_HierarchyNameLevel3" size="12" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="BDPO_HierarchyNameLevel4" size="12" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="BDPO_HierarchyNameLevel5" size="18" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="BDPO_HierarchyNodeIdLevel3" size="5" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="BDPO_HierarchyNodeIdLevel4" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="BDPO_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AACBD_HierarchyNameLevel3" size="11" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AACBD_HierarchyNameLevel4" size="14" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AACBD_HierarchyNameLevel5" size="1" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="AACBD_HierarchyNodeIdLevel3" size="5" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="AACBD_HierarchyNodeIdLevel4" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AACBD_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AACPM_HierarchyNameLevel3" size="1" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="AACPM_HierarchyNameLevel4" size="15" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AACPM_HierarchyNameLevel5" size="1" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="AACPM_HierarchyNodeIdLevel3" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AACPM_HierarchyNodeIdLevel4" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AACPM_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="IDNM_HierarchyNameLevel3" size="1" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="IDNM_HierarchyNameLevel4" size="1" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="IDNM_HierarchyNameLevel5" size="1" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="IDNM_HierarchyNodeIdLevel3" size="5" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="IDNM_HierarchyNodeIdLevel4" size="5" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="IDNM_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Right_YearMonth" source="File: \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Projects\Enginuity\Data\Inputs\VerticalSalesTransactionSalesData_202110.csv (BatchMacro)" type="Bool" />
+            <Field name="Right_SaleItemGroupId" source="File: \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Projects\Enginuity\Data\Inputs\VerticalSalesTransactionSalesData_202110.csv (BatchMacro)" type="Bool" />
+            <Field name="Right_Sales" source="File: \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Projects\Enginuity\Data\Inputs\VerticalSalesTransactionSalesData_202110.csv (BatchMacro)" type="Bool" />
+            <Field name="Right_Cost" source="File: \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Projects\Enginuity\Data\Inputs\VerticalSalesTransactionSalesData_202110.csv (BatchMacro)" type="Bool" />
+            <Field name="Right_Gp" source="File: \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Projects\Enginuity\Data\Inputs\VerticalSalesTransactionSalesData_202110.csv (BatchMacro)" type="Bool" />
+            <Field name="Right_BaseUomQty" source="File: \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Projects\Enginuity\Data\Inputs\VerticalSalesTransactionSalesData_202110.csv (BatchMacro)" type="Bool" />
+            <Field name="Right_IsMedtronic" source="File: \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Projects\Enginuity\Data\Inputs\VerticalSalesTransactionSalesData_202110.csv (BatchMacro)" type="Bool" />
+            <Field name="Right_SellingUomQty" source="File: \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Projects\Enginuity\Data\Inputs\VerticalSalesTransactionSalesData_202110.csv (BatchMacro)" type="Bool" />
+            <Field name="Calendar Year" source="Formula: Left([YearMonth], 4) (BatchMacro)" type="Bool" />
+            <Field name="Calendar Month" source="Formula: Right([YearMonth], 2) (BatchMacro)" type="Bool" />
+            <Field name="Date" source="Formula: ToDate(&#xA;[Calendar Year] + '-' + [Calendar Month] + '-01' ) (BatchMacro)" type="Date" />
+            <Field name="TodayDate" source="Formula: ToDate(DateTimeNow()) (BatchMacro)" type="Bool" />
+            <Field name="DateDiff" source="Formula: DateTimeDiff([TodayDate],Date,&quot;months&quot;) (BatchMacro)" type="Bool" />
+            <Field name="BDPOPrime" source="Formula: iif(!isnull([BDPO_HierarchyNodeIdLevel3]) and !isempty([BDPO_HierarchyNodeIdLevel3]),37,1)" type="Int64" />
+            <Field name="ANCR_HierarchyNameLevel3" size="15" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ANCR_HierarchyNameLevel4" size="15" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ANCR_HierarchyNameLevel5" size="17" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="ANCR_HierarchyNodeIdLevel3" size="6" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="ANCR_HierarchyNodeIdLevel4" size="6" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="ANCR_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="GPO" size="25" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="HasAasugAffiliation" source="Summarize: GroupBy - HasAasugAffiliation (BatchMacro)" type="Bool" />
+            <Field name="HasANCRAffiliation" source="Summarize: GroupBy - HasANCRAffiliation (BatchMacro)" type="Bool" />
+            <Field name="HasLabAffiliation" source="Summarize: GroupBy - HasLabAffiliation (BatchMacro)" type="Bool" />
+            <Field name="HasNDCAAfilliation" source="Summarize: GroupBy - HasNDCAAfilliation (BatchMacro)" type="Bool" />
+            <Field name="HasRDCAAffiliation" source="Summarize: GroupBy - HasRDCAAffiliation (BatchMacro)" type="Bool" />
+            <Field name="HasSCSEAffiliation" source="Summarize: GroupBy - HasSCSEAffiliation (BatchMacro)" type="Bool" />
+            <Field name="HasSCSRAffiliation" source="Summarize: GroupBy - HasSCSRAffiliation (BatchMacro)" type="Bool" />
+            <Field name="Left_Left_Right_IsMedtronic" source="File: \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Projects\Enginuity\Data\Inputs\VerticalSalesTransactionSalesData_202110.csv (BatchMacro)" type="Bool" />
+            <Field name="Left_Left_Right_IsMedtronic2" source="File: \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\Projects\Enginuity\Data\Inputs\VerticalSalesTransactionSalesData_202110.csv (BatchMacro)" type="Bool" />
+            <Field name="NDCA_HierarchyNameLevel3" size="10" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="NDCA_HierarchyNameLevel4" size="10" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="NDCA_HierarchyNameLevel5" size="19" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="NDCA_HierarchyNodeIdLevel3" size="6" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="NDCA_HierarchyNodeIdLevel4" size="6" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="NDCA_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="SCSE_HierarchyNameLevel3" size="15" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="SCSE_HierarchyNameLevel4" size="20" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="SCSE_HierarchyNameLevel5" size="25" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="SCSE_HierarchyNodeIdLevel3" size="6" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="SCSE_HierarchyNodeIdLevel4" size="6" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="SCSE_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="SCSR_HierarchyNameLevel3" size="15" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="SCSR_HierarchyNameLevel4" size="20" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="SCSR_HierarchyNameLevel5" size="19" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="SCSR_HierarchyNodeIdLevel3" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="SCSR_HierarchyNodeIdLevel4" size="6" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="SCSR_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="AmbcareAcCode" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Gp" source="File: (Multiple Sources) (BatchMacro)" type="Double" />
+            <Field name="RDCA_HierarchyNameLevel3" size="15" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="RDCA_HierarchyNameLevel4" size="15" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="RDCA_HierarchyNameLevel5" size="16" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="RDCA_HierarchyNodeIdLevel3" size="6" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="RDCA_HierarchyNodeIdLevel4" size="6" source="Formula: [_CurrentField_]" type="String" />
+            <Field name="RDCA_HierarchyNodeIdLevel5" size="8" source="Formula: [_CurrentField_]" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="33">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="223" y="644" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="360AccountKey" selected="False" />
+            <SelectField field="360AccountSegment" selected="False" />
+            <SelectField field="360CustomerName" selected="False" />
+            <SelectField field="AACBD_HierarchyNameLevel3" selected="False" />
+            <SelectField field="AACBD_HierarchyNameLevel4" selected="False" />
+            <SelectField field="AACBD_HierarchyNameLevel5" selected="False" />
+            <SelectField field="AACBD_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="AACBD_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="AACBD_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="AACCG_HierarchyNameLevel3" selected="False" />
+            <SelectField field="AACCG_HierarchyNameLevel4" selected="False" />
+            <SelectField field="AACCG_HierarchyNameLevel5" selected="False" />
+            <SelectField field="AACCG_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="AACCG_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="AACCG_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="AACPM_HierarchyNameLevel3" selected="False" />
+            <SelectField field="AACPM_HierarchyNameLevel4" selected="False" />
+            <SelectField field="AACPM_HierarchyNameLevel5" selected="False" />
+            <SelectField field="AACPM_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="AACPM_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="AACPM_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="AASUG_HierarchyNameLevel3" selected="False" />
+            <SelectField field="AASUG_HierarchyNameLevel4" selected="False" />
+            <SelectField field="AASUG_HierarchyNameLevel5" selected="False" />
+            <SelectField field="AASUG_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="AASUG_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="AASUG_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="Account Name" selected="False" />
+            <SelectField field="AmbcareAcCode" selected="False" />
+            <SelectField field="ANCR_HierarchyNameLevel3" selected="False" />
+            <SelectField field="ANCR_HierarchyNameLevel4" selected="False" />
+            <SelectField field="ANCR_HierarchyNameLevel5" selected="False" />
+            <SelectField field="ANCR_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="ANCR_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="ANCR_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="ANWSR RD" selected="False" />
+            <SelectField field="ANWSR Rep" selected="False" />
+            <SelectField field="ANWSR RVP" selected="False" />
+            <SelectField field="ANWSR_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="ANWSR_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="ANWSR_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="ANWSS_HierarchyNameLevel3" selected="False" />
+            <SelectField field="ANWSS_HierarchyNameLevel4" selected="False" />
+            <SelectField field="ANWSS_HierarchyNameLevel5" selected="False" />
+            <SelectField field="ANWSS_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="ANWSS_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="ANWSS_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="BaseUomQty" selected="False" />
+            <SelectField field="BCodeBasedOnUnspscAssignment" selected="False" />
+            <SelectField field="BCodeDesc" selected="False" />
+            <SelectField field="BDPO_HierarchyNameLevel3" selected="False" />
+            <SelectField field="BDPO_HierarchyNameLevel4" selected="False" />
+            <SelectField field="BDPO_HierarchyNameLevel5" selected="False" />
+            <SelectField field="BDPO_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="BDPO_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="BDPO_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="BDPOPrime" selected="False" />
+            <SelectField field="BillingDays" selected="False" />
+            <SelectField field="Business Unit" selected="False" />
+            <SelectField field="Calendar Month" selected="False" />
+            <SelectField field="Calendar Year" selected="False" />
+            <SelectField field="Category Bucket" selected="False" />
+            <SelectField field="Cost" selected="False" />
+            <SelectField field="CustomerSizeSegment" selected="False" />
+            <SelectField field="CustomerSupplierViewDesc" selected="False" />
+            <SelectField field="Date" selected="False" />
+            <SelectField field="DateDiff" selected="False" />
+            <SelectField field="Distribution Type" selected="False" />
+            <SelectField field="EnhancedDescription" selected="False" />
+            <SelectField field="EquivalentTaxonomyDesc" selected="False" />
+            <SelectField field="EquivalentTaxonomyId" selected="False" />
+            <SelectField field="EXNA_HierarchyNameLevel3" selected="False" />
+            <SelectField field="EXNA_HierarchyNameLevel4" selected="False" />
+            <SelectField field="EXNA_HierarchyNameLevel5" selected="False" />
+            <SelectField field="EXNA_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="EXNA_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="EXNA_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="FinClassId" selected="False" />
+            <SelectField field="GMSP_HierarchyNameLevel3" selected="False" />
+            <SelectField field="GMSP_HierarchyNameLevel4" selected="False" />
+            <SelectField field="GMSP_HierarchyNameLevel5" selected="False" />
+            <SelectField field="GMSP_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="GMSP_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="GMSP_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="Gp" selected="False" />
+            <SelectField field="GPO" selected="False" />
+            <SelectField field="GPO Affiliation" selected="False" />
+            <SelectField field="GPO Contract Name" selected="False" />
+            <SelectField field="GPO Contract Number" selected="False" />
+            <SelectField field="Gpo Contract Type" selected="False" />
+            <SelectField field="HasAasugAffiliation" selected="False" />
+            <SelectField field="HasANCRAffiliation" selected="False" />
+            <SelectField field="HasLabAffiliation" selected="False" />
+            <SelectField field="HasNDCAAfilliation" selected="False" />
+            <SelectField field="HasRDCAAffiliation" selected="False" />
+            <SelectField field="HasSCSEAffiliation" selected="False" />
+            <SelectField field="HasSCSRAffiliation" selected="False" />
+            <SelectField field="I.S. Non Acute Exclusive Products RD" selected="False" />
+            <SelectField field="I.S. Non Acute Exclusive Products Rep" selected="False" />
+            <SelectField field="I.S. Non Acute Exclusive Products RVP" selected="False" />
+            <SelectField field="IDNM_HierarchyNameLevel3" selected="False" />
+            <SelectField field="IDNM_HierarchyNameLevel4" selected="False" />
+            <SelectField field="IDNM_HierarchyNameLevel5" selected="False" />
+            <SelectField field="IDNM_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="IDNM_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="IDNM_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="IndividualUom" selected="False" />
+            <SelectField field="Is360Customer" selected="False" />
+            <SelectField field="IsAscendSole" selected="False" />
+            <SelectField field="IsEXNAView" selected="False" />
+            <SelectField field="IsKit" selected="False" />
+            <SelectField field="IsMedtronic" selected="False" />
+            <SelectField field="IsMSAView" selected="False" />
+            <SelectField field="IsPerformancePlus" selected="False" />
+            <SelectField field="IsStrategicAccount" selected="False" />
+            <SelectField field="LABS_HierarchyNameLevel3" selected="False" />
+            <SelectField field="LABS_HierarchyNameLevel4" selected="False" />
+            <SelectField field="LABS_HierarchyNameLevel5" selected="False" />
+            <SelectField field="LABS_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="LABS_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="LABS_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="Left_Left_Right_IsMedtronic" selected="False" />
+            <SelectField field="Left_Left_Right_IsMedtronic2" selected="False" />
+            <SelectField field="Long Term Care RD" selected="False" />
+            <SelectField field="Long Term Care RD Node ID" selected="False" />
+            <SelectField field="Long Term Care Rep" selected="False" />
+            <SelectField field="Long Term Care Rep Node ID" selected="False" />
+            <SelectField field="Long Term Care RVP" selected="False" />
+            <SelectField field="Long Term Care RVP Node ID" selected="False" />
+            <SelectField field="MarketingViewAlternativeView" selected="False" />
+            <SelectField field="MaterialId" selected="True" />
+            <SelectField field="MSAAccountName" selected="False" />
+            <SelectField field="NAEP_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="NAEP_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="NAEP_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="NDCA_HierarchyNameLevel3" selected="False" />
+            <SelectField field="NDCA_HierarchyNameLevel4" selected="False" />
+            <SelectField field="NDCA_HierarchyNameLevel5" selected="False" />
+            <SelectField field="NDCA_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="NDCA_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="NDCA_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="ORSP_HierarchyNameLevel3" selected="False" />
+            <SelectField field="ORSP_HierarchyNameLevel4" selected="False" />
+            <SelectField field="ORSP_HierarchyNameLevel5" selected="False" />
+            <SelectField field="ORSP_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="ORSP_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="ORSP_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="PackagingString" selected="False" />
+            <SelectField field="PR Breakout-ProductConversionField" selected="False" />
+            <SelectField field="PriceUnitQuantiy" selected="False" />
+            <SelectField field="PrimeVendor" selected="False" />
+            <SelectField field="PrimeVendor_Channel10" selected="False" />
+            <SelectField field="PrimeVendor_Channel20" selected="False" />
+            <SelectField field="PrimeVendor_Channel30" selected="False" />
+            <SelectField field="Product Category Group Description" selected="False" />
+            <SelectField field="Product Category Group ID" selected="False" />
+            <SelectField field="Product Conversion Field" selected="True" />
+            <SelectField field="Product Line" selected="False" />
+            <SelectField field="ProductOrService" selected="False" />
+            <SelectField field="PurchaseTrendAccount15Month" selected="False" />
+            <SelectField field="PurchaseTrendAccount6Month" selected="False" />
+            <SelectField field="PurchaseTrendAccountCategory15Month" selected="False" />
+            <SelectField field="PurchaseTrendAccountCategory6Month" selected="False" />
+            <SelectField field="PurchaseTrendSoldTo15Month" selected="False" />
+            <SelectField field="PurchaseTrendSoldTo6Month" selected="False" />
+            <SelectField field="PurchaseTrendSoldToCategory15Month" selected="False" />
+            <SelectField field="PurchaseTrendSoldToCategory6Month" selected="False" />
+            <SelectField field="RDCA_HierarchyNameLevel3" selected="False" />
+            <SelectField field="RDCA_HierarchyNameLevel4" selected="False" />
+            <SelectField field="RDCA_HierarchyNameLevel5" selected="False" />
+            <SelectField field="RDCA_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="RDCA_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="RDCA_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="Right_BaseUomQty" selected="False" />
+            <SelectField field="Right_Cost" selected="False" />
+            <SelectField field="Right_Gp" selected="False" />
+            <SelectField field="Right_IsMedtronic" selected="False" />
+            <SelectField field="Right_MarketingViewAlternativeView" selected="False" />
+            <SelectField field="Right_MaterialId" selected="False" />
+            <SelectField field="Right_SaleItemGroupId" selected="False" />
+            <SelectField field="Right_Sales" selected="False" />
+            <SelectField field="Right_SalesHierarchyBusinessSegment" selected="False" />
+            <SelectField field="Right_SellingUomQty" selected="False" />
+            <SelectField field="Right_ShipToCustomerId" selected="False" />
+            <SelectField field="Right_WorkflowFilePath" selected="False" />
+            <SelectField field="Right_YearMonth" selected="False" />
+            <SelectField field="SaleItemGroupId" selected="False" />
+            <SelectField field="Sales" selected="False" />
+            <SelectField field="SalesHierarchyBusinessSegment" selected="False" />
+            <SelectField field="SameTaxonomyId" selected="False" />
+            <SelectField field="SAT Finance Account Name" selected="False" />
+            <SelectField field="SCSE_HierarchyNameLevel3" selected="False" />
+            <SelectField field="SCSE_HierarchyNameLevel4" selected="False" />
+            <SelectField field="SCSE_HierarchyNameLevel5" selected="False" />
+            <SelectField field="SCSE_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="SCSE_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="SCSE_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="SCSR_HierarchyNameLevel3" selected="False" />
+            <SelectField field="SCSR_HierarchyNameLevel4" selected="False" />
+            <SelectField field="SCSR_HierarchyNameLevel5" selected="False" />
+            <SelectField field="SCSR_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="SCSR_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="SCSR_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="SellingUomQty" selected="False" />
+            <SelectField field="ShipTo City" selected="False" />
+            <SelectField field="ShipTo Name" selected="False" />
+            <SelectField field="ShipTo Number" selected="False" />
+            <SelectField field="ShipTo State" selected="False" />
+            <SelectField field="ShipTo Zip" selected="False" />
+            <SelectField field="ShipToBusinessSegment" selected="False" />
+            <SelectField field="ShipToCustomerClass" selected="False" />
+            <SelectField field="ShipToServicingBusinessUnit" selected="False" />
+            <SelectField field="SIGPrime" selected="False" />
+            <SelectField field="SimilarTaxonomyId" selected="False" />
+            <SelectField field="SoldTo City" selected="False" />
+            <SelectField field="SoldTo Name" selected="False" />
+            <SelectField field="SoldTo Number" selected="False" />
+            <SelectField field="SoldTo State" selected="False" />
+            <SelectField field="SoldTo Zip" selected="False" />
+            <SelectField field="SoldToCustomerClass" selected="False" />
+            <SelectField field="SourceTypeId" selected="False" />
+            <SelectField field="SPEC_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="SPEC_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="SPEC_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="Specialty RD" selected="False" />
+            <SelectField field="Specialty Rep" selected="False" />
+            <SelectField field="Specialty RVP" selected="False" />
+            <SelectField field="SubcategoryDesc" selected="False" />
+            <SelectField field="SubcategoryId" selected="False" />
+            <SelectField field="Supplier ID" selected="False" />
+            <SelectField field="Supplier Name" selected="False" />
+            <SelectField field="TodayDate" selected="False" />
+            <SelectField field="UnspscId" selected="True" />
+            <SelectField field="WorkflowFilePath" selected="False" />
+            <SelectField field="YearMonth" selected="False" />
+            <SelectField field="YearMonthMax" selected="False" />
+            <SelectField field="YearMonthMaxFormat" selected="False" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="34">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="415" y="644" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>Product Conversion Field</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2024-08-03 17:32:50</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>CAH</Operand>
+              <StartDate>2024-08-03 17:32:50</StartDate>
+              <EndDate>2024-08-03 17:32:50</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Product Conversion Field] = "CAH"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="35">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="511" y="632" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Product Conversion Field" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="37">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="463" y="956" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="360AccountKey" selected="False" />
+            <SelectField field="360AccountSegment" selected="False" />
+            <SelectField field="360CustomerName" selected="False" />
+            <SelectField field="AACBD_HierarchyNameLevel3" selected="False" />
+            <SelectField field="AACBD_HierarchyNameLevel4" selected="False" />
+            <SelectField field="AACBD_HierarchyNameLevel5" selected="False" />
+            <SelectField field="AACBD_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="AACBD_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="AACBD_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="AACCG_HierarchyNameLevel3" selected="False" />
+            <SelectField field="AACCG_HierarchyNameLevel4" selected="False" />
+            <SelectField field="AACCG_HierarchyNameLevel5" selected="False" />
+            <SelectField field="AACCG_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="AACCG_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="AACCG_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="AACPM_HierarchyNameLevel3" selected="False" />
+            <SelectField field="AACPM_HierarchyNameLevel4" selected="False" />
+            <SelectField field="AACPM_HierarchyNameLevel5" selected="False" />
+            <SelectField field="AACPM_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="AACPM_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="AACPM_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="AASUG_HierarchyNameLevel3" selected="False" />
+            <SelectField field="AASUG_HierarchyNameLevel4" selected="False" />
+            <SelectField field="AASUG_HierarchyNameLevel5" selected="False" />
+            <SelectField field="AASUG_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="AASUG_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="AASUG_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="Account Name" selected="False" />
+            <SelectField field="AmbcareAcCode" selected="False" />
+            <SelectField field="ANCR_HierarchyNameLevel3" selected="False" />
+            <SelectField field="ANCR_HierarchyNameLevel4" selected="False" />
+            <SelectField field="ANCR_HierarchyNameLevel5" selected="False" />
+            <SelectField field="ANCR_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="ANCR_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="ANCR_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="ANWSR RD" selected="False" />
+            <SelectField field="ANWSR Rep" selected="False" />
+            <SelectField field="ANWSR RVP" selected="False" />
+            <SelectField field="ANWSR_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="ANWSR_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="ANWSR_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="ANWSS_HierarchyNameLevel3" selected="False" />
+            <SelectField field="ANWSS_HierarchyNameLevel4" selected="False" />
+            <SelectField field="ANWSS_HierarchyNameLevel5" selected="False" />
+            <SelectField field="ANWSS_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="ANWSS_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="ANWSS_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="BaseUomQty" selected="False" />
+            <SelectField field="BCodeBasedOnUnspscAssignment" selected="False" />
+            <SelectField field="BCodeDesc" selected="False" />
+            <SelectField field="BDPO_HierarchyNameLevel3" selected="False" />
+            <SelectField field="BDPO_HierarchyNameLevel4" selected="False" />
+            <SelectField field="BDPO_HierarchyNameLevel5" selected="False" />
+            <SelectField field="BDPO_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="BDPO_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="BDPO_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="BDPOPrime" selected="False" />
+            <SelectField field="BillingDays" selected="False" />
+            <SelectField field="Business Unit" selected="False" />
+            <SelectField field="Calendar Month" selected="False" />
+            <SelectField field="Calendar Year" selected="False" />
+            <SelectField field="Category Bucket" selected="False" />
+            <SelectField field="Cost" selected="False" />
+            <SelectField field="CustomerSizeSegment" selected="False" />
+            <SelectField field="CustomerSupplierViewDesc" selected="False" />
+            <SelectField field="Date" selected="False" />
+            <SelectField field="DateDiff" selected="False" />
+            <SelectField field="Distribution Type" selected="False" />
+            <SelectField field="EnhancedDescription" selected="False" />
+            <SelectField field="EquivalentTaxonomyDesc" selected="False" />
+            <SelectField field="EquivalentTaxonomyId" selected="False" />
+            <SelectField field="EXNA_HierarchyNameLevel3" selected="False" />
+            <SelectField field="EXNA_HierarchyNameLevel4" selected="False" />
+            <SelectField field="EXNA_HierarchyNameLevel5" selected="False" />
+            <SelectField field="EXNA_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="EXNA_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="EXNA_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="FinClassId" selected="False" />
+            <SelectField field="GMSP_HierarchyNameLevel3" selected="False" />
+            <SelectField field="GMSP_HierarchyNameLevel4" selected="False" />
+            <SelectField field="GMSP_HierarchyNameLevel5" selected="False" />
+            <SelectField field="GMSP_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="GMSP_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="GMSP_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="Gp" selected="False" />
+            <SelectField field="GPO" selected="False" />
+            <SelectField field="GPO Affiliation" selected="False" />
+            <SelectField field="GPO Contract Name" selected="False" />
+            <SelectField field="GPO Contract Number" selected="False" />
+            <SelectField field="Gpo Contract Type" selected="False" />
+            <SelectField field="HasAasugAffiliation" selected="False" />
+            <SelectField field="HasANCRAffiliation" selected="False" />
+            <SelectField field="HasLabAffiliation" selected="False" />
+            <SelectField field="HasNDCAAfilliation" selected="False" />
+            <SelectField field="HasRDCAAffiliation" selected="False" />
+            <SelectField field="HasSCSEAffiliation" selected="False" />
+            <SelectField field="HasSCSRAffiliation" selected="False" />
+            <SelectField field="I.S. Non Acute Exclusive Products RD" selected="False" />
+            <SelectField field="I.S. Non Acute Exclusive Products Rep" selected="False" />
+            <SelectField field="I.S. Non Acute Exclusive Products RVP" selected="False" />
+            <SelectField field="IDNM_HierarchyNameLevel3" selected="False" />
+            <SelectField field="IDNM_HierarchyNameLevel4" selected="False" />
+            <SelectField field="IDNM_HierarchyNameLevel5" selected="False" />
+            <SelectField field="IDNM_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="IDNM_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="IDNM_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="IndividualUom" selected="False" />
+            <SelectField field="Is360Customer" selected="False" />
+            <SelectField field="IsAscendSole" selected="False" />
+            <SelectField field="IsEXNAView" selected="False" />
+            <SelectField field="IsKit" selected="False" />
+            <SelectField field="IsMedtronic" selected="False" />
+            <SelectField field="IsMSAView" selected="False" />
+            <SelectField field="IsPerformancePlus" selected="False" />
+            <SelectField field="IsStrategicAccount" selected="False" />
+            <SelectField field="LABS_HierarchyNameLevel3" selected="False" />
+            <SelectField field="LABS_HierarchyNameLevel4" selected="False" />
+            <SelectField field="LABS_HierarchyNameLevel5" selected="False" />
+            <SelectField field="LABS_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="LABS_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="LABS_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="Left_Left_Right_IsMedtronic" selected="False" />
+            <SelectField field="Left_Left_Right_IsMedtronic2" selected="False" />
+            <SelectField field="Long Term Care RD" selected="False" />
+            <SelectField field="Long Term Care RD Node ID" selected="False" />
+            <SelectField field="Long Term Care Rep" selected="False" />
+            <SelectField field="Long Term Care Rep Node ID" selected="False" />
+            <SelectField field="Long Term Care RVP" selected="False" />
+            <SelectField field="Long Term Care RVP Node ID" selected="False" />
+            <SelectField field="MarketingViewAlternativeView" selected="False" />
+            <SelectField field="MaterialId" selected="True" />
+            <SelectField field="MSAAccountName" selected="False" />
+            <SelectField field="NAEP_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="NAEP_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="NAEP_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="NDCA_HierarchyNameLevel3" selected="False" />
+            <SelectField field="NDCA_HierarchyNameLevel4" selected="False" />
+            <SelectField field="NDCA_HierarchyNameLevel5" selected="False" />
+            <SelectField field="NDCA_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="NDCA_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="NDCA_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="ORSP_HierarchyNameLevel3" selected="False" />
+            <SelectField field="ORSP_HierarchyNameLevel4" selected="False" />
+            <SelectField field="ORSP_HierarchyNameLevel5" selected="False" />
+            <SelectField field="ORSP_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="ORSP_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="ORSP_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="PackagingString" selected="False" />
+            <SelectField field="PR Breakout-ProductConversionField" selected="False" />
+            <SelectField field="PriceUnitQuantiy" selected="False" />
+            <SelectField field="PrimeVendor" selected="False" />
+            <SelectField field="PrimeVendor_Channel10" selected="False" />
+            <SelectField field="PrimeVendor_Channel20" selected="False" />
+            <SelectField field="PrimeVendor_Channel30" selected="False" />
+            <SelectField field="Product Category Group Description" selected="False" />
+            <SelectField field="Product Category Group ID" selected="False" />
+            <SelectField field="Product Conversion Field" selected="False" />
+            <SelectField field="Product Line" selected="False" />
+            <SelectField field="ProductOrService" selected="False" />
+            <SelectField field="PurchaseTrendAccount15Month" selected="False" />
+            <SelectField field="PurchaseTrendAccount6Month" selected="False" />
+            <SelectField field="PurchaseTrendAccountCategory15Month" selected="False" />
+            <SelectField field="PurchaseTrendAccountCategory6Month" selected="False" />
+            <SelectField field="PurchaseTrendSoldTo15Month" selected="False" />
+            <SelectField field="PurchaseTrendSoldTo6Month" selected="False" />
+            <SelectField field="PurchaseTrendSoldToCategory15Month" selected="False" />
+            <SelectField field="PurchaseTrendSoldToCategory6Month" selected="False" />
+            <SelectField field="RDCA_HierarchyNameLevel3" selected="False" />
+            <SelectField field="RDCA_HierarchyNameLevel4" selected="False" />
+            <SelectField field="RDCA_HierarchyNameLevel5" selected="False" />
+            <SelectField field="RDCA_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="RDCA_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="RDCA_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="Right_BaseUomQty" selected="False" />
+            <SelectField field="Right_Cost" selected="False" />
+            <SelectField field="Right_Gp" selected="False" />
+            <SelectField field="Right_IsMedtronic" selected="False" />
+            <SelectField field="Right_MarketingViewAlternativeView" selected="False" />
+            <SelectField field="Right_MaterialId" selected="False" />
+            <SelectField field="Right_SaleItemGroupId" selected="False" />
+            <SelectField field="Right_Sales" selected="False" />
+            <SelectField field="Right_SalesHierarchyBusinessSegment" selected="False" />
+            <SelectField field="Right_SellingUomQty" selected="False" />
+            <SelectField field="Right_ShipToCustomerId" selected="False" />
+            <SelectField field="Right_WorkflowFilePath" selected="False" />
+            <SelectField field="Right_YearMonth" selected="False" />
+            <SelectField field="SaleItemGroupId" selected="False" />
+            <SelectField field="Sales" selected="True" />
+            <SelectField field="SalesHierarchyBusinessSegment" selected="False" />
+            <SelectField field="SameTaxonomyId" selected="False" />
+            <SelectField field="SAT Finance Account Name" selected="False" />
+            <SelectField field="SCSE_HierarchyNameLevel3" selected="False" />
+            <SelectField field="SCSE_HierarchyNameLevel4" selected="False" />
+            <SelectField field="SCSE_HierarchyNameLevel5" selected="False" />
+            <SelectField field="SCSE_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="SCSE_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="SCSE_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="SCSR_HierarchyNameLevel3" selected="False" />
+            <SelectField field="SCSR_HierarchyNameLevel4" selected="False" />
+            <SelectField field="SCSR_HierarchyNameLevel5" selected="False" />
+            <SelectField field="SCSR_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="SCSR_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="SCSR_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="SellingUomQty" selected="False" />
+            <SelectField field="ShipTo City" selected="False" />
+            <SelectField field="ShipTo Name" selected="False" />
+            <SelectField field="ShipTo Number" selected="False" />
+            <SelectField field="ShipTo State" selected="False" />
+            <SelectField field="ShipTo Zip" selected="False" />
+            <SelectField field="ShipToBusinessSegment" selected="False" />
+            <SelectField field="ShipToCustomerClass" selected="False" />
+            <SelectField field="ShipToServicingBusinessUnit" selected="False" />
+            <SelectField field="SIGPrime" selected="False" />
+            <SelectField field="SimilarTaxonomyId" selected="False" />
+            <SelectField field="SoldTo City" selected="False" />
+            <SelectField field="SoldTo Name" selected="False" />
+            <SelectField field="SoldTo Number" selected="False" />
+            <SelectField field="SoldTo State" selected="False" />
+            <SelectField field="SoldTo Zip" selected="False" />
+            <SelectField field="SoldToCustomerClass" selected="False" />
+            <SelectField field="SourceTypeId" selected="False" />
+            <SelectField field="SPEC_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="SPEC_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="SPEC_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="Specialty RD" selected="False" />
+            <SelectField field="Specialty Rep" selected="False" />
+            <SelectField field="Specialty RVP" selected="False" />
+            <SelectField field="SubcategoryDesc" selected="False" />
+            <SelectField field="SubcategoryId" selected="False" />
+            <SelectField field="Supplier ID" selected="False" />
+            <SelectField field="Supplier Name" selected="False" />
+            <SelectField field="TodayDate" selected="False" />
+            <SelectField field="UnspscId" selected="False" />
+            <SelectField field="WorkflowFilePath" selected="False" />
+            <SelectField field="YearMonth" selected="True" />
+            <SelectField field="YearMonthMax" selected="False" />
+            <SelectField field="YearMonthMaxFormat" selected="False" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="38">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="643" y="956" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>&gt;</Operator>
+            <Field>Sales</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2024-08-03 17:37:01</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>0.0</Operand>
+              <StartDate>2024-08-03 17:37:01</StartDate>
+              <EndDate>2024-08-03 17:37:01</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Sales] &gt; 0.0</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="39">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DateTime.DateTime">
+        <Position x="547" y="956" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <IsFrom value="False" />
+          <InputFieldName>YearMonth</InputFieldName>
+          <Language>English</Language>
+          <Format>yyyy-MM</Format>
+          <OutputFieldName>DateTime_Out</OutputFieldName>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Convert YearMonth From:
+Custom</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDateTime" />
+    </Node>
+    <Node ToolID="40">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="751" y="944" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>&gt;</Operator>
+            <Field>DateTime_Out</Field>
+            <Operands>
+              <PeriodDate>2024-08-03 17:38:32</PeriodDate>
+              <PeriodType>days</PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <StartDate>2024-08-03 17:38:32</StartDate>
+              <EndDate>2024-08-03 17:38:32</EndDate>
+              <Operand>2023-06-30</Operand>
+              <DateType>fixed</DateType>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[DateTime_Out] &gt; "2023-06-30"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="41">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="859" y="932" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Sales" selected="False" />
+            <SelectField field="YearMonth" selected="False" />
+            <SelectField field="DateTime_Out" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="42">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="967" y="932" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="MaterialId" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="44">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="115" y="1328" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="360AccountKey" selected="False" />
+            <SelectField field="360AccountSegment" selected="False" />
+            <SelectField field="360CustomerName" selected="False" />
+            <SelectField field="AACBD_HierarchyNameLevel3" selected="False" />
+            <SelectField field="AACBD_HierarchyNameLevel4" selected="False" />
+            <SelectField field="AACBD_HierarchyNameLevel5" selected="False" />
+            <SelectField field="AACBD_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="AACBD_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="AACBD_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="AACCG_HierarchyNameLevel3" selected="False" />
+            <SelectField field="AACCG_HierarchyNameLevel4" selected="False" />
+            <SelectField field="AACCG_HierarchyNameLevel5" selected="False" />
+            <SelectField field="AACCG_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="AACCG_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="AACCG_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="AACPM_HierarchyNameLevel3" selected="False" />
+            <SelectField field="AACPM_HierarchyNameLevel4" selected="False" />
+            <SelectField field="AACPM_HierarchyNameLevel5" selected="False" />
+            <SelectField field="AACPM_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="AACPM_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="AACPM_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="AASUG_HierarchyNameLevel3" selected="False" />
+            <SelectField field="AASUG_HierarchyNameLevel4" selected="False" />
+            <SelectField field="AASUG_HierarchyNameLevel5" selected="False" />
+            <SelectField field="AASUG_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="AASUG_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="AASUG_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="Account Name" selected="False" />
+            <SelectField field="AmbcareAcCode" selected="False" />
+            <SelectField field="ANCR_HierarchyNameLevel3" selected="False" />
+            <SelectField field="ANCR_HierarchyNameLevel4" selected="False" />
+            <SelectField field="ANCR_HierarchyNameLevel5" selected="False" />
+            <SelectField field="ANCR_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="ANCR_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="ANCR_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="ANWSR RD" selected="False" />
+            <SelectField field="ANWSR Rep" selected="False" />
+            <SelectField field="ANWSR RVP" selected="False" />
+            <SelectField field="ANWSR_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="ANWSR_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="ANWSR_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="ANWSS_HierarchyNameLevel3" selected="False" />
+            <SelectField field="ANWSS_HierarchyNameLevel4" selected="False" />
+            <SelectField field="ANWSS_HierarchyNameLevel5" selected="False" />
+            <SelectField field="ANWSS_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="ANWSS_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="ANWSS_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="BaseUomQty" selected="False" />
+            <SelectField field="BCodeBasedOnUnspscAssignment" selected="False" />
+            <SelectField field="BCodeDesc" selected="False" />
+            <SelectField field="BDPO_HierarchyNameLevel3" selected="False" />
+            <SelectField field="BDPO_HierarchyNameLevel4" selected="False" />
+            <SelectField field="BDPO_HierarchyNameLevel5" selected="False" />
+            <SelectField field="BDPO_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="BDPO_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="BDPO_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="BDPOPrime" selected="False" />
+            <SelectField field="BillingDays" selected="False" />
+            <SelectField field="Business Unit" selected="False" />
+            <SelectField field="Calendar Month" selected="False" />
+            <SelectField field="Calendar Year" selected="False" />
+            <SelectField field="Category Bucket" selected="False" />
+            <SelectField field="Cost" selected="False" />
+            <SelectField field="CustomerSizeSegment" selected="False" />
+            <SelectField field="CustomerSupplierViewDesc" selected="False" />
+            <SelectField field="Date" selected="False" />
+            <SelectField field="DateDiff" selected="False" />
+            <SelectField field="Distribution Type" selected="False" />
+            <SelectField field="EnhancedDescription" selected="False" />
+            <SelectField field="EquivalentTaxonomyDesc" selected="False" />
+            <SelectField field="EquivalentTaxonomyId" selected="False" />
+            <SelectField field="EXNA_HierarchyNameLevel3" selected="False" />
+            <SelectField field="EXNA_HierarchyNameLevel4" selected="False" />
+            <SelectField field="EXNA_HierarchyNameLevel5" selected="False" />
+            <SelectField field="EXNA_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="EXNA_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="EXNA_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="FinClassId" selected="False" />
+            <SelectField field="GMSP_HierarchyNameLevel3" selected="False" />
+            <SelectField field="GMSP_HierarchyNameLevel4" selected="False" />
+            <SelectField field="GMSP_HierarchyNameLevel5" selected="False" />
+            <SelectField field="GMSP_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="GMSP_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="GMSP_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="Gp" selected="False" />
+            <SelectField field="GPO" selected="False" />
+            <SelectField field="GPO Affiliation" selected="False" />
+            <SelectField field="GPO Contract Name" selected="False" />
+            <SelectField field="GPO Contract Number" selected="False" />
+            <SelectField field="Gpo Contract Type" selected="False" />
+            <SelectField field="HasAasugAffiliation" selected="False" />
+            <SelectField field="HasANCRAffiliation" selected="False" />
+            <SelectField field="HasLabAffiliation" selected="False" />
+            <SelectField field="HasNDCAAfilliation" selected="False" />
+            <SelectField field="HasRDCAAffiliation" selected="False" />
+            <SelectField field="HasSCSEAffiliation" selected="False" />
+            <SelectField field="HasSCSRAffiliation" selected="False" />
+            <SelectField field="I.S. Non Acute Exclusive Products RD" selected="False" />
+            <SelectField field="I.S. Non Acute Exclusive Products Rep" selected="False" />
+            <SelectField field="I.S. Non Acute Exclusive Products RVP" selected="False" />
+            <SelectField field="IDNM_HierarchyNameLevel3" selected="False" />
+            <SelectField field="IDNM_HierarchyNameLevel4" selected="False" />
+            <SelectField field="IDNM_HierarchyNameLevel5" selected="False" />
+            <SelectField field="IDNM_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="IDNM_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="IDNM_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="IndividualUom" selected="False" />
+            <SelectField field="Is360Customer" selected="False" />
+            <SelectField field="IsAscendSole" selected="False" />
+            <SelectField field="IsEXNAView" selected="False" />
+            <SelectField field="IsKit" selected="False" />
+            <SelectField field="IsMedtronic" selected="False" />
+            <SelectField field="IsMSAView" selected="False" />
+            <SelectField field="IsPerformancePlus" selected="False" />
+            <SelectField field="IsStrategicAccount" selected="False" />
+            <SelectField field="LABS_HierarchyNameLevel3" selected="False" />
+            <SelectField field="LABS_HierarchyNameLevel4" selected="False" />
+            <SelectField field="LABS_HierarchyNameLevel5" selected="False" />
+            <SelectField field="LABS_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="LABS_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="LABS_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="Left_Left_Right_IsMedtronic" selected="False" />
+            <SelectField field="Left_Left_Right_IsMedtronic2" selected="False" />
+            <SelectField field="Long Term Care RD" selected="False" />
+            <SelectField field="Long Term Care RD Node ID" selected="False" />
+            <SelectField field="Long Term Care Rep" selected="False" />
+            <SelectField field="Long Term Care Rep Node ID" selected="False" />
+            <SelectField field="Long Term Care RVP" selected="False" />
+            <SelectField field="Long Term Care RVP Node ID" selected="False" />
+            <SelectField field="MarketingViewAlternativeView" selected="False" />
+            <SelectField field="MaterialId" selected="True" />
+            <SelectField field="MSAAccountName" selected="False" />
+            <SelectField field="NAEP_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="NAEP_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="NAEP_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="NDCA_HierarchyNameLevel3" selected="False" />
+            <SelectField field="NDCA_HierarchyNameLevel4" selected="False" />
+            <SelectField field="NDCA_HierarchyNameLevel5" selected="False" />
+            <SelectField field="NDCA_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="NDCA_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="NDCA_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="ORSP_HierarchyNameLevel3" selected="False" />
+            <SelectField field="ORSP_HierarchyNameLevel4" selected="False" />
+            <SelectField field="ORSP_HierarchyNameLevel5" selected="False" />
+            <SelectField field="ORSP_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="ORSP_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="ORSP_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="PackagingString" selected="False" />
+            <SelectField field="PR Breakout-ProductConversionField" selected="False" />
+            <SelectField field="PriceUnitQuantiy" selected="False" />
+            <SelectField field="PrimeVendor" selected="False" />
+            <SelectField field="PrimeVendor_Channel10" selected="False" />
+            <SelectField field="PrimeVendor_Channel20" selected="False" />
+            <SelectField field="PrimeVendor_Channel30" selected="False" />
+            <SelectField field="Product Category Group Description" selected="False" />
+            <SelectField field="Product Category Group ID" selected="False" />
+            <SelectField field="Product Conversion Field" selected="False" />
+            <SelectField field="Product Line" selected="False" />
+            <SelectField field="ProductOrService" selected="False" />
+            <SelectField field="PurchaseTrendAccount15Month" selected="False" />
+            <SelectField field="PurchaseTrendAccount6Month" selected="False" />
+            <SelectField field="PurchaseTrendAccountCategory15Month" selected="False" />
+            <SelectField field="PurchaseTrendAccountCategory6Month" selected="False" />
+            <SelectField field="PurchaseTrendSoldTo15Month" selected="False" />
+            <SelectField field="PurchaseTrendSoldTo6Month" selected="False" />
+            <SelectField field="PurchaseTrendSoldToCategory15Month" selected="False" />
+            <SelectField field="PurchaseTrendSoldToCategory6Month" selected="False" />
+            <SelectField field="RDCA_HierarchyNameLevel3" selected="False" />
+            <SelectField field="RDCA_HierarchyNameLevel4" selected="False" />
+            <SelectField field="RDCA_HierarchyNameLevel5" selected="False" />
+            <SelectField field="RDCA_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="RDCA_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="RDCA_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="Right_BaseUomQty" selected="False" />
+            <SelectField field="Right_Cost" selected="False" />
+            <SelectField field="Right_Gp" selected="False" />
+            <SelectField field="Right_IsMedtronic" selected="False" />
+            <SelectField field="Right_MarketingViewAlternativeView" selected="False" />
+            <SelectField field="Right_MaterialId" selected="False" />
+            <SelectField field="Right_SaleItemGroupId" selected="False" />
+            <SelectField field="Right_Sales" selected="False" />
+            <SelectField field="Right_SalesHierarchyBusinessSegment" selected="False" />
+            <SelectField field="Right_SellingUomQty" selected="False" />
+            <SelectField field="Right_ShipToCustomerId" selected="False" />
+            <SelectField field="Right_WorkflowFilePath" selected="False" />
+            <SelectField field="Right_YearMonth" selected="False" />
+            <SelectField field="SaleItemGroupId" selected="False" />
+            <SelectField field="Sales" selected="False" />
+            <SelectField field="SalesHierarchyBusinessSegment" selected="False" />
+            <SelectField field="SameTaxonomyId" selected="False" />
+            <SelectField field="SAT Finance Account Name" selected="False" />
+            <SelectField field="SCSE_HierarchyNameLevel3" selected="False" />
+            <SelectField field="SCSE_HierarchyNameLevel4" selected="False" />
+            <SelectField field="SCSE_HierarchyNameLevel5" selected="False" />
+            <SelectField field="SCSE_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="SCSE_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="SCSE_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="SCSR_HierarchyNameLevel3" selected="False" />
+            <SelectField field="SCSR_HierarchyNameLevel4" selected="False" />
+            <SelectField field="SCSR_HierarchyNameLevel5" selected="False" />
+            <SelectField field="SCSR_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="SCSR_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="SCSR_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="SellingUomQty" selected="False" />
+            <SelectField field="ShipTo City" selected="False" />
+            <SelectField field="ShipTo Name" selected="False" />
+            <SelectField field="ShipTo Number" selected="False" />
+            <SelectField field="ShipTo State" selected="False" />
+            <SelectField field="ShipTo Zip" selected="False" />
+            <SelectField field="ShipToBusinessSegment" selected="False" />
+            <SelectField field="ShipToCustomerClass" selected="False" />
+            <SelectField field="ShipToServicingBusinessUnit" selected="False" />
+            <SelectField field="SIGPrime" selected="False" />
+            <SelectField field="SimilarTaxonomyId" selected="False" />
+            <SelectField field="SoldTo City" selected="False" />
+            <SelectField field="SoldTo Name" selected="False" />
+            <SelectField field="SoldTo Number" selected="False" />
+            <SelectField field="SoldTo State" selected="False" />
+            <SelectField field="SoldTo Zip" selected="False" />
+            <SelectField field="SoldToCustomerClass" selected="False" />
+            <SelectField field="SourceTypeId" selected="False" />
+            <SelectField field="SPEC_HierarchyNodeIdLevel3" selected="False" />
+            <SelectField field="SPEC_HierarchyNodeIdLevel4" selected="False" />
+            <SelectField field="SPEC_HierarchyNodeIdLevel5" selected="False" />
+            <SelectField field="Specialty RD" selected="False" />
+            <SelectField field="Specialty Rep" selected="False" />
+            <SelectField field="Specialty RVP" selected="False" />
+            <SelectField field="SubcategoryDesc" selected="False" />
+            <SelectField field="SubcategoryId" selected="False" />
+            <SelectField field="Supplier ID" selected="False" />
+            <SelectField field="Supplier Name" selected="False" />
+            <SelectField field="TodayDate" selected="False" />
+            <SelectField field="UnspscId" selected="True" />
+            <SelectField field="WorkflowFilePath" selected="False" />
+            <SelectField field="YearMonth" selected="False" />
+            <SelectField field="YearMonthMax" selected="False" />
+            <SelectField field="YearMonthMaxFormat" selected="False" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="45">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="211" y="1328" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="MaterialId" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="47">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="319" y="644" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="MaterialId" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="36">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="78" y="404" width="241" height="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 36</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="16">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="103" y="453" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File RecordLimit="" FileFormat="23">odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.MaterialMaster.MaterialId,
+	AnalyticsGateway.dbo.MaterialMaster.UnspscId,
+	AnalyticsGateway.dbo.MaterialMaster.SourceTypeId as SourceTypeId
+from AnalyticsGateway.dbo.MaterialMaster
+	where SourceTypeId = 'PBP' or SourceTypeID = 'SMP'</File>
+              <FormatSpecificOptions>
+                <PreSQL />
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <NoProgress>True</NoProgress>
+                <CacheData>False</CacheData>
+                <TableStyle>Quoted</TableStyle>
+                <ReadUncommitted>False</ReadUncommitted>
+                <PostSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>DSN=Prod - MasterProduction
+Query=select AnalyticsGateway.dbo....</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="MaterialId" size="20" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.MaterialMaster.MaterialId,&#xA;	AnalyticsGateway.dbo.MaterialMaster.UnspscId,&#xA;	AnalyticsGateway.dbo.MaterialMaster.SourceTypeId as SourceTypeId&#xA;from AnalyticsGateway.dbo.MaterialMaster&#xA;	where SourceTypeId = 'PBP' or SourceTypeID = 'SMP'" type="V_WString" />
+                <Field name="UnspscId" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.MaterialMaster.MaterialId,&#xA;	AnalyticsGateway.dbo.MaterialMaster.UnspscId,&#xA;	AnalyticsGateway.dbo.MaterialMaster.SourceTypeId as SourceTypeId&#xA;from AnalyticsGateway.dbo.MaterialMaster&#xA;	where SourceTypeId = 'PBP' or SourceTypeID = 'SMP'" type="V_String" />
+                <Field name="SourceTypeId" size="50" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.MaterialMaster.MaterialId,&#xA;	AnalyticsGateway.dbo.MaterialMaster.UnspscId,&#xA;	AnalyticsGateway.dbo.MaterialMaster.SourceTypeId as SourceTypeId&#xA;from AnalyticsGateway.dbo.MaterialMaster&#xA;	where SourceTypeId = 'PBP' or SourceTypeID = 'SMP'" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="17">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="235" y="453" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="SourceTypeId" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="43">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="66" y="740" width="349" height="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 43</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="18">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="91" y="789" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File RecordLimit="" FileFormat="23">odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.VerticalSalesTransactionSalesData.MaterialId,
+	AnalyticsGateway.dbo.VerticalSalesTransactionSalesData.YearMonth,
+	AnalyticsGateway.dbo.VerticalSalesTransactionSalesData.Sales 
+from AnalyticsGateway.dbo.VerticalSalesTransactionSalesData 
+where AnalyticsGateway.dbo.VerticalSalesTransactionSalesData.Sales &gt; 0.00 and YearMonth &gt; '202206'</File>
+              <FormatSpecificOptions>
+                <PreSQL />
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <NoProgress>True</NoProgress>
+                <CacheData>False</CacheData>
+                <TableStyle>Quoted</TableStyle>
+                <ReadUncommitted>False</ReadUncommitted>
+                <PostSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>DSN=Prod - MasterProduction
+Query=select AnalyticsGateway.dbo....</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="MaterialId" size="20" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.VerticalSalesTransactionSalesData.MaterialId,&#xA;	AnalyticsGateway.dbo.VerticalSalesTransactionSalesData.YearMonth,&#xA;	AnalyticsGateway.dbo.VerticalSalesTransactionSalesData.Sales &#xA;from AnalyticsGateway.dbo.VerticalSalesTransactionSalesData &#xA;where AnalyticsGateway.dbo.VerticalSalesTransactionSalesData.Sales &gt; 0.00 and YearMonth &gt; '202206'" type="V_String" />
+                <Field name="YearMonth" size="6" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.VerticalSalesTransactionSalesData.MaterialId,&#xA;	AnalyticsGateway.dbo.VerticalSalesTransactionSalesData.YearMonth,&#xA;	AnalyticsGateway.dbo.VerticalSalesTransactionSalesData.Sales &#xA;from AnalyticsGateway.dbo.VerticalSalesTransactionSalesData &#xA;where AnalyticsGateway.dbo.VerticalSalesTransactionSalesData.Sales &gt; 0.00 and YearMonth &gt; '202206'" type="V_String" />
+                <Field name="Sales" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.VerticalSalesTransactionSalesData.MaterialId,&#xA;	AnalyticsGateway.dbo.VerticalSalesTransactionSalesData.YearMonth,&#xA;	AnalyticsGateway.dbo.VerticalSalesTransactionSalesData.Sales &#xA;from AnalyticsGateway.dbo.VerticalSalesTransactionSalesData &#xA;where AnalyticsGateway.dbo.VerticalSalesTransactionSalesData.Sales &gt; 0.00 and YearMonth &gt; '202206'" type="Double" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="19">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="223" y="789" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="YearMonth" selected="False" />
+                <SelectField field="Sales" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="20">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+            <Position x="331" y="789" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <UniqueFields>
+                <Field field="MaterialId" />
+              </UniqueFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="46">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="102" y="1087" width="157" height="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 46</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="27">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="127" y="1136" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File RecordLimit="" FileFormat="23">odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.MaterialMaster.MaterialId,
+	AnalyticsGateway.dbo.MaterialMaster.UnspscId
+from AnalyticsGateway.dbo.MaterialMaster</File>
+              <FormatSpecificOptions>
+                <PreSQL />
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <NoProgress>True</NoProgress>
+                <CacheData>False</CacheData>
+                <TableStyle>Quoted</TableStyle>
+                <ReadUncommitted>False</ReadUncommitted>
+                <PostSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>DSN=Prod - MasterProduction
+Query=select AnalyticsGateway.dbo....</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="MaterialId" size="20" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.MaterialMaster.MaterialId,&#xA;	AnalyticsGateway.dbo.MaterialMaster.UnspscId&#xA;from AnalyticsGateway.dbo.MaterialMaster" type="V_WString" />
+                <Field name="UnspscId" size="10" source="File: odbc:DSN=Prod - MasterProduction|||select AnalyticsGateway.dbo.MaterialMaster.MaterialId,&#xA;	AnalyticsGateway.dbo.MaterialMaster.UnspscId&#xA;from AnalyticsGateway.dbo.MaterialMaster" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="48">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="54" y="54" width="1273" height="422" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 48</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="1">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="79" y="201" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">\\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Strategic Analytics\Data\DRG\sales_distributed_transaction.yxdb</File>
+              <FormatSpecificOptions />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>sales_distributed_transaction.yxdb</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="PROD_REC_ID" source="Summarize: GroupBy - PROD_REC_ID" type="Int64" />
+                <Field name="TRAILING_TWELVE" source="Formula: if [RecordID] &lt;= 12 then 1&#xA;elseif [RecordID] &lt;= 24 then 2&#xA;elseif [RecordID] &lt;= 36 then 3&#xA;elseif [RecordID] &lt;= 48 then 4&#xA;elseif [RecordID] &lt;= 60 then 5&#xA;elseif [RecordID] &lt;= 72 then 6&#xA;else 7 endif&#xA;" type="Int16" />
+                <Field name="YEAR_TO_DATE" source="Formula: if [RecordID] &lt;= 12 then 1&#xA;elseif [RecordID] &lt;= 24 then 2&#xA;elseif [RecordID] &lt;= 36 then 3&#xA;elseif [RecordID] &lt;= 48 then 4&#xA;elseif [RecordID] &lt;= 60 then 5&#xA;elseif [RecordID] &lt;= 72 then 6&#xA;else 7 endif&#xA;" type="Int16" />
+                <Field name="CURRENT_QTR" source="Formula: ([Max_YEAR]-[YEAR])+1" type="Int16" />
+                <Field name="YEAR" source="Summarize: GroupBy - YEAR" type="Int32" />
+                <Field name="QUARTER" source="Summarize: GroupBy - QUARTER" type="Int16" />
+                <Field name="MONTH" source="Summarize: GroupBy - MONTH" type="Int16" />
+                <Field name="DATE" source="Formula: todate(tostring([YEAR])+'-'+right('0'+tostring([MONTH]),2)+'-'+'01')" type="Date" />
+                <Field name="YEAR_QTR" size="64" source="Formula: ToString([YEAR])+'-'+tostring([QUARTER])" type="String" />
+                <Field name="COT_ID" source="Summarize: GroupBy - COT_ID" type="Int16" />
+                <Field name="COT_GROUP" size="22" source="Summarize: GroupBy - COT_GROUP" type="V_String" />
+                <Field name="STATE" size="2" source="Summarize: GroupBy - STATE" type="V_String" />
+                <Field name="ZIP" source="Summarize: GroupBy - ZIP" type="Int16" />
+                <Field name="HAS_CUSTOMER_VIOLATION" source="Formula: if IsNull([DIST_TOT_UNITS]) then 1 elseif [DIST_TOT_UNITS] = 0 then 1 else 0 endif" type="Bool" />
+                <Field name="DIST_ITEM_KEY" size="17" source="Summarize: GroupBy - DIST_ITEM_KEY" type="V_String" />
+                <Field name="DIST_REVENUE" scale="2" size="25" source="Summarize: Sum - DIST_REVENUE" type="FixedDecimal" />
+                <Field name="DIST_UNITS" source="Summarize: Sum - DIST_UNITS" type="Int64" />
+                <Field name="DIST_TOT_REVENUE" scale="2" size="25" source="Summarize: Sum - DIST_TOT_REVENUE" type="FixedDecimal" />
+                <Field name="DIST_TOT_UNITS" source="Summarize: Sum - DIST_TOT_UNITS" type="Int64" />
+                <Field name="Consec_QTR" source="RecordID: Starting Value=1" type="Int32" />
+                <Field name="Consec_Month" source="RecordID: Starting Value=1" type="Int32" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="2">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="199" y="201" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="TRAILING_TWELVE" selected="False" />
+                <SelectField field="YEAR_TO_DATE" selected="False" />
+                <SelectField field="CURRENT_QTR" selected="False" />
+                <SelectField field="MONTH" selected="False" />
+                <SelectField field="DATE" selected="False" />
+                <SelectField field="YEAR_QTR" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="3">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="1243" y="201" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="YEAR" action="GroupBy" rename="YEAR" />
+                <SummarizeField field="QUARTER" action="GroupBy" rename="QUARTER" />
+                <SummarizeField field="ZIP" action="GroupBy" rename="ZIP" />
+                <SummarizeField field="COT_GROUP" action="GroupBy" rename="COT_GROUP" />
+                <SummarizeField field="DIST_ITEM_KEY" action="GroupBy" rename="DIST_ITEM_KEY" />
+                <SummarizeField field="DIST_REVENUE" action="Sum" rename="Sum_DIST_REVENUE" />
+                <SummarizeField field="DIST_TOT_REVENUE" action="Sum" rename="Sum_DIST_TOT_REVENUE" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="4">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="1087" y="201" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>[COT_GROUP] = "HOSPITAL/HEALTH SYSTEM"
+
+AND
+
+!isnull([DIST_ITEM_KEY])</Expression>
+              <Mode>Custom</Mode>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[COT_GROUP] = "HOSPITAL/HEALTH SYSTEM"
+
+AND
+
+!isnull([DIST_ITEM_KEY])</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="8">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="354" y="345" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="YEAR" action="GroupBy" rename="YEAR" />
+                <SummarizeField field="QUARTER" action="GroupBy" rename="QUARTER" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="9">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="259" y="333" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="YEAR" selected="True" type="V_WString" size="11" />
+                <SelectField field="QUARTER" selected="True" type="V_WString" size="5" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="10">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="475" y="345" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="[YEAR]+&quot;_0&quot;+[QUARTER]" field="year_quarter" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[year_quarter = [YEAR]+"_0"+[QUARTER]
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="11">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+            <Position x="583" y="345" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SortInfo locale="1033">
+                <Field field="year_quarter" order="Descending" />
+              </SortInfo>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>year_quarter - Descending</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+        </Node>
+        <Node ToolID="12">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+            <Position x="691" y="357" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FieldName>RecordID</FieldName>
+              <StartValue>1</StartValue>
+              <FieldType>Int32</FieldType>
+              <FieldSize>6</FieldSize>
+              <Position>0</Position>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+        </Node>
+        <Node ToolID="13">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="799" y="357" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>&lt;=</Operator>
+                <Field>RecordID</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2023-07-20 10:14:55</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>4</Operand>
+                  <StartDate>2023-07-20 10:14:55</StartDate>
+                  <EndDate>2023-07-20 10:14:55</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[RecordID] &lt;= 4</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="14">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="907" y="345" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="RecordID" selected="False" />
+                <SelectField field="YEAR" selected="True" type="Int32" size="4" />
+                <SelectField field="QUARTER" selected="True" type="Int16" size="2" />
+                <SelectField field="year_quarter" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="15">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="979" y="201" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="YEAR" />
+                <Field field="QUARTER" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="YEAR" />
+                <Field field="QUARTER" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Right_YEAR" selected="True" rename="Right_YEAR" input="Right_" />
+                    <SelectField field="Right_QUARTER" selected="True" rename="Right_QUARTER" input="Right_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="30">
+          <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+            <Position x="378" y="103" width="349" height="165" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Caption>Container 30</Caption>
+              <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+              <Disabled value="True" />
+              <Folded value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <ChildNodes>
+            <Node ToolID="5">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+                <Position x="403" y="177" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="COT_GROUP" selected="True" />
+                    <SelectField field="*Unknown" selected="False" />
+                  </SelectFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+            </Node>
+            <Node ToolID="6">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+                <Position x="523" y="164" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <UniqueFields>
+                    <Field field="COT_GROUP" />
+                  </UniqueFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+            </Node>
+            <Node ToolID="7">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+                <Position x="619" y="152" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <SortInfo locale="1033">
+                    <Field field="COT_GROUP" order="Ascending" />
+                  </SortInfo>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText>COT_GROUP - Ascending</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+            </Node>
+          </ChildNodes>
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="21" Connection="Join" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Join" />
+      <Destination ToolID="24" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="Output" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="Output" />
+      <Destination ToolID="29" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="45" Connection="Unique" />
+      <Destination ToolID="29" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="Join" />
+      <Destination ToolID="22" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="22" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="32" Connection="Output" />
+      <Destination ToolID="33" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="32" Connection="Output" />
+      <Destination ToolID="37" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="32" Connection="Output" />
+      <Destination ToolID="44" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="33" Connection="Output" />
+      <Destination ToolID="47" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="True" />
+      <Destination ToolID="35" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="35" Connection="Output" />
+      <Destination ToolID="21" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="42" Connection="Unique" />
+      <Destination ToolID="21" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="37" Connection="Output" />
+      <Destination ToolID="39" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="True" />
+      <Destination ToolID="40" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="39" Connection="Output" />
+      <Destination ToolID="38" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="40" Connection="True" />
+      <Destination ToolID="41" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="41" Connection="Output" />
+      <Destination ToolID="42" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="44" Connection="Output" />
+      <Destination ToolID="45" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="47" Connection="Unique" />
+      <Destination ToolID="34" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="15" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="15" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="True" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="True" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Join" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Unique" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>copy_clarivate</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="7c7910c6-2cf2-43c1-bf6e-869a7b2a7f09" />
+      <Telemetry>
+        <PreviousWorkflowId value="356cd296-b584-4518-94ec-92a66369fbab" />
+        <OriginWorkflowId value="356cd296-b584-4518-94ec-92a66369fbab" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

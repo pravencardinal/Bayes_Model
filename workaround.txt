@@ -1,0 +1,641 @@
+
+dat <- read.csv("C:\\Users\\praven.kumar\\OneDrive - Cardinal Health\\Desktop\\clarivate\\FinalTrainingData_v2.csv")
+
+#dim(dat)
+
+ynames <- names(dat)[which(apply(dat,2,function(x) "Y" %in% x))]
+yesnames <- names(dat)[which(apply(dat,2,function(x) "Yes" %in% x))]
+ruralnames <- names(dat)[which(apply(dat,2,function(x) "Rural" %in% x))]
+
+if(length(ynames) > 0){
+  for( i in ynasmes ) {
+    dat[,i] <- as.character(dat[,i])
+    dat[which(dat[,i] == "Y"),i] <- "1"
+    dat[which(dat[,i] != "1"),i] <- "0"
+    dat[,i] <- as.numeric(dat[,i])
+  }
+}
+if(length(yesnames) > 0){
+  for( i in yesnames ) {
+    dat[,i] <- as.character(dat[,i])
+    dat[which(dat[,i] == "Yes"),i] <- "1"
+    dat[which(dat[,i] != "1"),i] <- "0"
+    dat[,i] <- as.numeric(dat[,i])
+  }
+}
+if(length(ruralnames) > 0){
+  for( i in ruralnames ) {
+    dat[,i] <- as.character(dat[,i])
+    dat[which(dat[,i] == "Rural"),i] <- "1"
+    dat[which(dat[,i] != "1"),i] <- "0"
+    dat[,i] <- as.numeric(dat[,i])
+  }
+}
+
+rm(ynames)
+rm(yesnames)
+rm(ruralnames)
+
+
+dat <- dat[,-which(names(dat)=="cot_classification")]
+
+#na by column
+nacount <- apply(dat,2,function(x) length(which(is.na(x))))
+#summary(nacount)
+dim(dat)
+print(names(dat)[1:100])
+if(max(nacount) == nrow(dat)){
+  dat <- dat[,-which(nacount==max(nacount))]
+}
+
+dat[,grepl("BEDS_license",names(dat))][is.na(dat[,grepl("BEDS_license",names(dat))])] <- 0
+dat[,grepl("BEDS_census",names(dat))][is.na(dat[,grepl("BEDS_census",names(dat))])] <- 0
+dat[,grepl("BEDS_staffed",names(dat))][is.na(dat[,grepl("BEDS_staffed",names(dat))])] <- 0
+
+#drop hospitals that don't report beds
+bedsums <- apply(dat[,grepl("BEDS_license",names(dat))],1,function(x) sum(x,na.rm=T))
+
+# if(length(which(bedsums==0))>0){
+#   dat <- dat[-which(bedsums==0),]
+# }
+
+#fill in NA in UNSPSC's with 0
+dat[,grepl("UNSPSC",names(dat))][is.na(dat[,grepl("UNSPSC",names(dat))])] <- 0
+dat[,grepl("CAH_SALES",names(dat))][is.na(dat[,grepl("CAH_SALES",names(dat))])] <- 0
+
+#get list of unspscs
+unspsc_ghx <- unique(substr(names(dat)[which(grepl("UNSPSC",names(dat)))],start=nchar(names(dat)[which(grepl("UNSPSC",names(dat)))])-7,stop=nchar(names(dat)[which(grepl("UNSPSC",names(dat)))])))
+unspsc_cah <- unique(substr(names(dat)[which(grepl("CAH_SALES",names(dat)) & !grepl("NonConv",names(dat)))],start=nchar(names(dat)[which(grepl("CAH_SALES",names(dat)) & !grepl("NonConv",names(dat)))])-7,stop=nchar(names(dat)[which(grepl("CAH_SALES",names(dat)) & !grepl("NonConv",names(dat)))])))
+
+#Find the common unspscs
+unspsc_shared <- NULL
+for(i in unspsc_ghx){
+  if(i %in% unspsc_cah){
+    unspsc_shared <- c(unspsc_shared,i)
+  }
+}
+
+#drop unspscs that are not shared between GHX and CAH
+unspscs_drop <- c(unspsc_ghx[!(unspsc_ghx %in% unspsc_shared)],
+                  unspsc_cah[!(unspsc_cah %in% unspsc_shared)])
+#summary(unspscs_drop)
+
+for(i in unspscs_drop){
+  dat <- dat[,-which(grepl(i,names(dat),fixed=T))]
+}
+
+
+#for 0/1 classification, sum CAH dist data
+#a dummy column is created so that the apply function below doesn't choke
+dat$dummy0 <- 0
+for(i in unspsc_shared){
+  #exclude GHX and nonconvertible fields
+  u.names <- names(dat)[which(grepl(i,names(dat),fixed=T) & !grepl("UNSPSC_",names(dat),fixed=T) & !grepl("NBPNonConv",names(dat)))]
+  dat[,paste("CAHDISTSALES",i,sep="_")] <- unlist(apply(dat[,c(u.names,"dummy0")],1,function(x) ifelse(length(which(!is.na(x)))>0,sum(x,na.rm=T),0)))
+}
+dat <- dat[,-which(names(dat)=="dummy0")]
+
+#now, drop the unsummed CAH_SALES columns for 0/1 classification
+dat_cah <- dat[,which(names(dat)%in%c("ims_org_id")|grepl("CAH_SALES_",names(dat)))]
+dat <- dat[,-which(grepl("CAH_SALES_",names(dat),fixed=T))]
+
+#create 0/1 feature set across unspsc columns
+for(i in unspsc_shared){
+  u.names <- names(dat)[grepl(i,names(dat),fixed=T)]
+  for(j in u.names){
+    dat[,paste(j,"binary",sep="_")] <- ifelse(!is.na(dat[,j]) & dat[,j]>0.0,1,0)
+  }
+}
+rm(u.names)
+
+#create a dataset that maintains GHX and CAH sales figures
+dat_comprehensive <- dat
+
+#for 0/1 training, remove spend columns and GHX 0/1 columns
+dat <- dat[,-which(grepl("UNSPSC",names(dat)))]
+dat <- dat[,-which(grepl("CAHDISTSALES",names(dat))& !grepl("binary",names(dat)))]
+
+print(names(dat)[1:100])
+
+dat <- dat[,c("ims_org_id","cot_facility_type","ttl_license_beds","owner_status","profit_status","electronic_med_rec",
+              names(dat)[grepl("DETAIL_",names(dat))],names(dat)[grepl("WITHIN_",names(dat))],"GHX_TotalSales",names(dat)[grepl("binary",names(dat))])]
+
+#now pivot vertically to get individual unspsc with attributes duplicated
+names(dat)[grepl("binary",names(dat))] <- unlist(strsplit(names(dat)[grepl("binary",names(dat))],"_"))[seq(1,length(unlist(strsplit(names(dat)[grepl("binary",names(dat))],"_"))),1) %% 3 == 2]
+
+dat.tall <- reshape(dat[,c("ims_org_id",sort(names(dat)[which(substr(names(dat),start=1,stop=1) %in% as.character(seq(1,9,1)))]))],idvar="ims_org_id",
+                    varying=names(dat)[which(substr(names(dat),start=1,stop=1) %in% as.character(seq(1,9,1)))],direction="long",v.names="hasSpend",
+                    times=names(dat)[which(substr(names(dat),start=1,stop=1) %in% as.character(seq(1,9,1)))])
+dat.tall$time <- factor(dat.tall$time)
+names(dat.tall)[grepl("time",names(dat.tall))] <- "UNSPSC"
+dat.tall$hasSpend <- factor(dat.tall$hasSpend)
+
+
+dat_sales <- dat_comprehensive
+dat_sales <- dat_sales[,-which(grepl("UNSPSC",names(dat_sales)))]
+dat_sales <- dat_sales[,-which(grepl("CAHDISTSALES",names(dat_sales)) & grepl("binary",names(dat_sales)))]
+
+#################
+#################
+#################
+#################
+print(names(dat_sales)[1:10])
+
+dat_sales <- dat_sales[,c("ims_org_id","zip3","cot_facility_type","ttl_license_beds","owner_status","profit_status","electronic_med_rec",
+                          names(dat_sales)[grepl("DETAIL_",names(dat_sales))],names(dat_sales)[grepl("FINANCIAL_",names(dat_sales))],names(dat_sales)[grepl("WITHIN_",names(dat_sales))],"GHX_TotalSales",names(dat_sales)[grepl("CAHDISTSALES",names(dat_sales))])]
+names(dat_sales)[grepl("CAHDISTSALES",names(dat_sales))] <- unlist(strsplit(names(dat_sales)[grepl("CAHDISTSALES",names(dat_sales))],"_"))[seq(1,length(unlist(strsplit(names(dat_sales)[grepl("CAHDISTSALES",names(dat_sales))],"_"))),1) %% 2 == 0]
+
+
+#create summed cah-distribution spend
+dat_sales$CAH_Total <- unlist(apply(dat_sales[,which(substr(names(dat_sales),start=1,stop=1) %in% as.character(seq(1,9,1)))],1,function(x) sum(ifelse(x<0,0,x),na.rm=T)))
+
+#drop unsummed fields
+dat_sales <- dat_sales[,-which(substr(names(dat_sales),start=1,stop=1) %in% as.character(seq(1,9,1)))]
+
+if(length(which(is.na(dat_sales$GHX_TotalSales)))>0){
+  dat_comprehensive <- dat_comprehensive[-which(is.na(dat_sales$GHX_TotalSales)),]
+  dat_sales <- dat_sales[-which(is.na(dat_sales$GHX_TotalSales)),]
+}
+
+q_beds <- quantile(dat_sales$ttl_license_beds,probs=c(0.01,0.99),na.rm=T)
+
+### all about that bayes
+#source("C:\\Users\\adam.thomas\\Documents\\ClarivateAllocation\\easy_jags_DoNotMove.R")
+
+#extending the model to account for possible under-reporting of beds
+
+#for zip3 summing:
+# sort by zip3
+# read in start and end indices of each zip 3
+
+z3 <- sort(unique(dat_sales$zip3))
+z3n <- length(z3)
+z3start <- unlist(lapply(z3,function(x) which(dat_sales[order(dat_sales$zip3),][,"zip3"] == x)[1]))
+z3end <- unlist(lapply(z3,function(x) which(dat_sales[order(dat_sales$zip3),][,"zip3"] == x)[length(which(dat_sales[order(dat_sales$zip3),][,"zip3"] == x))]))
+z3GHX <- aggregate(dat_sales$GHX_TotalSales~dat_sales$zip3,FUN=max)[,2]
+#z3GHX <- unlist(lapply(sort(unique(dat_sales$zip3)),function(x){max(dat_sales$GHX_TotalSales[dat_sales$zip3==x],na.rm=T)}))
+#z3GHX[is.infinite(z3GHX)] <- 0.0
+
+y <- dat_sales$CAH_Total[order(dat_sales$zip3)]
+yz <- dat_sales$zip3[order(dat_sales$zip3)]
+x1 <- dat_sales$ttl_license_beds[order(dat_sales$zip3)]
+######re-scaled for BNN########
+######re-scaled for BNN########
+f1 <- t(t(dat_sales[order(dat_sales$zip3),c("DETAIL_Total_Routine_Days","DETAIL_Medicare_Discharges","FINANCIAL_fte_emp")]) / c(600000,40000,30000000))
+######re-scaled for BNN########
+######re-scaled for BNN########
+for(c in 1:ncol(f1)){f1[,c][is.na(f1[,c])] <- 0.0}
+n <- length(y)
+nu <- 3
+nf <- 3
+jags.dat <- c("y","x1","f1","n","z3n","z3GHX","z3start","z3end","nu","nf")
+jags.init <- function(){list(alpha=rnorm(1,0,0.0001),beta=rnorm(1,0,0.0001),be2ta=rnorm(1,0,0.0001),c=runif(1),fa=rnorm(1,0,0.0001),fb=rnorm(1,0,0.0001),fc=runif(1),fsigma=rgamma(1,1,1),phi=0.01,pi=runif(length(y)),sigma=rgamma(1,1,1),zsigma=rgamma(1,10,1/100))}
+jags.param <- c("alpha","beta","be2ta","c","fsigma","pi","phi","sigma","yhat","yrevenue","zsigma","w_h","w_o","bias","bias_o")
+seed <- 42
+n_burnin <- 5000
+n_iter <- 15000
+
+jags.fit2 <- readRDS("C:\\Users\\adam.thomas\\Documents\\ClarivateAllocation\\jags_fit_202408.rds")
+
+get_map <- function(jags_obj,cname){
+  sims <- eval(parse(text=paste(jags_obj,"$BUGSoutput$sims.matrix[,'",cname,"']",sep="")))
+  return(density(sims)$x[which(density(sims)$y==max(density(sims)$y))])
+}
+get_median <- function(jags_obj,cname){
+  sims <- eval(parse(text=paste(jags_obj,"$BUGSoutput$sims.matrix[,'",cname,"']",sep="")))
+  return(median(sims))
+}
+get_mean <- function(jags_obj,cname){
+  sims <- eval(parse(text=paste(jags_obj,"$BUGSoutput$sims.matrix[,'",cname,"']",sep="")))
+  return(mean(sims))
+}
+get_min <- function(jags_obj,cname){
+  min.i <- which(eval(parse(text=paste(jags_obj,"$BUGSoutput$sims.matrix[,'deviance']",sep="")))==
+                   min(eval(parse(text=paste(jags_obj,"$BUGSoutput$sims.matrix[,'deviance']",sep="")))))[1]
+  return(eval(parse(text=paste(jags_obj,"$BUGSoutput$sims.matrix[",as.character(min.i),",'",cname,"']",sep=""))))
+}
+
+get_interval <- function(jags_obj,cname,lower,upper){
+  sims <- eval(parse(text=paste(jags_obj,"$BUGSoutput$sims.matrix[,'",cname,"']",sep="")))
+  return(unname(quantile(sims,probs=c(lower,upper))))
+}
+get_stderr <- function(jags_obj,cname,lower,upper){
+  sims <- eval(parse(text=paste(jags_obj,"$BUGSoutput$sims.matrix[,'",cname,"']",sep="")))
+  return(sd(sims)/sqrt(length(sims)))
+}
+get_sd <- function(jags_obj,cname,lower,upper){
+  sims <- eval(parse(text=paste(jags_obj,"$BUGSoutput$sims.matrix[,'",cname,"']",sep="")))
+  return(sd(sims))
+}
+map_fits <- function(jags.dat,jags_obj,jags.equation,jags.param){
+  for(i in jags.param){
+    jags.equation <- gsub(i,as.character(get_map(jags_obj,i)),jags.equation)
+  }
+  jags.equation <- gsub("[i]","",jags.equation)
+  return(eval(parse(text=jags.equation)))
+}
+
+mean_fits <- function(jags.dat,jags_obj,jags.equation,jags.param){
+  for(i in jags.param){
+    jags.equation <- gsub(i,as.character(mean(eval(parse(text=paste(jags_obj,"$BUGSoutput$sims.matrix[,'",i,"']",sep=""))))),jags.equation)
+  }
+  jags.equation <- gsub("[i]","",jags.equation)
+  return(eval(parse(text=jags.equation)))
+}
+
+map_predict <- function(jags.dat,jags.dat.replace,jags_obj,jags.equation,jags.param){
+  for(i in jags.param){
+    jags.equation <- gsub(i,as.character(get_map(jags_obj,i)),jags.equation)
+  }
+  jags.equation <- gsub("[i]","",jags.equation)
+  for(i in 1:length(jags.dat)){
+    if(grepl(jags.dat[i],jags.equation)){
+      jags.equation <- gsub(jags.dat[i],jags.dat.replace[i],jags.equation)
+    }
+  }
+  return(eval(parse(text=jags.equation)))
+}
+
+jags_hist <- function(jags_obj,cname,breakval){
+  sims <- eval(parse(text=paste(jags_obj,"$BUGSoutput$sims.matrix[,'",cname,"']",sep="")))
+  hist(sims,main=cname,ylab="Frequency",xlab="values",breaks=breakval)
+}
+
+jags_plot <- function(jags_obj,cname){
+  sims <- eval(parse(text=paste(jags_obj,"$BUGSoutput$sims.matrix[,'",cname,"']",sep="")))
+  plot(sims,main=paste(cname,"Trace",sep=" "),ylab="Frequency",xlab="values",type="l")
+}
+
+library(zoo)
+
+
+pred.yhat <- unlist(lapply(paste("yhat[",seq(1,length(y),1),"]",sep=""),function(x) get_map("jags.fit2",x)))
+pred.y <- unlist(lapply(paste("yrevenue[",seq(1,length(y),1),"]",sep=""),function(x) get_map("jags.fit2",x)))
+pred.y <- ifelse(pred.y>0.0,pred.y,unlist(lapply(paste("yrevenue[",seq(1,length(y),1),"]",sep=""),function(x) get_median("jags.fit2",x))))
+pred.yhat.min <- unlist(lapply(paste("yhat[",seq(1,length(y),1),"]",sep=""),function(x) get_min("jags.fit2",x)))
+pred.y.min <- unlist(lapply(paste("yrevenue[",seq(1,length(y),1),"]",sep=""),function(x) get_min("jags.fit2",x)))
+uplow.y <- matrix(unlist(lapply(paste("yrevenue[",seq(1,length(y),1),"]",sep=""),function(x) get_interval("jags.fit2",x,0.16,0.84))),nrow=length(y),ncol=2,byrow=T)
+interval.y <- unlist(apply(uplow.y,1,function(x) diff(x)))
+
+
+dat_unspsc <- dat_comprehensive[dat_comprehensive$zip3!=8,]
+dat_unspsc <- dat_unspsc[,which(names(dat_unspsc) %in% c("ims_org_id","zip3")|(grepl("UNSPSC",names(dat_unspsc))&!grepl("binary",names(dat_unspsc))))]
+
+names(dat_unspsc)[grepl("UNSPSC",names(dat_unspsc))] <- unlist(strsplit(names(dat_unspsc)[grepl("UNSPSC",names(dat_unspsc))],"_"))[seq(1,length(unlist(strsplit(names(dat_unspsc)[grepl("UNSPSC",names(dat_unspsc))],"_"))),1) %% 2 == 0]
+
+dat_unspsc.tall <- reshape(dat_unspsc[,c("ims_org_id",sort(names(dat_unspsc)[which(substr(names(dat_unspsc),start=1,stop=1) %in% as.character(seq(1,9,1)))]))],idvar="ims_org_id",
+                           varying=names(dat_unspsc)[which(substr(names(dat_unspsc),start=1,stop=1) %in% as.character(seq(1,9,1)))],direction="long",v.names="Zip3_UNSPSC_GHX",
+                           times=names(dat_unspsc)[which(substr(names(dat_unspsc),start=1,stop=1) %in% as.character(seq(1,9,1)))])
+dat_unspsc.tall$time <- factor(dat_unspsc.tall$time)
+names(dat_unspsc.tall)[grepl("time",names(dat_unspsc.tall))] <- "UNSPSC"
+
+#head(dat_unspsc.tall)
+
+dat_unspsc.tall <- merge(dat_unspsc.tall,aggregate(dat_unspsc[,3]~zip3+ims_org_id,data=dat_unspsc,FUN=length)[,1:2],by="ims_org_id")
+
+dat_chb <- dat_cah[,which(names(dat_cah) %in% c("ims_org_id","zip3")|grepl("CAH_SALES_CAH",names(dat_cah)))]
+dat_nbpconv <- dat_cah[,which(names(dat_cah) %in% c("ims_org_id","zip3")|grepl("CAH_SALES_NBPConv",names(dat_cah)))]
+dat_nbpnon <- dat_cah[,which(names(dat_cah) %in% c("ims_org_id","zip3")|grepl("CAH_SALES_NBPNonConv",names(dat_cah)))]
+
+names(dat_chb)[grepl("CAH_SALES_CAH",names(dat_chb))] <- unlist(strsplit(names(dat_chb)[grepl("CAH_SALES_CAH",names(dat_chb))],"_"))[seq(1,length(unlist(strsplit(names(dat_chb)[grepl("CAH_SALES_CAH",names(dat_chb))],"_"))),1) %% 4 == 0]
+names(dat_nbpconv)[grepl("CAH_SALES_NBPConv",names(dat_nbpconv))] <- unlist(strsplit(names(dat_nbpconv)[grepl("CAH_SALES_NBPConv",names(dat_nbpconv))],"_"))[seq(1,length(unlist(strsplit(names(dat_nbpconv)[grepl("CAH_SALES_NBPConv",names(dat_nbpconv))],"_"))),1) %% 4 == 0]
+names(dat_nbpnon)[grepl("CAH_SALES_NBPNonConv",names(dat_nbpnon))] <- unlist(strsplit(names(dat_nbpnon)[grepl("CAH_SALES_NBPNonConv",names(dat_nbpnon))],"_"))[seq(1,length(unlist(strsplit(names(dat_nbpnon)[grepl("CAH_SALES_NBPNonConv",names(dat_nbpnon))],"_"))),1) %% 4 == 0]
+
+
+
+dat_chb.tall <- reshape(dat_chb[,c("ims_org_id",sort(names(dat_chb)[which(substr(names(dat_chb),start=1,stop=1) %in% as.character(seq(1,9,1)))]))],idvar="ims_org_id",
+                        varying=names(dat_chb)[which(substr(names(dat_chb),start=1,stop=1) %in% as.character(seq(1,9,1)))],direction="long",v.names="CHB",
+                        times=names(dat_chb)[which(substr(names(dat_chb),start=1,stop=1) %in% as.character(seq(1,9,1)))])
+dat_chb.tall$time <- factor(dat_chb.tall$time)
+names(dat_chb.tall)[grepl("time",names(dat_chb.tall))] <- "UNSPSC"
+
+
+dat_chb <- merge(dat_chb,dat_sales[,c("ims_org_id","zip3")],by="ims_org_id")
+chb.zip3 <- aggregate(.~zip3,data=dat_chb[,which(names(dat_chb) %in% c("zip3")|substr(names(dat_chb),start=1,stop=1) %in% as.character(seq(1,9,1)))],FUN=sum)
+chb.zip3.tall <- reshape(chb.zip3[,c("zip3",sort(names(chb.zip3)[which(substr(names(chb.zip3),start=1,stop=1) %in% as.character(seq(1,9,1)))]))],idvar="zip3",
+                         varying=names(chb.zip3)[which(substr(names(chb.zip3),start=1,stop=1) %in% as.character(seq(1,9,1)))],direction="long",v.names="CHB.zip3",
+                         times=names(chb.zip3)[which(substr(names(chb.zip3),start=1,stop=1) %in% as.character(seq(1,9,1)))])
+chb.zip3.tall$time <- factor(chb.zip3.tall$time)
+names(chb.zip3.tall)[grepl("time",names(chb.zip3.tall))] <- "UNSPSC"
+
+
+dat_nbpconv.tall <- reshape(dat_nbpconv[,c("ims_org_id",sort(names(dat_nbpconv)[which(substr(names(dat_nbpconv),start=1,stop=1) %in% as.character(seq(1,9,1)))]))],idvar="ims_org_id",
+                            varying=names(dat_nbpconv)[which(substr(names(dat_nbpconv),start=1,stop=1) %in% as.character(seq(1,9,1)))],direction="long",v.names="NBPConv",
+                            times=names(dat_nbpconv)[which(substr(names(dat_nbpconv),start=1,stop=1) %in% as.character(seq(1,9,1)))])
+dat_nbpconv.tall$time <- factor(dat_nbpconv.tall$time)
+names(dat_nbpconv.tall)[grepl("time",names(dat_nbpconv.tall))] <- "UNSPSC"
+
+dat_nbpconv <- merge(dat_nbpconv,dat_sales[,c("ims_org_id","zip3")],by="ims_org_id")
+nbpconv.zip3 <- aggregate(.~zip3,data=dat_nbpconv[,which(names(dat_nbpconv) %in% c("zip3")|substr(names(dat_nbpconv),start=1,stop=1) %in% as.character(seq(1,9,1)))],FUN=sum)
+nbpconv.zip3.tall <- reshape(nbpconv.zip3[,c("zip3",sort(names(nbpconv.zip3)[which(substr(names(nbpconv.zip3),start=1,stop=1) %in% as.character(seq(1,9,1)))]))],idvar="zip3",
+                             varying=names(nbpconv.zip3)[which(substr(names(nbpconv.zip3),start=1,stop=1) %in% as.character(seq(1,9,1)))],direction="long",v.names="NBPConv.zip3",
+                             times=names(nbpconv.zip3)[which(substr(names(nbpconv.zip3),start=1,stop=1) %in% as.character(seq(1,9,1)))])
+nbpconv.zip3.tall$time <- factor(nbpconv.zip3.tall$time)
+names(nbpconv.zip3.tall)[grepl("time",names(nbpconv.zip3.tall))] <- "UNSPSC"
+
+dat_nbpnon.tall <- reshape(dat_nbpnon[,c("ims_org_id",sort(names(dat_nbpnon)[which(substr(names(dat_nbpnon),start=1,stop=1) %in% as.character(seq(1,9,1)))]))],idvar="ims_org_id",
+                           varying=names(dat_nbpnon)[which(substr(names(dat_nbpnon),start=1,stop=1) %in% as.character(seq(1,9,1)))],direction="long",v.names="NBPNon",
+                           times=names(dat_nbpnon)[which(substr(names(dat_nbpnon),start=1,stop=1) %in% as.character(seq(1,9,1)))])
+dat_nbpnon.tall$time <- factor(dat_nbpnon.tall$time)
+names(dat_nbpnon.tall)[grepl("time",names(dat_nbpnon.tall))] <- "UNSPSC"
+
+dat_nbpnon <- merge(dat_nbpnon,dat_sales[,c("ims_org_id","zip3")],by="ims_org_id")
+nbpnon.zip3 <- aggregate(.~zip3,data=dat_nbpnon[,which(names(dat_nbpnon) %in% c("zip3")|substr(names(dat_nbpnon),start=1,stop=1) %in% as.character(seq(1,9,1)))],FUN=sum)
+nbpnon.zip3.tall <- reshape(nbpnon.zip3[,c("zip3",sort(names(nbpnon.zip3)[which(substr(names(nbpnon.zip3),start=1,stop=1) %in% as.character(seq(1,9,1)))]))],idvar="zip3",
+                            varying=names(nbpnon.zip3)[which(substr(names(nbpnon.zip3),start=1,stop=1) %in% as.character(seq(1,9,1)))],direction="long",v.names="NBPNon.zip3",
+                            times=names(nbpnon.zip3)[which(substr(names(nbpnon.zip3),start=1,stop=1) %in% as.character(seq(1,9,1)))])
+nbpnon.zip3.tall$time <- factor(nbpnon.zip3.tall$time)
+names(nbpnon.zip3.tall)[grepl("time",names(nbpnon.zip3.tall))] <- "UNSPSC"
+
+rm(dat_chb);rm(dat_nbpconv);rm(dat_nbpnon)
+
+#head(dat_unspsc.tall)
+
+dat_unspsc.tall <- merge(dat_unspsc.tall,dat_chb.tall,by=interaction(c("ims_org_id","UNSPSC")),all.x=T,all.y=F)
+dat_unspsc.tall <- merge(dat_unspsc.tall,dat_nbpconv.tall,by=interaction(c("ims_org_id","UNSPSC")),all.x=T,all.y=F)
+dat_unspsc.tall <- merge(dat_unspsc.tall,dat_nbpnon.tall,by=interaction(c("ims_org_id","UNSPSC")),all.x=T,all.y=F)
+
+for(i in c("CHB","NBPConv","NBPNon")){dat_unspsc.tall[,i][is.na(dat_unspsc.tall[,i])] <- 0.0}
+
+#merge in predicted model weights
+ims.y <- as.data.frame(cbind(as.character(dat_sales$ims_org_id[order(dat_sales$zip3)]),pred.y))
+names(ims.y) <- c("ims_org_id","pred.y")
+ims.y$pred.y <- as.numeric(as.character(ims.y$pred.y))
+
+dat_unspsc.tall <- merge(dat_unspsc.tall,ims.y,by="ims_org_id",all.x=T,all.y=F)
+
+#sum zip3 pred.y and CHB
+zip3.pred <- data.frame(cbind(dat_sales$ims_org_id[order(dat_sales$zip3)],dat_sales$zip3[order(dat_sales$zip3)],pred.y))
+names(zip3.pred) <- c("ims_org_id","zip3","pred.y.zip3")
+zip3.pred$pred.y.zip3 <- as.numeric(zip3.pred$pred.y.zip3)
+zip3.pred$zip3 <- as.factor(zip3.pred$zip3)
+zip3.pred <- aggregate(pred.y.zip3~zip3,data=zip3.pred,FUN="sum")
+
+dat_unspsc.tall <- merge(dat_unspsc.tall,zip3.pred,by="zip3",all.x=T,all.y=F)
+names(dat_unspsc.tall)[ncol(dat_unspsc.tall)] <- "pred.y.zip3"
+
+dat_unspsc.tall <- merge(dat_unspsc.tall,chb.zip3.tall,by=interaction(c("zip3","UNSPSC")),all.x=T,all.y=F)
+dat_unspsc.tall <- merge(dat_unspsc.tall,nbpconv.zip3.tall,by=interaction(c("zip3","UNSPSC")),all.x=T,all.y=F)
+dat_unspsc.tall <- merge(dat_unspsc.tall,nbpnon.zip3.tall,by=interaction(c("zip3","UNSPSC")),all.x=T,all.y=F)
+
+#head(dat_unspsc.tall)
+
+#join in bed count
+dat_unspsc.tall <- merge(dat_unspsc.tall,dat_sales[,c("ims_org_id","ttl_license_beds")],by="ims_org_id",all.x=T,all.y=F)
+dat_unspsc.tall$ttl_license_beds[is.na(dat_unspsc.tall$ttl_license_beds)] <- median(dat_sales$ttl_license_beds,na.rm=T)#replicating AQTTpod logic
+dat_sales_z3bed <- dat_sales[,c("zip3","ttl_license_beds")]
+dat_sales_z3bed$ttl_license_beds[is.na(dat_sales_z3bed$ttl_license_beds)] <- median(dat_sales_z3bed$ttl_license_beds,na.rm=T)
+dat_sales_z3bed <- aggregate(ttl_license_beds~zip3,data=dat_sales_z3bed,sum)
+dat_unspsc.tall <- merge(dat_unspsc.tall,aggregate(ttl_license_beds~zip3,data=dat_sales,sum),by="zip3",all.x=T,all.y=F)
+rm(dat_sales_z3bed)
+names(dat_unspsc.tall)[which(names(dat_unspsc.tall)=="ttl_license_beds.x")] <- "ttl_license_beds"
+names(dat_unspsc.tall)[ncol(dat_unspsc.tall)] <- "ttl_license_beds.zip3"
+
+#get rid of negatives. #get rid of NA's
+#calculate allocation percentages, conv/nonconv by zip3
+
+for(i in c("CHB","NBPConv","NBPNon","pred.y","pred.y.zip3","CHB.zip3","NBPConv.zip3","NBPNon.zip3")){dat_unspsc.tall[,i][is.na(dat_unspsc.tall[,i])]<-0.0}
+for(i in c("CHB","NBPConv","NBPNon","pred.y","pred.y.zip3","CHB.zip3","NBPConv.zip3","NBPNon.zip3")){dat_unspsc.tall[,i][dat_unspsc.tall[,i] < 0.0 ]<-0.0}
+
+#allocate
+dat_unspsc.tall$allocation <- dat_unspsc.tall$Zip3_UNSPSC_GHX * (dat_unspsc.tall$pred.y/dat_unspsc.tall$pred.y.zip3)
+dat_unspsc.tall$allocation.bed <- dat_unspsc.tall$Zip3_UNSPSC_GHX * (dat_unspsc.tall$ttl_license_beds/dat_unspsc.tall$ttl_license_beds.zip3)
+
+
+with(dat_unspsc.tall,length(which(allocation > CHB)))/nrow(dat_unspsc.tall)
+with(dat_unspsc.tall,length(which(allocation.bed > CHB)))/nrow(dat_unspsc.tall)
+
+
+print(dim(dat_sales))
+print(dim(dat_comprehensive))
+
+
+notRun<-1
+notfit <- 1
+if(notRun == 1){
+  library(nnet)
+  #variance by unspsc
+  #model as deviations from uniform allocation estimate
+  # think<-"
+  # UNSPSC CAHDistribution / summed facility distribution
+  # ^
+  # softmax(u1:u427)
+  # ^
+  # features
+  # "
+  
+  #data:
+  # CAHDIST UNSPSC wide, 1 facility per row
+  # facility features to use
+  #dat_prop <- dat_comprehensive[dat_comprehensive$zip3!=8,which(names(dat_comprehensive) %in% c("ims_org_id",paste("CAHDISTSALES",names(dat_unspsc[3:ncol(dat_unspsc)]),sep="_")))]
+  dat_prop <- dat_comprehensive[,which(names(dat_comprehensive) %in% c("ims_org_id",paste("CAHDISTSALES",names(dat_unspsc[3:ncol(dat_unspsc)]),sep="_")))]
+  dat_prop <- t(apply(dat_prop[,2:ncol(dat_prop)],1,function(x) x/sum(x)))
+  dat_feat <- dat_sales[,3:(ncol(dat_sales)-2)]
+  dat_feat <- dat_feat[,unlist(lapply(dat_feat,function(x) is.numeric(x)|is.integer(x)))]
+  for(i in 1:ncol(dat_feat)){dat_feat[,i][is.na(dat_feat[,i])] <- 0.0}
+  dat_feat.max <- unlist(apply(dat_feat,2,max))
+  for(i in 1:ncol(dat_feat)){dat_feat[,i]<- dat_feat[,i] / dat_feat.max[i]}
+  
+  # prop.net <- nnet(as.formula(eval(parse(text=paste(colnames(as.matrix(dat_prop)),collapse=" + "))) ~ eval(parse(text=paste(colnames(as.matrix(dat_feat[,1:7])),collapse=" + ")))),data=cbind(dat_prop,dat_feat[,1:7]),size=5,linout=T,maxit=10,MaxNWts=3000)
+  print(dim(dat_prop))
+  
+  dat_feat_<- as.matrix(dat_feat)
+  
+  print(dim(dat_feat_))
+  if(notfit == 1){
+    prop.net <- nnet(as.matrix(dat_prop) ~ dat_feat_,size=21,linout=T,maxit=1000,MaxNWts=13000)
+  }
+  
+  prop.net.out <- predict(prop.net,dat_feat_)
+  prop.net.out <- t(apply(predict(prop.net,dat_feat_),1,function(x) (x+(0.000001-min(x)))*(1/sum((x+(0.000001-min(x)))))))
+  
+  # hist(as.vector(prop.net.out),breaks=500,xlim=c(0,0.02))
+  # which.is.max(unname(unlist(apply(prop.net.out,2,function(x) cor(x,dat_feat_[,5])))))
+  
+  prop.net.out <- as.data.frame(prop.net.out)
+  names(prop.net.out) <- unlist(lapply(strsplit(names(prop.net.out),"_",fixed=T),function(x) x[2]))
+  #prop.net.out$ims_org_id <- dat_comprehensive$ims_org_id[dat_comprehensive$zip3!=8]
+  prop.net.out$ims_org_id <- dat_comprehensive$ims_org_id
+  
+  prop.tall <- reshape(prop.net.out,idvar="ims_org_id",
+                       varying=names(prop.net.out)[names(prop.net.out)!="ims_org_id"],direction="long",v.names="UNSPSC_Proportion",
+                       times=names(prop.net.out)[names(prop.net.out)!="ims_org_id"])
+  prop.tall$time <- factor(prop.tall$time)
+  names(prop.tall)[grepl("time",names(prop.tall))] <- "UNSPSC"
+  #head(prop.tall)
+  
+  #head(dat_unspsc.tall)
+}
+dat_unspsc.tall <- merge(dat_unspsc.tall,prop.tall,by=interaction(c("ims_org_id","UNSPSC")),all.x=T,all.y=F)
+
+dat_unspsc.tall$pred.y.unspsc <- with(dat_unspsc.tall,pred.y * UNSPSC_Proportion)
+
+temp.df <- aggregate(pred.y.unspsc~zip3+UNSPSC,dat_unspsc.tall,sum)
+names(temp.df) <- c("zip3","UNSPSC","pred.y.unspsc.zip3")
+
+dat_unspsc.tall <- merge(dat_unspsc.tall,temp.df,by=interaction(c("zip3","UNSPSC")),all.x=T,all.y=F)
+
+rm(temp.df)
+
+dat_unspsc.tall$allocation.u <- with(dat_unspsc.tall,Zip3_UNSPSC_GHX * ifelse(!is.na(pred.y.unspsc/pred.y.unspsc.zip3)&!is.nan(pred.y.unspsc/pred.y.unspsc.zip3),(pred.y.unspsc/pred.y.unspsc.zip3),0.0))
+dat_unspsc.tall$allocation.u[dat_unspsc.tall$pred.y.unspsc.zip3 == 0.0] <- dat_unspsc.tall$allocation[dat_unspsc.tall$pred.y.unspsc.zip3 == 0.0]
+
+
+#Output for Doug's team, prior to subtracting CHB or non-covertible
+strategic_out <- dat_unspsc.tall[,c("ims_org_id","UNSPSC","zip3","Zip3_UNSPSC_GHX","allocation.u")]
+names(strategic_out) <- c("ims_org_id","UNSPSC","zip3","Zip3_UNSPSC_GHX","Allocation")
+#head(strategic_out)
+
+write.csv(strategic_out,file="C:\\Users\\adam.thomas\\Documents\\ClarivateAllocation\\IMS_UNSPSC_Allocation_StrategicAnalytics.csv")
+
+#create new pred.y.unspsc field to reflect accounting for edge cases
+dat_unspsc.tall$allocation.u.mod <- dat_unspsc.tall$allocation.u - dat_unspsc.tall$CHB
+
+dat_unspsc.tall$allocation.u.mod[dat_unspsc.tall$Zip3_UNSPSC_GHX <= dat_unspsc.tall$CHB.zip3] <- 0.0
+
+
+loopTrue <- TRUE
+loopCount <- 0
+while(loopTrue){
+  loopCount <- loopCount + 1
+  if(loopCount > 1){
+    loopTrue <- FALSE
+    break
+  }
+  
+  #loop = 1: initial allocation
+  dat_unspsc.tall$allocation.u <- with(dat_unspsc.tall,Zip3_UNSPSC_GHX * ifelse(!is.na(pred.y.unspsc/pred.y.unspsc.zip3)&!is.nan(pred.y.unspsc/pred.y.unspsc.zip3),(pred.y.unspsc/pred.y.unspsc.zip3),0.0))
+  dat_unspsc.tall$allocation.u[dat_unspsc.tall$pred.y.unspsc.zip3 == 0.0] <- dat_unspsc.tall$allocation[dat_unspsc.tall$pred.y.unspsc.zip3 == 0.0]
+  
+  #create new pred.y.unspsc field to reflect accounting for edge cases
+  dat_unspsc.tall$allocation.u.mod <- dat_unspsc.tall$allocation.u - dat_unspsc.tall$CHB
+  
+  #Zero out CHB>GHX
+  dat_unspsc.tall$allocation.u.mod[dat_unspsc.tall$Zip3_UNSPSC_GHX <= dat_unspsc.tall$CHB.zip3] <- 0.0
+  
+  #percent change needed to bring negative values to zero
+  dat_unspsc.tall$allocation.change <- ifelse(dat_unspsc.tall$allocation.u.mod < 0.0,with(dat_unspsc.tall,(ifelse(allocation.u>0.0,(-1*allocation.u.mod+allocation.u)/(allocation.u),0.0))),0.0)
+  
+  #change needed stated in terms of model weight values
+  dat_unspsc.tall$pred.y.unspsc.mod <- ifelse(dat_unspsc.tall$allocation.u.mod < 0.0,with(dat_unspsc.tall,pred.y.unspsc*allocation.change),0.0)
+  
+  #calculate the most change that can be absorbed by other facilities
+  dat_unspsc.tall$pred.y.unspsc.mod.max <- ifelse(dat_unspsc.tall$allocation.u.mod > 0.0,with(dat_unspsc.tall,(ifelse(allocation.u>0.0,(allocation.u.mod)/(allocation.u),0.0))),0.0)*dat_unspsc.tall$pred.y.unspsc
+  
+  #a sub-frame for the amount of model-weight dollars being redistributed in a zip3-unspsc
+  dat_neg <- aggregate(pred.y.unspsc.mod~zip3+UNSPSC,dat_unspsc.tall,sum)
+  names(dat_neg) <- c("zip3","UNSPSC","pred.y.change")
+  length_above0 <- function(x){length(which(x>0.0))}
+  length_0 <- function(x){length(which(x<=0.0))}
+  dat_neg$count_ims <- aggregate(pred.y.unspsc.mod~zip3+UNSPSC,dat_unspsc.tall,length)[,3]
+  dat_neg$count_ims_change <- aggregate(pred.y.unspsc.mod~zip3+UNSPSC,dat_unspsc.tall,length_above0)[,3]
+  dat_neg$count_ims_cant_change <- aggregate(pred.y.unspsc.mod.max~zip3+UNSPSC,dat_unspsc.tall,length_0)[,3]
+  dat_neg$absorbable_change <- aggregate(pred.y.unspsc.mod.max~zip3+UNSPSC,dat_unspsc.tall,sum)[,3]
+  
+  dat_unspsc.tall <- merge(dat_unspsc.tall,dat_neg,by=interaction(c("zip3","UNSPSC")),all.x=T,all.y=F)
+  
+  dat_unspsc.tall$redist_prop <- ifelse(with(dat_unspsc.tall,allocation.u.mod>0.0 & (count_ims - count_ims_change - count_ims_cant_change)>0.0),with(dat_unspsc.tall,pred.y.unspsc.mod.max/absorbable_change),0.0)
+  
+  #dat_unspsc.tall$redist <- dat_unspsc.tall$redist_prop * ifelse(with(dat_unspsc.tall,allocation.u.mod>0.0 & (count_ims - count_ims_change - count_ims_cant_change)>0.0),with(dat_unspsc.tall,pred.y.change/(count_ims - count_ims_change - count_ims_cant_change)),0.0)
+  dat_unspsc.tall$redist <- dat_unspsc.tall$redist_prop * with(dat_unspsc.tall,pred.y.change)
+  
+  #add the necessary weight to zero out under-allocated ims-unspsc's
+  dat_unspsc.tall$pred.y.unspsc[dat_unspsc.tall$allocation.u.mod < 0.0] <- with(dat_unspsc.tall,pred.y.unspsc[allocation.u.mod < 0.0]+pred.y.unspsc.mod[allocation.u.mod < 0.0])
+  
+  #then subtract weight from other facilities that have weight to give....
+  #dat_unspsc.tall$pred.y.unspsc[dat_unspsc.tall$allocation.change == 0.0] <- with(dat_unspsc.tall[dat_unspsc.tall$allocation.change == 0.0,],pred.y.unspsc-redist)
+  dat_unspsc.tall$pred.y.unspsc <- ifelse(with(dat_unspsc.tall,allocation.u.mod>0.0 & (count_ims - count_ims_change - count_ims_cant_change)>0.0),dat_unspsc.tall$pred.y.unspsc-dat_unspsc.tall$redist,dat_unspsc.tall$pred.y.unspsc)
+  
+  #Then recalculate allocation
+  dat_unspsc.tall$allocation.u <- with(dat_unspsc.tall,Zip3_UNSPSC_GHX * ifelse(!is.na(pred.y.unspsc/pred.y.unspsc.zip3)&!is.nan(pred.y.unspsc/pred.y.unspsc.zip3),(pred.y.unspsc/pred.y.unspsc.zip3),0.0))
+  dat_unspsc.tall$allocation.u[dat_unspsc.tall$pred.y.unspsc.zip3 == 0.0] <- dat_unspsc.tall$allocation[dat_unspsc.tall$pred.y.unspsc.zip3 == 0.0]
+  
+  dat_unspsc.tall$allocation.u.mod <- dat_unspsc.tall$allocation.u - dat_unspsc.tall$CHB
+  
+  #Zero out CHB>GHX
+  dat_unspsc.tall$allocation.u.mod[dat_unspsc.tall$Zip3_UNSPSC_GHX <= dat_unspsc.tall$CHB.zip3] <- 0.0
+  
+  if(length(which(dat_unspsc.tall$allocation.u.mod < 0.0)) == 0){
+    loopTrue <- FALSE
+    break
+  }
+  #if going around again, remove fields calculated in loop
+  if(loopTrue==TRUE){
+    dat_unspsc.tall <- dat_unspsc.tall[,-which(names(dat_unspsc.tall) %in% c("allocation.u","allocation.u.mod","allocation.change","pred.y.unspsc.mod","pred.y.unspsc.mod.max",
+                                                                             "pred.y.change","count_ims","count_ims_change","count_ims_cant_change","absorbable_change","redist"))]
+  }
+}
+# dat_unspsc.tall <- dat_unspsc.tall[,-which(names(dat_unspsc.tall) %in% c("allocation.u","allocation.u.mod"))]
+gc()
+
+if(!("allocation.u" %in% names(dat_unspsc.tall))){
+  dat_unspsc.tall$allocation.u <- with(dat_unspsc.tall,Zip3_UNSPSC_GHX * ifelse(!is.na(pred.y.unspsc/pred.y.unspsc.zip3)&!is.nan(pred.y.unspsc/pred.y.unspsc.zip3),(pred.y.unspsc/pred.y.unspsc.zip3),0.0))
+  dat_unspsc.tall$allocation.u[dat_unspsc.tall$pred.y.unspsc.zip3 == 0.0] <- dat_unspsc.tall$allocation[dat_unspsc.tall$pred.y.unspsc.zip3 == 0.0]
+  
+  #create new pred.y.unspsc field to reflect accounting for edge cases
+  dat_unspsc.tall$allocation.u.mod <- dat_unspsc.tall$allocation.u - dat_unspsc.tall$CHB
+  
+  #Zero out CHB>GHX
+  dat_unspsc.tall$allocation.u.mod[dat_unspsc.tall$Zip3_UNSPSC_GHX <= dat_unspsc.tall$CHB.zip3] <- 0.0
+}
+
+#with(dat_unspsc.tall,length(which(allocation.u.mod < 0.0))) / nrow(dat_unspsc.tall)
+
+#with(dat_unspsc.tall[!duplicated(paste(dat_unspsc.tall$zip3,dat_unspsc.tall$UNSPSC,sep=",")),],length(which(CHB.zip3 > Zip3_UNSPSC_GHX))) / nrow(dat_unspsc.tall)
+
+#head(dat_unspsc.tall)
+summary(dat_unspsc.tall)
+
+#sum(dat_unspsc.tall$allocation.u.mod[dat_unspsc.tall$allocation.u.mod < 0.0])
+#sum(dat_unspsc.tall$allocation.u.mod[dat_unspsc.tall$allocation.u.mod > 0.0])
+#sum(dat_unspsc.tall$allocation.u.mod)
+
+#summary(dat_unspsc.tall$allocation.u.mod[dat_unspsc.tall$allocation.u.mod < 0.0])
+#summary(dat_unspsc.tall$allocation.u.mod[dat_unspsc.tall$allocation.u.mod > 0.0])
+
+fn1 <- function(){
+  print(dat_unspsc.tall[dat_unspsc.tall$allocation.change!=0.0,][1:10,])
+  print(dat_unspsc.tall[dat_unspsc.tall$allocation.change==0.0,][1:10,])
+}
+
+
+dat_unspsc.tall$allocation.u.mod[dat_unspsc.tall$allocation.u.mod < 0.0] <- 0.0
+
+#estimate % convertible vs non-convertible by unspsc
+dat.conv <- dat_unspsc.tall[!duplicated(paste(dat_unspsc.tall$zip3,dat_unspsc.tall$UNSPSC,sep=",")),c("UNSPSC","CHB.zip3","NBPConv.zip3","NBPNon.zip3")]
+dat.conv <- aggregate(cbind(CHB.zip3,NBPConv.zip3,NBPNon.zip3) ~ UNSPSC,data=dat.conv,sum)
+dat.conv$conv_perc <- sqrt(with(dat.conv,NBPConv.zip3/(NBPConv.zip3+NBPNon.zip3)))
+dat.conv$conv_perc[is.na(dat.conv$conv_perc)] <- 0.0
+head(dat.conv)
+summary(dat.conv)
+
+dat_unspsc.tall <- merge(dat_unspsc.tall,dat.conv[,c("UNSPSC","conv_perc")],by="UNSPSC",all.x=T)
+
+#head(dat_unspsc.tall)
+
+dat_unspsc.tall$allocation.final <- with(dat_unspsc.tall,allocation.u.mod * conv_perc)
+
+
+#summary(dat_unspsc.tall)
+
+
+dat_out <- dat_unspsc.tall[,c("ims_org_id","UNSPSC","CHB","allocation.u.mod","allocation.final","conv_perc")]
+names(dat_out)<-c("ims_org_id","UNSPSC","CHB_Sales","Sales_Opportunity_Total","Sales_Opportunity","Convertible_Percentage")
+dat_out$CHB_Sales <- round(dat_out$CHB_Sales,2)
+dat_out$Sales_Opportunity <- round(dat_out$Sales_Opportunity,2)
+#head(dat_out)
+#summary(dat_out)
+
+write.csv(dat_out,file="C:\\Users\\praven.kumar\\OneDrive - Cardinal Health\\Desktop\\clarivate\\IMS_UNSPSC_Allocation.csv")
+
+##############################################################
+##############################################################
+##############################################################
+
+
+
+
+
+
+
+
