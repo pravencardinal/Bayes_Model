@@ -1,0 +1,79 @@
+** Take maximum time and go through below pointers for Project "Out of channel allocation" and provide me brilliant prompt to be used within chatGPT **
+
+** The prompt will be used to generate a highly efficient SOP (Standard operating procedure) **
+
+** The SOP has to be easy to understand and even a non-technical person should be able to perform Alteryx worflow run and trigger r script which is required for completion of the project by going through this SOP **
+
+1) From below paragraph I want a cleaner problem statement and objective:
+
+•	Out of channel targeting tool provides information on estimates of Cardinal Brand Opportunity, further drilled down at Sold_To, Ship_To, UNSPSC (material) level and marketing view level.
+•	It helps to answer questions like what is the size of customers in terms of bed count, what is the total value of UNSPSC (material) level, what is market size based on marketing view, what is the percentage of Cardinal share. Overall, it helps business to predict how much would be on CAH contracts.
+•	The solution leverages data from Zip code wise GHX sales data, Clarivate, IQVIA and internal sources.  
+•	Out of Channel Allocation objective is to identify customers who are not meeting their purchasing level commitments for their tier price access.
+•	The goal is to encourage these customers to either increase their purchases to meet the compliance levels or to pay higher prices that are appropriate for their actual tier.
+•	This involves identifying UNSPSC spend within GHX.
+•	It also requires determining which facilities are linked to the GHX dollar amount, using customer attributes sourced from IQVIA data.
+
+2) Data Governance Framework
+•	AD Groups:
+•	SharePoint:   Out of Channel Allocation
+•	Network Folder:  \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\AdamTransition\ClarivateAllocation
+
+3) Process Steps
+There are seven workflows designed to run sequentially, to produce the final output. Below table depicts details about the workflows.
+Location: \\cardinalhealth.net\Applications\OH001\AnalyticsInfoMgmt\Teams\Performance Optimization\AdamTransition\ClarivateAllocation
+Training Data - Summary: Training Data – Summary
+All Workflows Sources and targets with description: Sources and Targets.xlsx
+
+4) Take maximum time and Go through the word document "OUT OF CHANNEL ALLOCATION.docx"
+
+5) To know sequential execution of project steps, look for table "DETAILED PROCESS STEPS IN SEQUENCE:" inside the word document.
+
+6) I want a cleaner and easy to understand process steps (without losing any information from table "DETAILED PROCESS STEPS IN SEQUENCE:")
+
+7) Take maximum time and go through below headers and contents from the word document:
+
+*** Data sources:
+
+*** Tools Used:
+
+*** Additional file details:
+
+*** Allocation model steps:
+
+*** Model Architecture:
+
+8) Use the contents from point 7 at the right place inside the SOP. So that we have a sequential understanding of process flow and a very efficient SOP
+
+9) Also attached .xml versions of the Alteryx workflows for reference, In case if we missed any crucial information.
+
+10) Also attached the R code .txt format (workaround.txt) for reference, In case if we missed any crucial information.
+
+11) Also attached the presentation which we did for explaining the "Out of channel allocation" for reference, In case if we missed any crucial information.
+
+12) We have attached refence SOP "ITA_SOP" which was built for another project "Intelligent territory alignment". We want similar headers and contents tailored for "Out of channel allocation" for each header
+
+13) For code module overview (R script) and Methodology, Give your best.
+
+14) Results from the Bayes model run:
+
+*** File 1 – soldto_UNSPSC_denominator
+This file provides the cardinal estimate at “sold-to” and UNSPSC (material) level for total out-of-channel spend.
+
+*** File 2 – Shipto_MarketingView_Allocation
+This file provides Convertible and Non-Convertible Opportunity at a “ship-to” and marketing view level. 
+
+*** File 3 – Shipto_Unspsc_Allocation
+This file provides the cardinal estimate at “Shipto” and UNSPSC (material) level for total out-of-channel spend.
+
+*** File 4 – Bayes_Soldto_Unspsc_Opportunity
+This file provides the "Bayes" " at “SoldToCustomerId” and UNSPSC (material) level for total out-of-channel spend.
+( I Honestly do not know what this output is. If we already have File 1 – soldto_UNSPSC_denominator with same data on “sold-to” and UNSPSC (material) level, why we need file 4? Please do explain this in SOP
+
+15) I want to impress my client with this SOP. So give your best to generate a brilliant prompt that utilizes all attached files and that must produce easily understandable THE AWESOME SOP document
+
+
+
+
+
+
