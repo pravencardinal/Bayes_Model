@@ -1,0 +1,16 @@
+Bayes KT:
+
+Input Data Sources
+
+AD groups
+
+For any data input do we need to set up connection within ODBC? If so give me step by step pointers to do it
+
+Outputs - Explain them in max 5 words each
+
+Add more info to explain each workflow.
+
+Give me exact and good content for table, Segregation of Duties – Documents and Risks
+
+Give me exact and good content for table, Process Risk & Mitigation
+
